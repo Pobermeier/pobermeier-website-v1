@@ -17,6 +17,16 @@
   <link rel="stylesheet" href="css/main.min.css">
 
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    @media screen and (max-width: 1023px) {
+      html {
+        scroll-padding-top: 3.25rem
+      }
+    }
+
     .logo-title {
       margin-left: 0.5em;
       font-size: 1.4rem;
@@ -126,7 +136,7 @@
     <nav class="navbar" role="navigation" aria-label="main navigation">
       <div class="container">
         <div class="navbar-brand">
-          <a class="navbar-item" href="./">
+          <a class="navbar-item" href="#hero">
             <svg width="50" height="50" viewBox="0 0 250 250" fill="none" xmlns="http://www.w3.org/2000/svg">
               <rect width="250" height="250" rx="50" fill="#EBEDF0" />
               <path d="M75 100H125V100C125 127.614 102.614 150 75 150V150V100Z" fill="#7BC96F" />
@@ -145,7 +155,7 @@
           </a>
 
           <span class="navbar-item is-hidden-desktop navbar-mobile-cta">
-            <a class="button is-primary ">
+            <a class="button is-primary" href="#portfolio">
               <span class="icon">
                 <i class="fas fa-eye"></i>
               </span>
@@ -165,19 +175,20 @@
 
         <div id="navMenu" class="navbar-menu">
           <div class="navbar-end">
-            <a class="navbar-item is-hidden-touch">
+            <a class="navbar-item is-hidden-touch" href="https://www.linkedin.com/in/patrickobermeier/"
+              referrerpolicy="no-referrer" rel="noreferrer noopener">
               <span class="icon">
                 <i class="fab fa-linkedin-in"></i>
               </span>
             </a>
-            <a class="navbar-item">
+            <a class="navbar-item" href="#about">
               About
             </a>
-            <a class="navbar-item">
+            <a class="navbar-item" href="#contact">
               Contact
             </a>
             <span class="navbar-item is-hidden-touch">
-              <a class="button is-primary">
+              <a class="button is-primary" href="#portfolio">
                 <span class="icon">
                   <i class="fas fa-eye"></i>
                 </span>
@@ -185,7 +196,8 @@
               </a>
             </span>
             <span class="navbar-item is-hidden-desktop">
-              <a class="button is-secondary">
+              <a class="button is-secondary" href="https://github.com/Pobermeier" referrerpolicy="no-referrer"
+                rel="noreferrer noopener">
                 <span class="icon">
                   <i class="fab fa-github"></i>
                 </span>
@@ -193,7 +205,8 @@
               </a>
             </span>
             <span class="navbar-item is-hidden-desktop">
-              <a class="button is-secondary">
+              <a class="button is-secondary" href="https://www.linkedin.com/in/patrickobermeier/"
+                referrerpolicy="no-referrer" rel="noreferrer noopener">
                 <span class="icon">
                   <i class="fab fa-linkedin-in"></i>
                 </span>
@@ -205,7 +218,7 @@
       </div>
     </nav>
 
-    <section class="hero is-fullheight-with-navbar is-large">
+    <section class="hero is-fullheight-with-navbar is-large" id="hero">
       <div class="hero-body">
         <div class="container">
           <h1 class="title has-text-white is-size-1 is-size-2-tablet is-size-3-mobile">
@@ -236,7 +249,7 @@
   </header>
 
   <main>
-    <section class="section">
+    <section class="section" id="about">
       <div class="container has-text-centered">
         <h3 class="title">About Me</h3>
 
@@ -354,7 +367,7 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section" id="portfolio">
       <div class="container has-text-centered">
         <h3 class="title">Personal Portfolio</h3>
         <h4 class="subtitle">
@@ -564,7 +577,7 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section" id="contact">
       <div class="container has-text-centered">
         <h3 class="title">Contact Me</h3>
         <h4 class="subtitle">
