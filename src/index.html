@@ -615,9 +615,43 @@
       <p>
         © Patrick Obermeier. All rights reserved.
       </p>
-      <p><a href="!#">Privacy Notice</a> | <a href="!#">Legal Notice</a></p>
+      <p><a class="modal-link" data-target="privacy-modal">Privacy Notice</a> | <a class="modal-link"
+          data-target="imprint-modal">Legal Notice</a></p>
     </div>
   </footer>
+
+  <div class="modal" id="privacy-modal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">Privacy Notice</p>
+        <button class="delete" aria-label="close"></button>
+      </header>
+      <section class="modal-card-body">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, doloribus!</p>
+      </section>
+      <footer class="modal-card-foot">
+        <button class="button is-success">Close</button>
+      </footer>
+    </div>
+  </div>
+
+  <div class="modal" id="imprint-modal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">Imprint</p>
+        <button class="delete" aria-label="close"></button>
+      </header>
+      <section class="modal-card-body">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, doloribus!</p>
+      </section>
+      <footer class="modal-card-foot">
+        <button class="button is-success">Close</button>
+      </footer>
+    </div>
+  </div>
+
   <!-- <script src="js/vendor/modernizr-3.8.0.min.js"></script> -->
   <!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
@@ -634,8 +668,10 @@
   </script> -->
   <!-- <script src="https://www.google-analytics.com/analytics.js" async></script> -->
   <script>
+    "use strict"
+
     // Global state
-    _STATE_ = {
+    const _STATE_ = {
       isNavMenuOpen: false
     }
 
@@ -676,7 +712,32 @@
           setTimeout(() => removeHash(), 0)
         })
       })
-    });
+
+      function removeHash() {
+        history.pushState("", document.title, window.location.pathname +
+          window.location.search);
+      }
+
+      // Init Modals
+      const modals = document.querySelectorAll(".modal")
+
+      modals.forEach(modal => {
+        const modalButtons = modal.querySelectorAll("button")
+        const modalBackground = modal.getElementsByClassName("modal-background")
+        const clickHandlers = [...modalButtons, ...modalBackground]
+        clickHandlers.forEach(clickHandler => clickHandler.addEventListener("click", () => modal.classList
+          .toggle(
+            "is-active")));
+      })
+
+      const modalLinks = document.querySelectorAll(".modal-link")
+      modalLinks.forEach(modalLink => {
+        modalLink.addEventListener("click", e => {
+          e.preventDefault()
+          document.getElementById(e.target.dataset.target).classList.toggle("is-active")
+        })
+      })
+    })
 
     // Fix for 100vh height of hero-section on Mobile
     convertWindowHeightToViewPortHeight()
@@ -688,11 +749,6 @@
     function convertWindowHeightToViewPortHeight() {
       let vh = window.innerHeight * 0.01;
       document.documentElement.style.setProperty('--vh', `${vh}px`);
-    }
-
-    function removeHash() {
-      history.pushState("", document.title, window.location.pathname +
-        window.location.search);
     }
 
   </script>
