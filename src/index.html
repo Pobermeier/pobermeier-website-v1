@@ -23,7 +23,11 @@
       background-repeat: no-repeat;
       background-size: cover;
       position: relative;
-      min-height: 50vh;
+    }
+
+    .hero.is-fullheight-with-navbar {
+      min-height: calc(100vh - 3.25rem);
+      min-height: calc((var(--vh, 1vh) * 100) - 3.25rem);
     }
 
     .navbar-burger {
@@ -36,6 +40,10 @@
       font-size: 1.4rem;
       font-weight: 100;
       text-transform: uppercase;
+    }
+
+    .navbar-brand .navbar-item:hover {
+      color: #4a4a4a;
     }
 
     .title:not(.is-spaced)+.subtitle {
@@ -52,6 +60,10 @@
       width: 100%;
       bottom: 9%;
       animation: mover 1s infinite alternate;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
     }
 
     .nav-arrow {
@@ -74,9 +86,30 @@
       }
     }
 
-    .navbar-menu {
-      position: absolute;
-      width: 100%;
+    @media screen and (max-width: 1023px) {
+      .navbar {
+        position: fixed;
+        width: 100%;
+      }
+
+      .hero.is-fullheight-with-navbar {
+        height: calc(100vh);
+        height: calc((var(--vh, 1vh) * 100));
+      }
+
+      .navbar-menu {
+        position: absolute;
+        width: 100%;
+      }
+    }
+
+    .navbar-menu .navbar-item {
+      text-transform: uppercase;
+      margin: auto 0;
+    }
+
+    .footer {
+      background-color: #7BC96F;
     }
 
   </style>
@@ -90,7 +123,7 @@
     <nav class="navbar" role="navigation" aria-label="main navigation">
       <div class="container">
         <div class="navbar-brand">
-          <a class="navbar-item" href="https://bulma.io">
+          <a class="navbar-item" href="./">
             <svg width="50" height="50" viewBox="0 0 250 250" fill="none" xmlns="http://www.w3.org/2000/svg">
               <rect width="250" height="250" rx="50" fill="#EBEDF0" />
               <path d="M75 100H125V100C125 127.614 102.614 150 75 150V150V100Z" fill="#7BC96F" />
@@ -108,7 +141,8 @@
             <h1 class="logo-title is-hidden-mobile">Patrick Obermeier</h1>
           </a>
 
-          <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+          <a role="button" class="navbar-burger" id="navbar-burger" data-target="navMenu" aria-label="menu"
+            aria-expanded="false">
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
@@ -117,7 +151,7 @@
 
         <div id="navMenu" class="navbar-menu">
           <div class="navbar-end">
-            <a class="navbar-item is-active">
+            <a class="navbar-item">
               Home
             </a>
             <a class="navbar-item">
@@ -155,13 +189,11 @@
           <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="36px" height="18px"
             viewBox="0 0 36 18" zoomAndPan="disable" preserveAspectRatio="none">
             <style type="text/css">
-              <![CDATA[
               line {
                 stroke: #fff;
                 stroke-width: 1;
               }
 
-              ]]>
             </style>
             <line x1="0" y1="0" x2="18" y2="18" />
             <line x1="36" y1="0" x2="18" y2="18" />
@@ -513,13 +545,12 @@
     </section>
   </main>
 
-  <footer class="footer has-background-grey-lighter">
+  <footer class="footer">
     <div class="content has-text-centered">
       <p>
-        <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is licensed
-        <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
-        is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+        © Patrick Obermeier. Alle Rechte vorbehalten.
       </p>
+      <p><a href="!#">Privacy Notice</a> | <a href="!#">Legal Notice</a></p>
     </div>
   </footer>
   <!-- <script src="js/vendor/modernizr-3.8.0.min.js"></script> -->
@@ -538,31 +569,50 @@
   </script> -->
   <!-- <script src="https://www.google-analytics.com/analytics.js" async></script> -->
   <script>
+    // Global state
+    _STATE_ = {
+      isNavMenuOpen: false
+    }
+
+    // Mobile Navbar Logic
     document.addEventListener('DOMContentLoaded', () => {
+      const navbarBurger = document.getElementById("navbar-burger");
+      const navMenu = document.getElementById(navbarBurger.dataset.target)
 
-      // Get all "navbar-burger" elements
-      const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+      document.body.addEventListener("click", (e) => {
+        if (e.target.id !== "navbar-burger" && e.target.id !==
+          "navMenu" && _STATE_.isNavMenuOpen === true) toogleNav()
+      })
 
-      // Check if there are any navbar burgers
-      if ($navbarBurgers.length > 0) {
+      navbarBurger.addEventListener("click", function () {
+        toogleNav()
+      })
 
-        // Add a click event on each of them
-        $navbarBurgers.forEach(el => {
-          el.addEventListener('click', () => {
+      navMenu.querySelectorAll(".navbar-item").forEach((navItem) => {
+        navItem.addEventListener("click", () => {
+          toogleNav()
+        })
+      })
 
-            // Get the target from the "data-target" attribute
-            const target = el.dataset.target;
-            const $target = document.getElementById(target);
-
-            // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-            el.classList.toggle('is-active');
-            $target.classList.toggle('is-active');
-
-          });
-        });
+      function toogleNav() {
+        navbarBurger.classList.toggle("is-active")
+        navMenu.classList.toggle("is-active")
+        _STATE_.isNavMenuOpen = !_STATE_.isNavMenuOpen
       }
-
     });
+
+    // Fix for 100vh height of hero-section on Mobile
+    convertWindowHeightToViewPortHeight()
+
+    window.addEventListener('resize', () => {
+      convertWindowHeightToViewPortHeight()
+    });
+
+    function convertWindowHeightToViewPortHeight() {
+      let vh = window.innerHeight * 0.01;
+      console.log(vh);
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+    }
 
   </script>
 </body>
