@@ -6,7 +6,8 @@
     "type": "image/png",
     "sizes": "192x192"
   }],
-  "start_url": "/?utm_source=homescreen",
+  "start_url": "/src",
   "background_color": "#fff",
-  "theme_color": "#fff"
+  "theme_color": "#fff",
+  "display": "standalone"
 }
