@@ -2,11 +2,12 @@
 <html class="no-js" lang="en">
 
 <head>
-  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Patrick Obermeier | Frontend-Developer & Online Marketeer | VIE, AUT</title>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
+  <meta name="keywords" content="">
   <link rel="canonical" href="">
 
   <link rel="manifest" href="site.webmanifest">
@@ -17,6 +18,12 @@
   <link rel="stylesheet" href="css/main.min.css">
 
   <style>
+    @import url('https://fonts.googleapis.com/css?family=Montserrat:200,400&display=swap');
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+    }
+
     html {
       scroll-behavior: smooth;
     }
@@ -30,7 +37,7 @@
     .logo-title {
       margin-left: 0.5em;
       font-size: 1.4rem;
-      font-weight: 100;
+      font-weight: 200;
       text-transform: uppercase;
     }
 
@@ -77,12 +84,23 @@
 
       .navbar-menu {
         position: absolute;
-        width: 100%;
+        right: 0;
+        width: 200px;
+        text-align: center;
+      }
+
+      .navbar-menu .button {
+        width: 175px;
       }
     }
 
     .title:not(.is-spaced)+.subtitle {
       margin-top: 0;
+    }
+
+    .scroll-to-arrow {
+      cursor: pointer;
+      height: 25vh;
     }
 
     .nav-text {
@@ -110,6 +128,7 @@
       -webkit-animation: mover 1s infinite alternate;
       animation: mover 1s infinite alternate;
     }
+
 
     @keyframes mover {
       0% {
@@ -171,8 +190,6 @@
           </a>
         </div>
 
-
-
         <div id="navMenu" class="navbar-menu">
           <div class="navbar-end">
             <a class="navbar-item is-hidden-touch" href="https://www.linkedin.com/in/patrickobermeier/"
@@ -227,23 +244,26 @@
             Developer & Online-Marketeer</h2>
           <h3 class="subtitle has-text-white is-size-4 is-size-5-tablet is-size-6-mobile">Vienna, Austria</h3>
         </div>
-        <div class="nav-text">
-          <p class="is-size-5 is-size-6-mobile">About me</p>
-        </div>
-        <div class="nav-arrow">
-          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="36px" height="18px"
-            viewBox="0 0 36 18" zoomAndPan="disable" preserveAspectRatio="none">
-            <style type="text/css">
-              line {
-                stroke: #fff;
-                stroke-width: 1;
-              }
+        <div id="scroll-to-about" class="scroll-to-arrow">
+          <div class="nav-text">
+            <p class="is-size-6">About me</p>
+          </div>
+          <div class="nav-arrow">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="36px"
+              height="18px" viewBox="0 0 36 18" zoomAndPan="disable" preserveAspectRatio="none">
+              <style type="text/css">
+                line {
+                  stroke: #fff;
+                  stroke-width: 1;
+                }
 
-            </style>
-            <line x1="0" y1="0" x2="18" y2="18" />
-            <line x1="36" y1="0" x2="18" y2="18" />
-          </svg>
+              </style>
+              <line x1="0" y1="0" x2="18" y2="18" />
+              <line x1="36" y1="0" x2="18" y2="18" />
+            </svg>
+          </div>
         </div>
+
       </div>
     </section>
   </header>
@@ -593,7 +613,7 @@
   <footer class="footer">
     <div class="content has-text-centered">
       <p>
-        © Patrick Obermeier. Alle Rechte vorbehalten.
+        © Patrick Obermeier. All rights reserved.
       </p>
       <p><a href="!#">Privacy Notice</a> | <a href="!#">Legal Notice</a></p>
     </div>
@@ -619,8 +639,8 @@
       isNavMenuOpen: false
     }
 
-    // Mobile Navbar Logic
     document.addEventListener('DOMContentLoaded', () => {
+      // Mobile Navbar Logic
       const navbarBurger = document.getElementById("navbar-burger");
       const navMenu = document.getElementById(navbarBurger.dataset.target)
 
@@ -644,6 +664,18 @@
         navMenu.classList.toggle("is-active")
         _STATE_.isNavMenuOpen = !_STATE_.isNavMenuOpen
       }
+
+      // Clean-up URL (remove hash) after "jumping" to a heading
+      document.getElementById("scroll-to-about").onclick = () => {
+        document.location.hash = "#about"
+        removeHash()
+      }
+
+      document.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          setTimeout(() => removeHash(), 0)
+        })
+      })
     });
 
     // Fix for 100vh height of hero-section on Mobile
@@ -656,6 +688,11 @@
     function convertWindowHeightToViewPortHeight() {
       let vh = window.innerHeight * 0.01;
       document.documentElement.style.setProperty('--vh', `${vh}px`);
+    }
+
+    function removeHash() {
+      history.pushState("", document.title, window.location.pathname +
+        window.location.search);
     }
 
   </script>
