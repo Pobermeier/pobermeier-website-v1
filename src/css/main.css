@@ -55,6 +55,18 @@ textarea {
   resize: vertical;
 }
 
+.button.is-primary {
+  background-color: #239a3b;
+}
+
+.button.is-primary:hover {
+  background-color: #196127;
+}
+
+a.navbar-item:hover {
+  color: #239a3b;
+}
+
 .logo-title {
   margin-left: 0.5em;
   font-size: 1.4rem;
@@ -102,6 +114,10 @@ textarea {
   .hero.is-fullheight-with-navbar {
     height: calc(100vh);
     height: calc((var(--vh, 1vh) * 100));
+  }
+
+  .hero .control {
+    margin-top: 1em;
   }
 
   .navbar-menu {

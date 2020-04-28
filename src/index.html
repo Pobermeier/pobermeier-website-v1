@@ -4,7 +4,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Patrick Obermeier | Frontend-Developer & Online Marketeer | VIE, AUT</title>
+  <title>Patrick Obermeier | Frontend Developer & Online-Marketeer | Vienna, Austria</title>
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="description" content="">
   <meta name="keywords" content="">
@@ -13,8 +13,8 @@
   <link rel="manifest" href="site.webmanifest">
   <link rel="apple-touch-icon" href="icon.png">
 
-  <link rel="stylesheet" href="css/normalize.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
+  <link rel="stylesheet" href="css/normalize.min.css">
   <link rel="stylesheet" href="css/main.min.css">
 
   <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
@@ -44,7 +44,7 @@
           </a>
 
           <span class="navbar-item is-hidden-desktop navbar-mobile-cta">
-            <a class="button is-primary" href="#portfolio">
+            <a class="button is-rounded is-primary" href="#portfolio">
               <span class="icon">
                 <i class="fas fa-eye"></i>
               </span>
@@ -63,7 +63,7 @@
         <div id="navMenu" class="navbar-menu">
           <div class="navbar-end">
             <a class="navbar-item is-hidden-touch" href="https://www.linkedin.com/in/patrickobermeier/"
-              referrerpolicy="no-referrer" rel="noreferrer noopener">
+              referrerpolicy="no-referrer" rel="noreferrer noopener" target="_blank">
               <span class="icon">
                 <i class="fab fa-linkedin-in"></i>
               </span>
@@ -75,7 +75,7 @@
               Contact
             </a>
             <span class="navbar-item is-hidden-touch">
-              <a class="button is-primary" href="#portfolio">
+              <a class="button is-rounded is-primary" href="#portfolio">
                 <span class="icon">
                   <i class="fas fa-eye"></i>
                 </span>
@@ -83,8 +83,8 @@
               </a>
             </span>
             <span class="navbar-item is-hidden-desktop">
-              <a class="button is-secondary" href="https://github.com/Pobermeier" referrerpolicy="no-referrer"
-                rel="noreferrer noopener">
+              <a class="button is-rounded is-secondary" href="https://github.com/Pobermeier"
+                referrerpolicy="no-referrer" rel="noreferrer noopener" target="_blank">
                 <span class="icon">
                   <i class="fab fa-github"></i>
                 </span>
@@ -92,8 +92,8 @@
               </a>
             </span>
             <span class="navbar-item is-hidden-desktop">
-              <a class="button is-secondary" href="https://www.linkedin.com/in/patrickobermeier/"
-                referrerpolicy="no-referrer" rel="noreferrer noopener">
+              <a class="button is-rounded is-secondary" href="https://www.linkedin.com/in/patrickobermeier/"
+                referrerpolicy="no-referrer" rel="noreferrer noopener" target="_blank">
                 <span class="icon">
                   <i class="fab fa-linkedin-in"></i>
                 </span>
@@ -113,7 +113,39 @@
           <h2 class="subtitle has-text-white is-size-3 is-size-4-tablet is-size-5-mobile">Frontend
             Developer & Online-Marketeer</h2>
           <h3 class="subtitle has-text-white is-size-4 is-size-5-tablet is-size-6-mobile">Vienna, Austria</h3>
+          <div class="field is-grouped is-hidden-touch">
+            <p class="control"><a class="button is-primary is-rounded is-large" href="#portfolio">
+                <span class="icon is-medium">
+                  <i class="fas fa-eye"></i>
+                </span>
+                <span>View my work</span>
+              </a></p>
+            <p class="control"><a class="button is-secondary is-rounded is-large" href="https://github.com/Pobermeier"
+                referrerpolicy="no-referrer" rel="noreferrer noopener" target="_blank">
+                <span class="icon is-medium">
+                  <i class="fab fa-github"></i>
+                </span>
+                <span>GitHub Profile</span>
+              </a></p>
+          </div>
+          <div class="field is-hidden-desktop">
+            <p class="control"><a class="button is-primary is-fullwidth is-rounded is-medium" href="#portfolio">
+                <span class="icon is-small">
+                  <i class="fas fa-eye"></i>
+                </span>
+                <span>View my work</span>
+              </a></p>
+            <p class="control"><a class="button is-secondary is-fullwidth is-rounded is-medium"
+                href="https://github.com/Pobermeier" referrerpolicy="no-referrer" rel="noreferrer noopener"
+                target="_blank">
+                <span class="icon is-small">
+                  <i class="fab fa-github"></i>
+                </span>
+                <span>GitHub Profile</span>
+              </a></p>
+          </div>
         </div>
+
         <div id="scroll-to-about" class="scroll-to-arrow">
           <div class="nav-text">
             <p class="is-size-6">About me</p>
@@ -522,8 +554,7 @@
     </div>
   </div>
 
-  <script src="js/plugins.js"></script>
-  <script src="js/main.js"></script>
+  <script src="js/main.min.js"></script>
 
   <!-- <script>
     window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
