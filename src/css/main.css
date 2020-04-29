@@ -144,7 +144,7 @@ a.navbar-item:hover {
 .nav-text {
   color: #e4e4e4;
   position: absolute;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   font-weight: 100;
   text-align: center;
   left: -0.5em;
