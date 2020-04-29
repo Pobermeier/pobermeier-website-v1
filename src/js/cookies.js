@@ -44,7 +44,7 @@ function getCookie(cname) {
 function checkCookie() {
   var cookiesAccepted = getCookie("cookies-accepted");
   if (cookiesAccepted == "") {
-    showCookieAlert();
+    setTimeout(showCookieAlert, 2000);
   }
 }
 document.addEventListener(
