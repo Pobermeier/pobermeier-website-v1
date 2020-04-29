@@ -15,7 +15,6 @@
   <link rel="manifest" href="site.webmanifest">
   <link rel="apple-touch-icon" href="icon.png">
 
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:200,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/main.css">
 </head>
 
@@ -749,6 +748,25 @@
     </div>
   </div>
 
+  <script>
+    fetchStyle("https://fonts.googleapis.com/css?family=Montserrat:200,400&display=auto");
+
+    function fetchStyle(url) {
+      return new Promise((resolve, reject) => {
+        let link = document.createElement('link');
+        link.type = 'text/css';
+        link.rel = 'stylesheet';
+        link.onload = function () {
+          resolve();
+        };
+        link.href = url;
+
+        let headScript = document.querySelector('script');
+        headScript.parentNode.insertBefore(link, headScript);
+      });
+    };
+
+  </script>
   <script src="js/main.js"></script>
 
   <!-- <script>
