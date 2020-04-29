@@ -1,4 +1,6 @@
 "use strict";
+import "./plugins";
+import "./cookies";
 
 // Global state
 const _STATE_ = {
@@ -78,6 +80,32 @@ document.addEventListener("DOMContentLoaded", () => {
         .classList.toggle("is-active");
     });
   });
+
+  // Set current year in footer
+  (function setCurrentYear(element) {
+    const currentYear = new Date().getFullYear();
+    element.innerHTML = currentYear;
+  })(document.getElementById("current-year"));
+
+  // Set email-address after DOM-content has loaded
+  (function setEmailAddress(elements, email) {
+    elements.forEach((element) => {
+      element.innerHTML = `<a href="mailto:${email}">${email}</a>`;
+    });
+  })(
+    document.querySelectorAll(".email-placeholder"),
+    "patrick.obermeier@outlook.com"
+  );
+
+  document.querySelector(
+    "#email-button-placeholder"
+  ).innerHTML = `<a class="button is-rounded is-secondary" href="mailto:patrick.obermeier@outlook.com"
+    referrerpolicy="no-referrer" rel="noreferrer noopener" target="_blank">
+    <span class="icon">
+      <i class="fa fa-envelope"></i>
+    </span>
+    <span>Email</span>
+  </a>`;
 });
 
 // Fix for 100vh height of hero-section on Mobile
