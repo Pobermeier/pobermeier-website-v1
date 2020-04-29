@@ -1,6 +1,7 @@
 "use strict";
 import "./plugins";
 import "./cookies";
+import * as serviceWorker from "./serviceworker";
 
 // Global state
 const _STATE_ = {
@@ -127,3 +128,5 @@ function convertWindowHeightToViewPortHeight() {
   let vh = window.innerHeight * 0.01;
   document.documentElement.style.setProperty("--vh", `${vh}px`);
 }
+
+serviceWorker.register();
