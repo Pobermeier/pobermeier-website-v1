@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "parcel src/index.html --out-dir serve --open",
-    "build": "parcel build src/index.html --out-dir dist"
+    "build": "parcel build src/index.html --out-dir dist && cp ./src/robots.txt ./src/404.html ./dist"
   },
   "repository": {
     "type": "git",
