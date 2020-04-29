@@ -106,6 +106,14 @@ document.addEventListener("DOMContentLoaded", () => {
     </span>
     <span>Email</span>
   </a>`;
+
+  var link = document.createElement("a");
+  link.classList.add("navbar-item", "is-hidden-touch");
+  link.href = "mailto:patrick.obermeier@outlook.com";
+  link.innerHTML = `<span class="icon">
+                    <i class="fa fa-envelope"></i>
+                    </span>`;
+  document.querySelector("#email-icon-placeholder").replaceWith(link);
 });
 
 // Fix for 100vh height of hero-section on Mobile

@@ -65,6 +65,10 @@ a:hover {
   color: #196127;
 }
 
+.button:active {
+  transform: translateY(1px);
+}
+
 .button.is-primary {
   background-color: #239a3b;
 }
