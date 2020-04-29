@@ -129,4 +129,4 @@ function convertWindowHeightToViewPortHeight() {
   document.documentElement.style.setProperty("--vh", `${vh}px`);
 }
 
-serviceWorker.register();
+serviceWorker.unregister();
