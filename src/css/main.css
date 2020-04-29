@@ -1,4 +1,6 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat:200,400&display=swap");
+@import "./normalize.css";
+@import "./bulma.css";
+@import "./fontawesome-all.css";
 
 html {
   color: #222;
@@ -55,12 +57,27 @@ textarea {
   resize: vertical;
 }
 
+a {
+  color: #239a3b;
+}
+
+a:hover {
+  color: #196127;
+}
+
 .button.is-primary {
   background-color: #239a3b;
 }
 
-.button.is-primary:hover {
+.button.is-primary:hover,
+.button.is-primary.is-outlined:hover {
   background-color: #196127;
+  border-color: #196127;
+}
+
+.button.is-primary.is-outlined {
+  border-color: #239a3b;
+  color: #239a3b;
 }
 
 a.navbar-item:hover {
@@ -180,7 +197,17 @@ a.navbar-item:hover {
 }
 
 .footer {
-  background-color: #7bc96f;
+  background-color: #ebedf0;
+}
+
+.footer a,
+.footer p {
+  color: #4a4a4a;
+}
+
+.modal h3,
+.modal p:not(.modal-card-title) {
+  margin: 1em 0;
 }
 
 .hidden {
