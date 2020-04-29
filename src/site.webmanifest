@@ -1,12 +1,12 @@
 {
   "short_name": "Patrick Obermeier Portfolio",
-  "name": "Patrick Obermeier | Frontend-Developer & Online Marketeer | VIE, AUT",
+  "name": "Patrick Obermeier Portfolio",
   "icons": [{
     "src": "icon.png",
     "type": "image/png",
     "sizes": "192x192"
   }],
-  "start_url": "/src",
+  "start_url": ".",
   "background_color": "#fff",
   "theme_color": "#fff",
   "display": "standalone"
