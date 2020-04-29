@@ -135,8 +135,8 @@ a.navbar-item:hover {
   }
 
   .hero.is-fullheight-with-navbar {
-    height: calc(100vh);
-    height: calc((var(--vh, 1vh) * 100));
+    min-height: calc(100vh);
+    min-height: calc((var(--vh, 1vh) * 100 + 1.8rem));
   }
 
   .hero .control {
@@ -172,7 +172,7 @@ a.navbar-item:hover {
   text-align: center;
   left: -0.5em;
   width: 100%;
-  bottom: 9%;
+  bottom: 12%;
   animation: mover 1s infinite alternate;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -185,7 +185,7 @@ a.navbar-item:hover {
   width: 100%;
   text-align: center;
   left: -0.5em;
-  bottom: 5%;
+  bottom: 8%;
   -webkit-animation: mover 1s infinite alternate;
   animation: mover 1s infinite alternate;
 }
