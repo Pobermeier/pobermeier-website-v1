@@ -1,0 +1,12 @@
+GTM Events
+
+onclick="dataLayer.push({'event': 'cta-clicked'});"
+onclick="dataLayer.push({'event': 'github-clicked'});"
+onclick="dataLayer.push({'event': 'linkedin-clicked'});"
+dataLayer.push({'event': 'about-arrow-clicked'});
+dataLayer.push({ event: "modal-closed" });
+dataLayer.push({ event: "modal-opened" });
+dataLayer.push({ event: "cookies-accepted" });
+dataLayer.push({ event: "privacy-notice-opened" });
+onclick="dataLayer.push({'event': 'about-clicked'});"
+onclick="dataLayer.push({'event': 'contact-clicked'});"
