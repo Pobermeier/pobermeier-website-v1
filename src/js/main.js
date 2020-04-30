@@ -118,9 +118,6 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelector("#email-icon-placeholder").replaceWith(link);
 });
 
-// Init datalayer if it doesn't exit yet
-window.dataLayer = window.dataLayer || [];
-
 // Fix for 100vh height of hero-section on Mobile
 convertWindowHeightToViewPortHeight();
 
