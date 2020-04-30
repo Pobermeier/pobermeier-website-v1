@@ -67,6 +67,10 @@ a:hover {
   color: #196127;
 }
 
+.button:hover {
+  transform: scale(1.03);
+}
+
 .button:active {
   transform: translateY(1px);
 }
