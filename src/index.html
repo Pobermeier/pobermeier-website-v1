@@ -50,6 +50,42 @@
 
   <link rel="stylesheet" href="css/main.css">
 
+  <style>
+    #loader {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    .custom-loader {
+      position: absolute;
+      top: calc(50vh - 64px);
+      left: calc(50vw - 64px);
+      transform: scale(1);
+      /* box-shadow: 0 0 0 0 rgba(0, 0, 0, 0); */
+      border-radius: 25px;
+      animation: pulse 1s infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(0.85);
+        box-shadow: 0 0 0 0 rgba(123, 201, 111, 0.5);
+      }
+
+      70% {
+        transform: scale(1.25);
+        box-shadow: 0 0 0 30px rgba(35, 154, 59, 0);
+      }
+
+      100% {
+        transform: scale(0.85);
+        box-shadow: 0 0 0 0 rgba(123, 201, 111, 0);
+      }
+    }
+
+  </style>
+
 
   <!-- Google Optimize Anti-flicker snippet -->
   <!-- <style>
@@ -84,63 +120,51 @@
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TLPT94R" height="0" width="0"
       style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
-  <header>
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-      <div class="container">
-        <div class="navbar-brand">
-          <a class="navbar-item" href="#hero">
-            <svg width="50" height="50" viewBox="0 0 250 250" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="250" height="250" rx="50" fill="#EBEDF0" />
-              <path d="M75 100H125V100C125 127.614 102.614 150 75 150V150V100Z" fill="#7BC96F" />
-              <path d="M175 150H225V150C225 177.614 202.614 200 175 200V200V150Z" fill="#C6E48B" />
-              <path d="M175 150L175 200V200C147.386 200 125 177.614 125 150V150L175 150Z" fill="#C6E48B" />
-              <path d="M75 100L75 50V50C102.614 50 125 72.3858 125 100V100L75 100Z" fill="#239A3B" />
-              <path d="M175 100L175 50V50C202.614 50 225 72.3858 225 100V100L175 100Z" fill="#239A3B" />
-              <path d="M175 100L125 100V100C125 72.3858 147.386 50 175 50V50L175 100Z" fill="#239A3B" />
-              <rect x="175" y="100" width="50" height="50" fill="#7BC96F" />
-              <rect x="125" y="100" width="50" height="50" fill="#7BC96F" />
-              <rect x="25" y="150" width="50" height="50" fill="#C6E48B" />
-              <rect x="25" y="100" width="50" height="50" fill="#7BC96F" />
-              <rect x="25" y="50" width="50" height="50" fill="#239A3B" />
-            </svg>
-            <h1 class="logo-title is-hidden-mobile">Patrick Obermeier</h1>
-          </a>
+  <div id="loader" style="display: block;">
+    <svg width="128" height="128" viewBox="0 0 256 256" class="custom-loader" fill="none"
+      xmlns="http://www.w3.org/2000/svg">
+      <rect width="256" height="256" rx="50" fill="#EBEDF0" />
+      <path d="M76.8 102.4H128V103.6C128 131.214 105.614 153.6 78 153.6H76.8V102.4Z" fill="#7BC96F" />
+      <path d="M179.2 153.6H230.4V154.8C230.4 182.414 208.014 204.8 180.4 204.8H179.2V153.6Z" fill="#C6E48B" />
+      <path d="M179.2 153.6L179.2 204.8L178 204.8C150.386 204.8 128 182.414 128 154.8L128 153.6L179.2 153.6Z"
+        fill="#C6E48B" />
+      <path d="M76.8 102.4L76.8 51.2L78 51.2C105.614 51.2 128 73.5858 128 101.2L128 102.4L76.8 102.4Z" fill="#239A3B" />
+      <path d="M179.2 102.4L179.2 51.2L180.4 51.2C208.014 51.2 230.4 73.5858 230.4 101.2L230.4 102.4L179.2 102.4Z"
+        fill="#239A3B" />
+      <path d="M179.2 102.4L128 102.4L128 101.2C128 73.5858 150.386 51.2 178 51.2L179.2 51.2L179.2 102.4Z"
+        fill="#239A3B" />
+      <rect x="179.2" y="102.4" width="51.2" height="51.2" fill="#7BC96F" />
+      <rect x="128" y="102.4" width="51.2" height="51.2" fill="#7BC96F" />
+      <rect x="25.6" y="153.6" width="51.2" height="51.2" fill="#C6E48B" />
+      <rect x="25.6" y="102.4" width="51.2" height="51.2" fill="#7BC96F" />
+      <rect x="25.6" y="51.2" width="51.2" height="51.2" fill="#239A3B" />
+    </svg>
+  </div>
 
-          <span class="navbar-item is-hidden-desktop navbar-mobile-cta">
-            <a class="button is-rounded is-primary" href="#portfolio"
-              onclick="dataLayer.push({'event': 'cta-clicked'});">
-              <span class="icon">
-                <i class="fas fa-eye"></i>
-              </span>
-              <span>Portfolio</span>
+  <div id="content-body" style="display: none;">
+    <header>
+      <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="container">
+          <div class="navbar-brand">
+            <a class="navbar-item" href="#hero">
+              <svg width="50" height="50" viewBox="0 0 250 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="250" height="250" rx="50" fill="#EBEDF0" />
+                <path d="M75 100H125V100C125 127.614 102.614 150 75 150V150V100Z" fill="#7BC96F" />
+                <path d="M175 150H225V150C225 177.614 202.614 200 175 200V200V150Z" fill="#C6E48B" />
+                <path d="M175 150L175 200V200C147.386 200 125 177.614 125 150V150L175 150Z" fill="#C6E48B" />
+                <path d="M75 100L75 50V50C102.614 50 125 72.3858 125 100V100L75 100Z" fill="#239A3B" />
+                <path d="M175 100L175 50V50C202.614 50 225 72.3858 225 100V100L175 100Z" fill="#239A3B" />
+                <path d="M175 100L125 100V100C125 72.3858 147.386 50 175 50V50L175 100Z" fill="#239A3B" />
+                <rect x="175" y="100" width="50" height="50" fill="#7BC96F" />
+                <rect x="125" y="100" width="50" height="50" fill="#7BC96F" />
+                <rect x="25" y="150" width="50" height="50" fill="#C6E48B" />
+                <rect x="25" y="100" width="50" height="50" fill="#7BC96F" />
+                <rect x="25" y="50" width="50" height="50" fill="#239A3B" />
+              </svg>
+              <h1 class="logo-title is-hidden-mobile">Patrick Obermeier</h1>
             </a>
-          </span>
 
-          <a role="button" class="navbar-burger" id="navbar-burger" data-target="navMenu" aria-label="menu"
-            aria-expanded="false">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-          </a>
-        </div>
-
-        <div id="navMenu" class="navbar-menu">
-          <div class="navbar-end">
-            <span id="email-icon-placeholder"></span>
-            <a class="navbar-item is-hidden-touch" href="https://www.linkedin.com/in/patrickobermeier/"
-              referrerpolicy="no-referrer" rel="noreferrer noopener" target="_blank"
-              onclick="dataLayer.push({'event': 'linkedin-clicked'});">
-              <span class="icon">
-                <i class="fab fa-linkedin-in"></i>
-              </span>
-            </a>
-            <a class="navbar-item" href="#about" onclick="dataLayer.push({'event': 'about-clicked'});">
-              About
-            </a>
-            <a class="navbar-item" href="#contact" onclick="dataLayer.push({'event': 'contact-clicked'});">
-              Contact
-            </a>
-            <span class="navbar-item is-hidden-touch">
+            <span class="navbar-item is-hidden-desktop navbar-mobile-cta">
               <a class="button is-rounded is-primary" href="#portfolio"
                 onclick="dataLayer.push({'event': 'cta-clicked'});">
                 <span class="icon">
@@ -149,454 +173,491 @@
                 <span>Portfolio</span>
               </a>
             </span>
-            <span class="navbar-item is-hidden-desktop" id="email-button-placeholder">
-            </span>
-            <span class="navbar-item is-hidden-desktop">
-              <a class="button is-rounded is-secondary" href="https://www.linkedin.com/in/patrickobermeier/"
+
+            <a role="button" class="navbar-burger" id="navbar-burger" data-target="navMenu" aria-label="menu"
+              aria-expanded="false">
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+            </a>
+          </div>
+
+          <div id="navMenu" class="navbar-menu">
+            <div class="navbar-end">
+              <span id="email-icon-placeholder"></span>
+              <a class="navbar-item is-hidden-touch" href="https://www.linkedin.com/in/patrickobermeier/"
                 referrerpolicy="no-referrer" rel="noreferrer noopener" target="_blank"
                 onclick="dataLayer.push({'event': 'linkedin-clicked'});">
                 <span class="icon">
                   <i class="fab fa-linkedin-in"></i>
                 </span>
-                <span>LinkedIn</span>
               </a>
-            </span>
-            <span class="navbar-item is-hidden-desktop">
-              <a class="button is-rounded is-secondary" href="https://github.com/Pobermeier"
-                referrerpolicy="no-referrer" rel="noreferrer noopener" target="_blank"
-                onclick="dataLayer.push({'event': 'github-clicked'});">
-                <span class="icon">
-                  <i class="fab fa-github"></i>
-                </span>
-                <span>GitHub</span>
+              <a class="navbar-item" href="#about" onclick="dataLayer.push({'event': 'about-clicked'});">
+                About
               </a>
-            </span>
+              <a class="navbar-item" href="#contact" onclick="dataLayer.push({'event': 'contact-clicked'});">
+                Contact
+              </a>
+              <span class="navbar-item is-hidden-touch">
+                <a class="button is-rounded is-primary" href="#portfolio"
+                  onclick="dataLayer.push({'event': 'cta-clicked'});">
+                  <span class="icon">
+                    <i class="fas fa-eye"></i>
+                  </span>
+                  <span>Portfolio</span>
+                </a>
+              </span>
+              <span class="navbar-item is-hidden-desktop" id="email-button-placeholder">
+              </span>
+              <span class="navbar-item is-hidden-desktop">
+                <a class="button is-rounded is-secondary" href="https://www.linkedin.com/in/patrickobermeier/"
+                  referrerpolicy="no-referrer" rel="noreferrer noopener" target="_blank"
+                  onclick="dataLayer.push({'event': 'linkedin-clicked'});">
+                  <span class="icon">
+                    <i class="fab fa-linkedin-in"></i>
+                  </span>
+                  <span>LinkedIn</span>
+                </a>
+              </span>
+              <span class="navbar-item is-hidden-desktop">
+                <a class="button is-rounded is-secondary" href="https://github.com/Pobermeier"
+                  referrerpolicy="no-referrer" rel="noreferrer noopener" target="_blank"
+                  onclick="dataLayer.push({'event': 'github-clicked'});">
+                  <span class="icon">
+                    <i class="fab fa-github"></i>
+                  </span>
+                  <span>GitHub</span>
+                </a>
+              </span>
+            </div>
           </div>
         </div>
+      </nav>
+
+      <section class="hero is-fullheight-with-navbar is-large" id="hero">
+        <div class="hero-body">
+          <div class="container">
+            <h1 class="title has-text-white is-size-1 is-size-2-tablet is-size-3-mobile">
+              Creating <span
+                style="display: inline-block; padding: 0.2em 0.2em; background-color: rgba(35, 154, 59, 0.8); border-radius: 5px;">fresh
+                web apps &
+                landing
+                pages</span> with passion!</h1>
+            <h2 class="subtitle has-text-white is-size-3 is-size-4-tablet is-size-5-mobile">Frontend
+              Developer & Online-Marketeer</h2>
+            <h3 class="subtitle has-text-white is-size-4 is-size-5-tablet is-size-6-mobile">Vienna, Austria</h3>
+            <div class="field is-grouped is-hidden-touch">
+              <p class="control"><a class="button is-primary is-rounded is-large" href="#portfolio"
+                  onclick="dataLayer.push({'event': 'cta-clicked'});">
+                  <span class="icon is-medium">
+                    <i class="fas fa-eye"></i>
+                  </span>
+                  <span>View my work</span>
+                </a></p>
+              <p class="control"><a class="button is-secondary is-rounded is-large" href="https://github.com/Pobermeier"
+                  referrerpolicy="no-referrer" rel="noreferrer noopener" target="_blank"
+                  onclick="dataLayer.push({'event': 'github-clicked'});">
+                  <span class="icon is-medium">
+                    <i class="fab fa-github"></i>
+                  </span>
+                  <span>GitHub Profile</span>
+                </a></p>
+            </div>
+            <div class="field is-hidden-desktop">
+              <p class="control"><a class="button is-primary is-fullwidth is-rounded is-medium" href="#portfolio"
+                  onclick="dataLayer.push({'event': 'cta-clicked'});">
+                  <span class="icon is-small">
+                    <i class="fas fa-eye"></i>
+                  </span>
+                  <span>View my work</span>
+                </a></p>
+              <p class="control"><a class="button is-secondary is-fullwidth is-rounded is-medium"
+                  href="https://github.com/Pobermeier" referrerpolicy="no-referrer" rel="noreferrer noopener"
+                  target="_blank" onclick="dataLayer.push({'event': 'github-clicked'});">
+                  <span class="icon is-small">
+                    <i class="fab fa-github"></i>
+                  </span>
+                  <span>GitHub Profile</span>
+                </a></p>
+            </div>
+          </div>
+
+          <div id="scroll-to-about" class="scroll-to-arrow">
+            <div class="nav-text">
+              <p class="is-size-6">About Me</p>
+            </div>
+            <div class="nav-arrow">
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="36px"
+                height="18px" viewBox="0 0 36 18" zoomAndPan="disable" preserveAspectRatio="none">
+                <style type="text/css">
+                  line {
+                    stroke: #fff;
+                    stroke-width: 1;
+                  }
+
+                </style>
+                <line x1="0" y1="0" x2="18" y2="18" />
+                <line x1="36" y1="0" x2="18" y2="18" />
+              </svg>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </header>
+
+    <main>
+      <section class="section" id="about">
+        <div class="container has-text-centered">
+          <h3 class="title">About Me</h3>
+
+          <div class="columns level">
+            <div class="column is-three-quarters level-item">
+              <h4 class="subtitle has-text-left">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. A temporibus optio error ut non sunt asperiores
+                sequi
+                maxime. Ducimus porro sit animi nesciunt commodi soluta iusto dolore voluptate accusamus ad quos ipsam
+                repellat, provident non quod ab suscipit possimus totam nisi eveniet aut! Aliquam in velit expedita
+                perspiciatis libero quaerat?
+              </h4>
+            </div>
+            <div class="column level-item">
+              <figure class="image is-128x128">
+                <img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
+              </figure>
+            </div>
+          </div>
+
+          <div class="columns">
+
+            <div class="column">
+              <div class="card">
+                <div class="card-image">
+                  <figure class="image is-4by3">
+                    <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                  </figure>
+                </div>
+                <div class="card-content">
+                  <div class="media">
+                    <div class="media-left">
+                      <figure class="image is-48x48">
+                        <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+                      </figure>
+                    </div>
+                    <div class="media-content">
+                      <p class="title is-4">John Smith</p>
+                      <p class="subtitle is-6">@johnsmith</p>
+                    </div>
+                  </div>
+                  <div class="content">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+                    <a href="#">#css</a> <a href="#">#responsive</a>
+                    <br>
+                    <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="column">
+              <div class="card">
+                <div class="card-image">
+                  <figure class="image is-4by3">
+                    <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                  </figure>
+                </div>
+                <div class="card-content">
+                  <div class="media">
+                    <div class="media-left">
+                      <figure class="image is-48x48">
+                        <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+                      </figure>
+                    </div>
+                    <div class="media-content">
+                      <p class="title is-4">John Smith</p>
+                      <p class="subtitle is-6">@johnsmith</p>
+                    </div>
+                  </div>
+                  <div class="content">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+                    <a href="#">#css</a> <a href="#">#responsive</a>
+                    <br>
+                    <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="column">
+              <div class="card">
+                <div class="card-image">
+                  <figure class="image is-4by3">
+                    <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                  </figure>
+                </div>
+                <div class="card-content">
+                  <div class="media">
+                    <div class="media-left">
+                      <figure class="image is-48x48">
+                        <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+                      </figure>
+                    </div>
+                    <div class="media-content">
+                      <p class="title is-4">John Smith</p>
+                      <p class="subtitle is-6">@johnsmith</p>
+                    </div>
+                  </div>
+                  <div class="content">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+                    <a href="#">#css</a> <a href="#">#responsive</a>
+                    <br>
+                    <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <section class="section" id="portfolio">
+        <div class="container has-text-centered">
+          <h3 class="title">Personal Portfolio</h3>
+          <h4 class="subtitle">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore itaque, maiores officiis sed vitae doloribus
+            voluptatum sequi, hic dolorum ut ab! Accusantium odit et vero veritatis debitis porro dolor rerum magnam
+            eveniet sint maiores corrupti assumenda dignissimos, iusto reprehenderit numquam quaerat quam quo voluptates
+            tenetur beatae repellat id. Neque, sit?
+          </h4>
+          <div class="columns">
+
+            <div class="column">
+              <div class="card">
+                <div class="card-image">
+                  <figure class="image is-4by3">
+                    <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                  </figure>
+                </div>
+                <div class="card-content">
+                  <div class="media">
+                    <div class="media-left">
+                      <figure class="image is-48x48">
+                        <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+                      </figure>
+                    </div>
+                    <div class="media-content">
+                      <p class="title is-4">John Smith</p>
+                      <p class="subtitle is-6">@johnsmith</p>
+                    </div>
+                  </div>
+                  <div class="content">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+                    <a href="#">#css</a> <a href="#">#responsive</a>
+                    <br>
+                    <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="column">
+              <div class="card">
+                <div class="card-image">
+                  <figure class="image is-4by3">
+                    <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                  </figure>
+                </div>
+                <div class="card-content">
+                  <div class="media">
+                    <div class="media-left">
+                      <figure class="image is-48x48">
+                        <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+                      </figure>
+                    </div>
+                    <div class="media-content">
+                      <p class="title is-4">John Smith</p>
+                      <p class="subtitle is-6">@johnsmith</p>
+                    </div>
+                  </div>
+                  <div class="content">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+                    <a href="#">#css</a> <a href="#">#responsive</a>
+                    <br>
+                    <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="column">
+              <div class="card">
+                <div class="card-image">
+                  <figure class="image is-4by3">
+                    <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                  </figure>
+                </div>
+                <div class="card-content">
+                  <div class="media">
+                    <div class="media-left">
+                      <figure class="image is-48x48">
+                        <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+                      </figure>
+                    </div>
+                    <div class="media-content">
+                      <p class="title is-4">John Smith</p>
+                      <p class="subtitle is-6">@johnsmith</p>
+                    </div>
+                  </div>
+                  <div class="content">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+                    <a href="#">#css</a> <a href="#">#responsive</a>
+                    <br>
+                    <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container has-text-centered">
+          <h3 class="title">Professional Work Excerpt</h3>
+          <h4 class="subtitle">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore itaque, maiores officiis sed vitae doloribus
+            voluptatum sequi, hic dolorum ut ab! Accusantium odit et vero veritatis debitis porro dolor rerum magnam
+            eveniet sint maiores corrupti assumenda dignissimos, iusto reprehenderit numquam quaerat quam quo voluptates
+            tenetur beatae repellat id. Neque, sit?
+          </h4>
+          <div class="columns">
+
+            <div class="column">
+              <div class="card">
+                <div class="card-image">
+                  <figure class="image is-4by3">
+                    <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                  </figure>
+                </div>
+                <div class="card-content">
+                  <div class="media">
+                    <div class="media-left">
+                      <figure class="image is-48x48">
+                        <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+                      </figure>
+                    </div>
+                    <div class="media-content">
+                      <p class="title is-4">John Smith</p>
+                      <p class="subtitle is-6">@johnsmith</p>
+                    </div>
+                  </div>
+                  <div class="content">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+                    <a href="#">#css</a> <a href="#">#responsive</a>
+                    <br>
+                    <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="column">
+              <div class="card">
+                <div class="card-image">
+                  <figure class="image is-4by3">
+                    <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                  </figure>
+                </div>
+                <div class="card-content">
+                  <div class="media">
+                    <div class="media-left">
+                      <figure class="image is-48x48">
+                        <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+                      </figure>
+                    </div>
+                    <div class="media-content">
+                      <p class="title is-4">John Smith</p>
+                      <p class="subtitle is-6">@johnsmith</p>
+                    </div>
+                  </div>
+                  <div class="content">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+                    <a href="#">#css</a> <a href="#">#responsive</a>
+                    <br>
+                    <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="column">
+              <div class="card">
+                <div class="card-image">
+                  <figure class="image is-4by3">
+                    <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                  </figure>
+                </div>
+                <div class="card-content">
+                  <div class="media">
+                    <div class="media-left">
+                      <figure class="image is-48x48">
+                        <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+                      </figure>
+                    </div>
+                    <div class="media-content">
+                      <p class="title is-4">John Smith</p>
+                      <p class="subtitle is-6">@johnsmith</p>
+                    </div>
+                  </div>
+                  <div class="content">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+                    <a href="#">#css</a> <a href="#">#responsive</a>
+                    <br>
+                    <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="contact">
+        <div class="container has-text-centered">
+          <h3 class="title">Get in touch</h3>
+          <h4 class="subtitle">
+            Whether you are interested in hiring me, to work on a project together or to discuss any other proposal,
+            feel
+            free to contact me anytime. I am very much looking forward to your message!
+          </h4>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p><a class="modal-link" data-target="privacy-modal">Privacy Notice</a> | <a class="modal-link"
+            data-target="imprint-modal">Imprint</a></p>
+        <p>
+          &copy; <span id="current-year"></span> Patrick Obermeier. All rights reserved.
+        </p>
       </div>
-    </nav>
+    </footer>
+  </div>
 
-    <section class="hero is-fullheight-with-navbar is-large" id="hero">
-      <div class="hero-body">
-        <div class="container">
-          <h1 class="title has-text-white is-size-1 is-size-2-tablet is-size-3-mobile">
-            Creating <span
-              style="display: inline-block; padding: 0.2em 0.2em; background-color: rgba(35, 154, 59, 0.8); border-radius: 5px;">fresh
-              web apps &
-              landing
-              pages</span> with passion!</h1>
-          <h2 class="subtitle has-text-white is-size-3 is-size-4-tablet is-size-5-mobile">Frontend
-            Developer & Online-Marketeer</h2>
-          <h3 class="subtitle has-text-white is-size-4 is-size-5-tablet is-size-6-mobile">Vienna, Austria</h3>
-          <div class="field is-grouped is-hidden-touch">
-            <p class="control"><a class="button is-primary is-rounded is-large" href="#portfolio"
-                onclick="dataLayer.push({'event': 'cta-clicked'});">
-                <span class="icon is-medium">
-                  <i class="fas fa-eye"></i>
-                </span>
-                <span>View my work</span>
-              </a></p>
-            <p class="control"><a class="button is-secondary is-rounded is-large" href="https://github.com/Pobermeier"
-                referrerpolicy="no-referrer" rel="noreferrer noopener" target="_blank"
-                onclick="dataLayer.push({'event': 'github-clicked'});">
-                <span class="icon is-medium">
-                  <i class="fab fa-github"></i>
-                </span>
-                <span>GitHub Profile</span>
-              </a></p>
-          </div>
-          <div class="field is-hidden-desktop">
-            <p class="control"><a class="button is-primary is-fullwidth is-rounded is-medium" href="#portfolio"
-                onclick="dataLayer.push({'event': 'cta-clicked'});">
-                <span class="icon is-small">
-                  <i class="fas fa-eye"></i>
-                </span>
-                <span>View my work</span>
-              </a></p>
-            <p class="control"><a class="button is-secondary is-fullwidth is-rounded is-medium"
-                href="https://github.com/Pobermeier" referrerpolicy="no-referrer" rel="noreferrer noopener"
-                target="_blank" onclick="dataLayer.push({'event': 'github-clicked'});">
-                <span class="icon is-small">
-                  <i class="fab fa-github"></i>
-                </span>
-                <span>GitHub Profile</span>
-              </a></p>
-          </div>
-        </div>
-
-        <div id="scroll-to-about" class="scroll-to-arrow">
-          <div class="nav-text">
-            <p class="is-size-6">About Me</p>
-          </div>
-          <div class="nav-arrow">
-            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="36px"
-              height="18px" viewBox="0 0 36 18" zoomAndPan="disable" preserveAspectRatio="none">
-              <style type="text/css">
-                line {
-                  stroke: #fff;
-                  stroke-width: 1;
-                }
-
-              </style>
-              <line x1="0" y1="0" x2="18" y2="18" />
-              <line x1="36" y1="0" x2="18" y2="18" />
-            </svg>
-          </div>
-        </div>
-
-      </div>
-    </section>
-  </header>
-
-  <main>
-    <section class="section" id="about">
-      <div class="container has-text-centered">
-        <h3 class="title">About Me</h3>
-
-        <div class="columns level">
-          <div class="column is-three-quarters level-item">
-            <h4 class="subtitle has-text-left">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. A temporibus optio error ut non sunt asperiores
-              sequi
-              maxime. Ducimus porro sit animi nesciunt commodi soluta iusto dolore voluptate accusamus ad quos ipsam
-              repellat, provident non quod ab suscipit possimus totam nisi eveniet aut! Aliquam in velit expedita
-              perspiciatis libero quaerat?
-            </h4>
-          </div>
-          <div class="column level-item">
-            <figure class="image is-128x128">
-              <img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
-            </figure>
-          </div>
-        </div>
-
-        <div class="columns">
-
-          <div class="column">
-            <div class="card">
-              <div class="card-image">
-                <figure class="image is-4by3">
-                  <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-                </figure>
-              </div>
-              <div class="card-content">
-                <div class="media">
-                  <div class="media-left">
-                    <figure class="image is-48x48">
-                      <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
-                    </figure>
-                  </div>
-                  <div class="media-content">
-                    <p class="title is-4">John Smith</p>
-                    <p class="subtitle is-6">@johnsmith</p>
-                  </div>
-                </div>
-                <div class="content">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-                  <a href="#">#css</a> <a href="#">#responsive</a>
-                  <br>
-                  <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="column">
-            <div class="card">
-              <div class="card-image">
-                <figure class="image is-4by3">
-                  <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-                </figure>
-              </div>
-              <div class="card-content">
-                <div class="media">
-                  <div class="media-left">
-                    <figure class="image is-48x48">
-                      <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
-                    </figure>
-                  </div>
-                  <div class="media-content">
-                    <p class="title is-4">John Smith</p>
-                    <p class="subtitle is-6">@johnsmith</p>
-                  </div>
-                </div>
-                <div class="content">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-                  <a href="#">#css</a> <a href="#">#responsive</a>
-                  <br>
-                  <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="column">
-            <div class="card">
-              <div class="card-image">
-                <figure class="image is-4by3">
-                  <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-                </figure>
-              </div>
-              <div class="card-content">
-                <div class="media">
-                  <div class="media-left">
-                    <figure class="image is-48x48">
-                      <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
-                    </figure>
-                  </div>
-                  <div class="media-content">
-                    <p class="title is-4">John Smith</p>
-                    <p class="subtitle is-6">@johnsmith</p>
-                  </div>
-                </div>
-                <div class="content">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-                  <a href="#">#css</a> <a href="#">#responsive</a>
-                  <br>
-                  <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <section class="section" id="portfolio">
-      <div class="container has-text-centered">
-        <h3 class="title">Personal Portfolio</h3>
-        <h4 class="subtitle">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore itaque, maiores officiis sed vitae doloribus
-          voluptatum sequi, hic dolorum ut ab! Accusantium odit et vero veritatis debitis porro dolor rerum magnam
-          eveniet sint maiores corrupti assumenda dignissimos, iusto reprehenderit numquam quaerat quam quo voluptates
-          tenetur beatae repellat id. Neque, sit?
-        </h4>
-        <div class="columns">
-
-          <div class="column">
-            <div class="card">
-              <div class="card-image">
-                <figure class="image is-4by3">
-                  <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-                </figure>
-              </div>
-              <div class="card-content">
-                <div class="media">
-                  <div class="media-left">
-                    <figure class="image is-48x48">
-                      <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
-                    </figure>
-                  </div>
-                  <div class="media-content">
-                    <p class="title is-4">John Smith</p>
-                    <p class="subtitle is-6">@johnsmith</p>
-                  </div>
-                </div>
-                <div class="content">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-                  <a href="#">#css</a> <a href="#">#responsive</a>
-                  <br>
-                  <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="column">
-            <div class="card">
-              <div class="card-image">
-                <figure class="image is-4by3">
-                  <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-                </figure>
-              </div>
-              <div class="card-content">
-                <div class="media">
-                  <div class="media-left">
-                    <figure class="image is-48x48">
-                      <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
-                    </figure>
-                  </div>
-                  <div class="media-content">
-                    <p class="title is-4">John Smith</p>
-                    <p class="subtitle is-6">@johnsmith</p>
-                  </div>
-                </div>
-                <div class="content">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-                  <a href="#">#css</a> <a href="#">#responsive</a>
-                  <br>
-                  <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="column">
-            <div class="card">
-              <div class="card-image">
-                <figure class="image is-4by3">
-                  <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-                </figure>
-              </div>
-              <div class="card-content">
-                <div class="media">
-                  <div class="media-left">
-                    <figure class="image is-48x48">
-                      <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
-                    </figure>
-                  </div>
-                  <div class="media-content">
-                    <p class="title is-4">John Smith</p>
-                    <p class="subtitle is-6">@johnsmith</p>
-                  </div>
-                </div>
-                <div class="content">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-                  <a href="#">#css</a> <a href="#">#responsive</a>
-                  <br>
-                  <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container has-text-centered">
-        <h3 class="title">Professional Work Excerpt</h3>
-        <h4 class="subtitle">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore itaque, maiores officiis sed vitae doloribus
-          voluptatum sequi, hic dolorum ut ab! Accusantium odit et vero veritatis debitis porro dolor rerum magnam
-          eveniet sint maiores corrupti assumenda dignissimos, iusto reprehenderit numquam quaerat quam quo voluptates
-          tenetur beatae repellat id. Neque, sit?
-        </h4>
-        <div class="columns">
-
-          <div class="column">
-            <div class="card">
-              <div class="card-image">
-                <figure class="image is-4by3">
-                  <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-                </figure>
-              </div>
-              <div class="card-content">
-                <div class="media">
-                  <div class="media-left">
-                    <figure class="image is-48x48">
-                      <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
-                    </figure>
-                  </div>
-                  <div class="media-content">
-                    <p class="title is-4">John Smith</p>
-                    <p class="subtitle is-6">@johnsmith</p>
-                  </div>
-                </div>
-                <div class="content">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-                  <a href="#">#css</a> <a href="#">#responsive</a>
-                  <br>
-                  <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="column">
-            <div class="card">
-              <div class="card-image">
-                <figure class="image is-4by3">
-                  <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-                </figure>
-              </div>
-              <div class="card-content">
-                <div class="media">
-                  <div class="media-left">
-                    <figure class="image is-48x48">
-                      <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
-                    </figure>
-                  </div>
-                  <div class="media-content">
-                    <p class="title is-4">John Smith</p>
-                    <p class="subtitle is-6">@johnsmith</p>
-                  </div>
-                </div>
-                <div class="content">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-                  <a href="#">#css</a> <a href="#">#responsive</a>
-                  <br>
-                  <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="column">
-            <div class="card">
-              <div class="card-image">
-                <figure class="image is-4by3">
-                  <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-                </figure>
-              </div>
-              <div class="card-content">
-                <div class="media">
-                  <div class="media-left">
-                    <figure class="image is-48x48">
-                      <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
-                    </figure>
-                  </div>
-                  <div class="media-content">
-                    <p class="title is-4">John Smith</p>
-                    <p class="subtitle is-6">@johnsmith</p>
-                  </div>
-                </div>
-                <div class="content">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-                  <a href="#">#css</a> <a href="#">#responsive</a>
-                  <br>
-                  <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="contact">
-      <div class="container has-text-centered">
-        <h3 class="title">Get in touch</h3>
-        <h4 class="subtitle">
-          Whether you are interested in hiring me, to work on a project together or to discuss any other proposal, feel
-          free to contact me anytime. I am very much looking forward to your message!
-        </h4>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="content has-text-centered">
-      <p><a class="modal-link" data-target="privacy-modal">Privacy Notice</a> | <a class="modal-link"
-          data-target="imprint-modal">Imprint</a></p>
-      <p>
-        &copy; <span id="current-year"></span> Patrick Obermeier. All rights reserved.
-      </p>
-    </div>
-  </footer>
 
   <div class="modal" id="privacy-modal">
     <div class="modal-background"></div>
@@ -823,7 +884,15 @@
     // Init datalayer if it doesn't exit yet
     window.dataLayer = window.dataLayer || [];
     // Lazy-load google font when page has been fully loaded
-    window.onload = () => fetchStyle("https://fonts.googleapis.com/css?family=Montserrat:200,400&display=auto");
+    window.addEventListener("load", () => {
+      setTimeout(showPage, 2000)
+      fetchStyle("https://fonts.googleapis.com/css?family=Montserrat:200,400&display=auto");
+    })
+
+    function showPage() {
+      document.querySelector("#loader").style.display = "none"
+      document.querySelector("#content-body").style.display = "block"
+    }
 
     function fetchStyle(url) {
       let link = document.createElement('link');
