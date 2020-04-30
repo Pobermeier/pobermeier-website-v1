@@ -181,7 +181,7 @@ function getCookie(cname) {
 function checkCookie() {
   var cookiesAccepted = getCookie("cookies-accepted");
   if (cookiesAccepted == "") {
-    setTimeout(showCookieAlert, 2000);
+    setTimeout(showCookieAlert, 3000);
   }
 }
 
@@ -211,8 +211,8 @@ document.addEventListener(
   false
 );
 
-window.addEventListener(
-  "load",
+document.addEventListener(
+  "DOMContentLoaded",
   function (e) {
     var cookie = document.getElementById("accept-cookies");
     if (cookie == null) {
