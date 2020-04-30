@@ -49,7 +49,7 @@ function getCookie(cname) {
 function checkCookie() {
   var cookiesAccepted = getCookie("cookies-accepted");
   if (cookiesAccepted == "") {
-    setTimeout(showCookieAlert, 2000);
+    setTimeout(showCookieAlert, 3000);
   }
 }
 
