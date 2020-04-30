@@ -1,15 +1,25 @@
 "use strict";
-import "./plugins";
 import "./cookies";
-import * as serviceWorker from "./serviceworker";
-
-// Init datalayer if it doesn't exit yet
-window.dataLayer = window.dataLayer || [];
 
 // Global state
 const _STATE_ = {
   isNavMenuOpen: false,
 };
+
+// Init datalayer if it doesn't exit yet
+window.dataLayer = window.dataLayer || [];
+
+// Fix for 100vh height of hero-section on Mobile
+convertWindowHeightToViewPortHeight();
+
+window.addEventListener("resize", () => {
+  convertWindowHeightToViewPortHeight();
+});
+
+function convertWindowHeightToViewPortHeight() {
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty("--vh", `${vh}px`);
+}
 
 document.addEventListener("DOMContentLoaded", () => {
   // Mobile Navbar Logic
@@ -123,17 +133,3 @@ document.addEventListener("DOMContentLoaded", () => {
   link.onclick = () => dataLayer.push({ event: "mail-clicked" });
   document.querySelector("#email-icon-placeholder").replaceWith(link);
 });
-
-// Fix for 100vh height of hero-section on Mobile
-convertWindowHeightToViewPortHeight();
-
-window.addEventListener("resize", () => {
-  convertWindowHeightToViewPortHeight();
-});
-
-function convertWindowHeightToViewPortHeight() {
-  let vh = window.innerHeight * 0.01;
-  document.documentElement.style.setProperty("--vh", `${vh}px`);
-}
-
-serviceWorker.unregister();

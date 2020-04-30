@@ -11,6 +11,7 @@ function getAlertTemplate() {
     "</div>";
   return template;
 }
+
 function showCookieAlert() {
   var wrapper = document.createElement("div");
   wrapper.style.position = "fixed";
@@ -22,6 +23,7 @@ function showCookieAlert() {
   wrapper.innerHTML = getAlertTemplate();
   document.body.appendChild(wrapper);
 }
+
 function setCookie(cname, cvalue, exdays) {
   var d = new Date();
   d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
@@ -50,6 +52,7 @@ function checkCookie() {
     setTimeout(showCookieAlert, 2000);
   }
 }
+
 document.addEventListener(
   "click",
   function (e) {
@@ -61,6 +64,7 @@ document.addEventListener(
   },
   false
 );
+
 document.addEventListener(
   "click",
   function (e) {
@@ -74,8 +78,9 @@ document.addEventListener(
   },
   false
 );
-document.addEventListener(
-  "DOMContentLoaded",
+
+window.addEventListener(
+  "load",
   function (e) {
     var cookie = document.getElementById("accept-cookies");
     if (cookie == null) {
