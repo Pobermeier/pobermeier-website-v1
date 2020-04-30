@@ -102,6 +102,13 @@ a.navbar-item:hover {
   text-transform: uppercase;
 }
 
+.navbar {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 .navbar-menu .navbar-item {
   margin: auto 0;
 }
@@ -128,6 +135,10 @@ a.navbar-item:hover {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .hero.is-fullheight-with-navbar {
