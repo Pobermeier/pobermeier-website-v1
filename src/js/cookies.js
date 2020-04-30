@@ -53,6 +53,7 @@ document.addEventListener(
     if (e.target.id == "accept-cookies") {
       setCookie("cookies-accepted", "1", 365 * 5);
       document.getElementById("cookie-info").style.display = "none";
+      dataLayer.push({ event: "cookies-accepted" });
     }
   },
   false
@@ -62,8 +63,10 @@ document.addEventListener(
   function (e) {
     if (e.target.id == "open-privacy-notice") {
       const privacyModal = document.querySelector("#privacy-modal");
-      if (!privacyModal.classList.contains("is-active"))
+      if (!privacyModal.classList.contains("is-active")) {
         privacyModal.classList.add("is-active");
+        dataLayer.push({ event: "privacy-notice-opened" });
+      }
     }
   },
   false
