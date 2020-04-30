@@ -1,7 +1,6 @@
 "use strict";
 import "./plugins";
 import "./cookies";
-import "./gtm";
 import * as serviceWorker from "./serviceworker";
 
 // Global state

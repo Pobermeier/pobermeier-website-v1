@@ -49,6 +49,8 @@
   <meta name="twitter:image" content="https://www.example.com/path/to/image.jpg">
 
   <link rel="stylesheet" href="css/main.css">
+
+  <script src="./js/gtm.min.js"></script>
 </head>
 
 <body>
@@ -156,7 +158,8 @@
             Developer & Online-Marketeer</h2>
           <h3 class="subtitle has-text-white is-size-4 is-size-5-tablet is-size-6-mobile">Vienna, Austria</h3>
           <div class="field is-grouped is-hidden-touch">
-            <p class="control"><a class="button is-primary is-rounded is-large" href="#portfolio">
+            <p class="control"><a class="button is-primary is-rounded is-large" href="#portfolio"
+                onclick="dataLayer.push({'event': 'button1-click'});">
                 <span class="icon is-medium">
                   <i class="fas fa-eye"></i>
                 </span>
@@ -171,7 +174,8 @@
               </a></p>
           </div>
           <div class="field is-hidden-desktop">
-            <p class="control"><a class="button is-primary is-fullwidth is-rounded is-medium" href="#portfolio">
+            <p class="control"><a class="button is-primary is-fullwidth is-rounded is-medium" href="#portfolio"
+                onclick="dataLayer.push({'event': 'button1-click'});">
                 <span class="icon is-small">
                   <i class="fas fa-eye"></i>
                 </span>
