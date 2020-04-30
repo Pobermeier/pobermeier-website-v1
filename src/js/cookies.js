@@ -1,5 +1,8 @@
 "use strict";
 
+// Init datalayer if it doesn't exit yet
+window.dataLayer = window.dataLayer || [];
+
 function getAlertTemplate() {
   var template =
     '<div id="cookie-info" style="background-color:#fff;padding:0.8em;font-size:0.9rem;text-align:center;margin: 0 auto;">' +

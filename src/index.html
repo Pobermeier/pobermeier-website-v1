@@ -794,6 +794,9 @@
   </div>
 
   <script>
+    // Init datalayer if it doesn't exit yet
+    window.dataLayer = window.dataLayer || [];
+    // Lazy-load google font when page has been fully loaded
     window.onload = () => fetchStyle("https://fonts.googleapis.com/css?family=Montserrat:200,400&display=auto");
 
     function fetchStyle(url) {
