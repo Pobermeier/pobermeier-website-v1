@@ -117,6 +117,10 @@ a.navbar-item:hover {
   margin: auto 0;
 }
 
+.navbar-burger > span {
+  pointer-events: none;
+}
+
 .navbar-mobile-cta {
   margin: auto 0;
   margin-left: auto;

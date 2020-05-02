@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
       toogleNav();
   });
 
-  navbarBurger.addEventListener("click", function () {
+  navbarBurger.addEventListener("click", function (e) {
     toogleNav();
   });
 
@@ -113,6 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
   link.href = "mailto:patrick.obermeier@outlook.com";
   link.innerHTML = `<span class="icon">
                     <i class="fa fa-envelope"></i>
+                    <span class="sr-only">Email</span>
                     </span>`;
   document.querySelector("#email-icon-placeholder").replaceWith(link);
 });
