@@ -40,7 +40,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // Clean-up URL (remove hash) after "jumping" to a heading
   document.getElementById("scroll-to-about").onclick = () => {
     document.location.hash = "#about";
-    dataLayer.push({ event: "about-arrow-clicked" });
     removeHash();
   };
 
@@ -68,7 +67,6 @@ document.addEventListener("DOMContentLoaded", () => {
     clickHandlers.forEach((clickHandler) =>
       clickHandler.addEventListener("click", () => {
         modal.classList.toggle("is-active");
-        dataLayer.push({ event: "modal-closed" });
       })
     );
   });
@@ -80,7 +78,6 @@ document.addEventListener("DOMContentLoaded", () => {
       document
         .getElementById(e.target.dataset.target)
         .classList.toggle("is-active");
-      dataLayer.push({ event: "modal-opened" });
     });
   });
 
@@ -93,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Set email-address after DOM-content has loaded
   (function setEmailAddress(elements, email) {
     elements.forEach((element) => {
-      element.innerHTML = `<a href="mailto:${email}" onclick="dataLayer.push({'event': 'mail-clicked'});">${email}</a>`;
+      element.innerHTML = `<a href="mailto:${email}" class="email-link">${email}</a>`;
     });
   })(
     document.querySelectorAll(".email-placeholder"),
@@ -103,7 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelector(
     "#email-button-placeholder"
   ).innerHTML = `<a class="button is-rounded is-secondary" href="mailto:patrick.obermeier@outlook.com"
-    referrerpolicy="no-referrer" rel="noreferrer noopener" target="_blank" onclick="dataLayer.push({'event': 'mail-clicked'});">
+    referrerpolicy="no-referrer" rel="noreferrer noopener" target="_blank" id="mail-button">
     <span class="icon">
       <i class="fa fa-envelope"></i>
     </span>
@@ -112,11 +109,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   var link = document.createElement("a");
   link.classList.add("navbar-item", "is-hidden-touch");
+  link.id = "mail-icon";
   link.href = "mailto:patrick.obermeier@outlook.com";
   link.innerHTML = `<span class="icon">
                     <i class="fa fa-envelope"></i>
                     </span>`;
-  link.onclick = () => dataLayer.push({ event: "mail-clicked" });
   document.querySelector("#email-icon-placeholder").replaceWith(link);
 });
 

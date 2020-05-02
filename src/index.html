@@ -145,7 +145,7 @@
 
   <div id="content-body" style="display: none;">
     <header>
-      <nav class="navbar" role="navigation" aria-label="main navigation">
+      <nav class="navbar" aria-label="main navigation">
         <div class="container">
           <div class="navbar-brand">
             <a class="navbar-item" href="#hero">
@@ -167,8 +167,7 @@
             </a>
 
             <span class="navbar-item is-hidden-desktop navbar-mobile-cta">
-              <a class="button is-rounded is-primary" href="#portfolio"
-                onclick="dataLayer.push({'event': 'cta-clicked'});">
+              <a class="button is-rounded is-primary" href="#portfolio" id="cta-mobile-nav">
                 <span class="icon">
                   <i class="fas fa-eye"></i>
                 </span>
@@ -188,21 +187,20 @@
             <div class="navbar-end">
               <span id="email-icon-placeholder"></span>
               <a class="navbar-item is-hidden-touch" href="https://www.linkedin.com/in/patrickobermeier/"
-                referrerpolicy="no-referrer" rel="noreferrer noopener" target="_blank"
-                onclick="dataLayer.push({'event': 'linkedin-clicked'});">
+                referrerpolicy="no-referrer" rel="noreferrer noopener external nofollow" target="_blank"
+                id="linkedin-icon-desktop">
                 <span class="icon">
                   <i class="fab fa-linkedin-in"></i>
                 </span>
               </a>
-              <a class="navbar-item" href="#about" onclick="dataLayer.push({'event': 'about-clicked'});">
+              <a class="navbar-item" href="#about" id="about-link">
                 About
               </a>
-              <a class="navbar-item" href="#contact" onclick="dataLayer.push({'event': 'contact-clicked'});">
+              <a class="navbar-item" href="#contact" id="contact-link">
                 Contact
               </a>
               <span class="navbar-item is-hidden-touch">
-                <a class="button is-rounded is-primary" href="#portfolio"
-                  onclick="dataLayer.push({'event': 'cta-clicked'});">
+                <a class="button is-rounded is-primary" href="#portfolio" id="cta-desktop-nav">
                   <span class="icon">
                     <i class="fas fa-eye"></i>
                   </span>
@@ -213,8 +211,8 @@
               </span>
               <span class="navbar-item is-hidden-desktop">
                 <a class="button is-rounded is-secondary" href="https://www.linkedin.com/in/patrickobermeier/"
-                  referrerpolicy="no-referrer" rel="noreferrer noopener" target="_blank"
-                  onclick="dataLayer.push({'event': 'linkedin-clicked'});">
+                  referrerpolicy="no-referrer" rel="noreferrer noopener external nofollow" target="_blank"
+                  id="linkedin-icon-mobile">
                   <span class="icon">
                     <i class="fab fa-linkedin-in"></i>
                   </span>
@@ -223,8 +221,8 @@
               </span>
               <span class="navbar-item is-hidden-desktop">
                 <a class="button is-rounded is-secondary" href="https://github.com/Pobermeier"
-                  referrerpolicy="no-referrer" rel="noreferrer noopener" target="_blank"
-                  onclick="dataLayer.push({'event': 'github-clicked'});">
+                  referrerpolicy="no-referrer" rel="noreferrer noopener external nofollow" target="_blank"
+                  id="github-icon-mobile">
                   <span class="icon">
                     <i class="fab fa-github"></i>
                   </span>
@@ -249,16 +247,14 @@
               Developer & Online-Marketeer</h2>
             <h3 class="subtitle has-text-white is-size-4 is-size-5-tablet is-size-6-mobile">Vienna, Austria</h3>
             <div class="field is-grouped is-hidden-touch">
-              <p class="control"><a class="button is-primary is-rounded is-large" href="#portfolio"
-                  onclick="dataLayer.push({'event': 'cta-clicked'});">
+              <p class="control"><a class="button is-primary is-rounded is-large" href="#portfolio" id="cta-desktop">
                   <span class="icon is-medium">
                     <i class="fas fa-eye"></i>
                   </span>
                   <span>View my work</span>
                 </a></p>
               <p class="control"><a class="button is-secondary is-rounded is-large" href="https://github.com/Pobermeier"
-                  referrerpolicy="no-referrer" rel="noreferrer noopener" target="_blank"
-                  onclick="dataLayer.push({'event': 'github-clicked'});">
+                  id="github-hero-desktop" rel="noreferrer noopener external nofollow">
                   <span class="icon is-medium">
                     <i class="fab fa-github"></i>
                   </span>
@@ -267,15 +263,15 @@
             </div>
             <div class="field is-hidden-desktop">
               <p class="control"><a class="button is-primary is-fullwidth is-rounded is-medium" href="#portfolio"
-                  onclick="dataLayer.push({'event': 'cta-clicked'});">
+                  id="cta-mobile">
                   <span class="icon is-small">
                     <i class="fas fa-eye"></i>
                   </span>
                   <span>View my work</span>
                 </a></p>
               <p class="control"><a class="button is-secondary is-fullwidth is-rounded is-medium"
-                  href="https://github.com/Pobermeier" referrerpolicy="no-referrer" rel="noreferrer noopener"
-                  target="_blank" onclick="dataLayer.push({'event': 'github-clicked'});">
+                  href="https://github.com/Pobermeier" referrerpolicy="no-referrer"
+                  rel="noreferrer noopener external nofollow" target="_blank" id="github-hero-mobile">
                   <span class="icon is-small">
                     <i class="fab fa-github"></i>
                   </span>
@@ -651,8 +647,8 @@
 
     <footer class="footer">
       <div class="content has-text-centered">
-        <p><a class="modal-link" data-target="privacy-modal">Privacy Notice</a> | <a class="modal-link"
-            data-target="imprint-modal">Imprint</a></p>
+        <p><a class="modal-link" data-target="privacy-modal" id="open-privacy-modal">Privacy Notice</a> | <a
+            class="modal-link" data-target="imprint-modal" id="open-imprint-modal">Imprint</a></p>
         <p>
           &copy; <span id="current-year"></span> Patrick Obermeier. All rights reserved.
         </p>
@@ -662,11 +658,11 @@
 
 
   <div class="modal" id="privacy-modal">
-    <div class="modal-background"></div>
+    <div class="modal-background close-privacy-modal"></div>
     <div class="modal-card">
       <header class="modal-card-head">
         <p class="modal-card-title has-text-centered">Privacy Notice</p>
-        <button class="delete" aria-label="close"></button>
+        <button class="delete close-privacy-modal" aria-label="close"></button>
       </header>
       <section class="modal-card-body">
         <h3 class="is-size-5"><strong>Declaration on the duty to provide information (data protection
@@ -720,10 +716,10 @@
           data protection claims have otherwise been violated, you can complain to the supervisory authority. In Austria
           this is the data protection authority.</p>
         <p>You can reach us using the following contact details:</p>
-        <p>Patrick Obermeier<br />
+        <p>Patrick Obermeier<br>
           <span class="email-placeholder"></span><noscript>
             <em>
-              Email address protected by JavaScript.<BR>
+              Email address protected by JavaScript.<br>
               Please enable JavaScript to contact me.
             </em>
           </noscript></p>
@@ -781,36 +777,36 @@
           das Datenschutzrecht verstößt oder deine datenschutzrechtlichen Ansprüche sonst in einer Weise verletzt worden
           sind, kannst du dich bei der Aufsichtsbehörde beschweren. In Österreich ist dies die Datenschutzbehörde.</p>
         <p>Du erreichst uns unter folgenden Kontaktdaten:</p>
-        <p>Patrick Obermeier<br />
+        <p>Patrick Obermeier<br>
           <span class="email-placeholder"></span><noscript>
             <em>
-              Email address protected by JavaScript.<BR>
+              Email address protected by JavaScript.<br>
               Please enable JavaScript to contact me.
             </em>
           </noscript></p>
       </section>
       <footer class="modal-card-foot">
-        <button class="button is-primary is-rounded" style="margin-left: auto;">Close</button>
+        <button class="button is-primary is-rounded close-privacy-modal" style="margin-left: auto;">Close</button>
       </footer>
     </div>
   </div>
 
   <div class="modal" id="imprint-modal">
-    <div class="modal-background"></div>
+    <div class="modal-background close-imprint-modal"></div>
     <div class="modal-card">
       <header class="modal-card-head">
         <p class="modal-card-title has-text-centered">Imprint</p>
-        <button class="delete" aria-label="close"></button>
+        <button class="delete close-imprint-modal" aria-label="close"></button>
       </header>
       <section class="modal-card-body">
-        <p><strong>Disclosure requirement according to § 25 p 5 MedienG / Offenlegungspflicht gem § 25 Abs 5
-            MedienG</strong></p>
+        <h3><strong>Disclosure requirement according to § 25 p 5 MedienG / Offenlegungspflicht gem § 25 Abs 5
+            MedienG</strong></h3>
         <p>Patrick Obermeier <br>
           Frontend Developer & Online-Marketeer <br>
           1060 Vienna, Austria<br>
           <span class="email-placeholder"></span><noscript>
             <em>
-              Email address protected by JavaScript.<BR>
+              Email address protected by JavaScript.<br>
               Please enable JavaScript to contact me.
             </em>
           </noscript></p>
@@ -820,12 +816,12 @@
         <p>Designed and created by Patrick Obermeier.</p>
         <p>Deployed and hosted via Netlify.</p>
         <hr>
-        <p><strong>Terms of Use</strong><br />The contents of this website can be used freely and are for information
+        <p><strong>Terms of Use</strong><br>The contents of this website can be used freely and are for information
           only. By using the selection options on the website, no legal transactions between Patrick Obermeier
           (henceforth called "the operator") and the users or between the users come about. The further procedure
           between providers and users and the possible subsequent conclusion of orders between providers and users are
           at the sole discretion of the users.</p>
-        <p><strong>Copyright / Disclaimer</strong><br />With regard to the technical properties of the Internet, no
+        <p><strong>Copyright / Disclaimer</strong><br>With regard to the technical properties of the Internet, no
           guarantee can be given for the authenticity, correctness and completeness of the information made available on
           the Internet. There is also no guarantee for the availability or operation of the website and its content. Any
           liability for direct, indirect or other damage, regardless of its cause, which arises from the use or
@@ -839,7 +835,7 @@
           will be removed immediately. Hyperlinks on www.patrickobermeier.dev are welcome and welcome. However, any
           integration of individual pages into third-party frames is prohibited, and the RSS feed is not made available
           on third-party websites.</p>
-        <p><strong>Liability for links</strong><br />This website contains links to external websites of third parties,
+        <p><strong>Liability for links</strong><br>This website contains links to external websites of third parties,
           the content of which the operator has no influence on. Therefore, the operator cannot accept any liability for
           this third-party content. The respective provider or operator of the pages is always responsible for the
           content of the linked pages. The linked pages were checked for possible legal violations at the time the link
@@ -847,12 +843,12 @@
           content of the linked websites is not reasonable without concrete evidence of an infringement. Upon
           notification of rights violations, such links will be removed promptly.</p>
         <hr>
-        <p><strong>Nutzungsbedingungen</strong><br />Die Inhalte dieser Website sind frei nutzbar und dienen
+        <p><strong>Nutzungsbedingungen</strong><br>Die Inhalte dieser Website sind frei nutzbar und dienen
           ausschließlich der Information. Es kommen durch die Nutzung der Auswahlmöglichkeiten der Website keinerlei
           Rechtsgeschäfte zwischen Patrick Obermeier (fortan "der Betreiber" genannt) und den Nutzern oder zwischen den
           Nutzern zu Stande. Die weitere Vorgangsweise zwischen Anbietern und Nutzern und der mögliche spätere Abschluss
           von Aufträgen zwischen Anbietern und Nutzern liegen im ausschließlichen Ermessen der Nutzer.</p>
-        <p><strong>Copyright / Haftungsausschluss</strong><br />Im Hinblick auf die technischen Eigenschaften des
+        <p><strong>Copyright / Haftungsausschluss</strong><br>Im Hinblick auf die technischen Eigenschaften des
           Internet kann keine Gewähr für die Authentizität, Richtigkeit und Vollständigkeit der im Internet zur
           Verfügung gestellten Informationen übernommen werden. Es wird auch keine Gewähr für die Verfügbarkeit oder den
           Betrieb der gegenständlichen Website und ihrer Inhalte übernommen. Jede Haftung für unmittelbare, mittelbare
@@ -868,7 +864,7 @@
           entfernen. Hyperlinks auf www.patrickobermeier.dev sind gewünscht und willkommen. Jedoch ist jede Einbindung
           einzelner Seiten in fremde Frames zu unterlassen sowie die Zurverfügungstellung des RSS-Feeds auf fremden
           Websites.</p>
-        <p><strong>Haftung für Links</strong><br />Diese Website enthält Links zu externen Websites Dritter, auf deren
+        <p><strong>Haftung für Links</strong><br>Diese Website enthält Links zu externen Websites Dritter, auf deren
           Inhalte der Betreiber keinen Einfluss hat. Deshalb kann der Betreiber für diese fremden Inhalte auch keine
           Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der
           Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße
@@ -877,7 +873,7 @@
           nicht zumutbar. Bei bekannt werden von Rechtsverletzungen werden derartige Links umgehend entfernt.</p>
       </section>
       <footer class="modal-card-foot">
-        <button class="button is-primary is-rounded" style="margin-left: auto;">Close</button>
+        <button class="button is-primary is-rounded close-imprint-modal" style="margin-left: auto;">Close</button>
       </footer>
     </div>
   </div>

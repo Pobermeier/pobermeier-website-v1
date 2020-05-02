@@ -4,11 +4,14 @@
 window.dataLayer = window.dataLayer || [];
 
 function getAlertTemplate() {
-  var template =
-    '<div id="cookie-info" style="background-color:#fff;padding:0.8em;font-size:0.9rem;text-align:center;margin: 0 auto;">' +
-    "<div>This website uses cookies. If you continue to use the website, we assume your consent.</div>" +
-    '<div style="display:flex; flex-wrap: wrap; justify-content: center"><button id="accept-cookies" class="button is-rounded is-outlined is-primary" style="margin: 0.5em 1em;">Continue</button><button id="open-privacy-notice" class="button is-rounded is-secondary" style="margin: 0.5em 1em;">Privacy Notice</button></div>' +
-    "</div>";
+  var template = `
+    <div id="cookie-info" style="background-color:#fff;padding:0.8em;font-size:0.9rem;text-align:center;margin: 0 auto;">
+      <div>This website uses cookies. If you continue to use the website, we assume your consent.</div>
+      <div style="display:flex; flex-wrap: wrap; justify-content: center">
+        <button id="accept-cookies" class="button is-rounded is-outlined is-primary" style="margin: 0.5em 1em;">Continue</button>
+        <button id="open-privacy-notice" class="button is-rounded is-secondary" style="margin: 0.5em 1em;">Privacy Notice</button>
+      </div>
+    </div>`;
   return template;
 }
 
@@ -59,7 +62,6 @@ document.addEventListener(
     if (e.target.id == "accept-cookies") {
       setCookie("cookies-accepted", "1", 365 * 5);
       document.getElementById("cookie-info").style.display = "none";
-      dataLayer.push({ event: "cookies-accepted" });
     }
   },
   false
@@ -72,7 +74,6 @@ document.addEventListener(
       const privacyModal = document.querySelector("#privacy-modal");
       if (!privacyModal.classList.contains("is-active")) {
         privacyModal.classList.add("is-active");
-        dataLayer.push({ event: "privacy-notice-opened" });
       }
     }
   },
