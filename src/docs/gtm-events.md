@@ -15,7 +15,7 @@
 
 - `#mail-icon`
 - `#mail-button`
-- `#email-link`
+- `.email-link`
 
 ### CTA
 
