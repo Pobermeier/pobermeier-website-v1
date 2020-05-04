@@ -27,5 +27,6 @@
     "parcel-bundler": "^1.12.4",
     "parcel-plugin-imagemin": "^4.0.1",
     "parcel-plugin-purgecss": "^2.1.3"
-  }
+  },
+  "browserslist": "> 0.25%, not dead"
 }
