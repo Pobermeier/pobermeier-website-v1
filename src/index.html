@@ -72,10 +72,19 @@
     }
 
     .hero-body.enhanced {
-      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./img/hero.jpg") !important;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./img/hero.jpg");
     }
 
   </style>
+
+  <noscript>
+    <style>
+      .hero-body {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./img/hero.jpg");
+      }
+
+    </style>
+  </noscript>
 
   <style>
     #loader {
@@ -165,7 +174,7 @@
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TLPT94R" height="0" width="0"
       style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
-  <div id="loader" style="display: block;">
+  <div id="loader" style="display: none;">
     <svg width="128" height="128" viewBox="0 0 256 256" class="custom-loader" fill="none"
       xmlns="http://www.w3.org/2000/svg">
       <rect width="256" height="256" rx="50" fill="#EBEDF0" />
@@ -186,7 +195,7 @@
     </svg>
   </div>
 
-  <div id="content-body" style="display: none;">
+  <div id="content-body">
     <header>
       <nav class="navbar" aria-label="main navigation">
         <div class="container">
@@ -956,6 +965,10 @@
   <script>
     // Init datalayer if it doesn't exit yet
     window.dataLayer = window.dataLayer || [];
+
+    document.querySelector("#loader").style.display = "block"
+    document.querySelector("#content-body").style.display = "none"
+
     // Lazy-load google font when page has been fully loaded
     window.addEventListener("DOMContentLoaded", () => {
       setTimeout(showPage, 1000)
