@@ -120,10 +120,54 @@ document.addEventListener("DOMContentLoaded", () => {
                     <span class="sr-only">Email</span>
                     </span>`;
   document.querySelector("#email-icon-placeholder").replaceWith(link);
+
+  // Fix for 100vh height of hero-section on Mobile
+  convertWindowHeightToViewPortHeight();
 });
 
-// Fix for 100vh height of hero-section on Mobile
-convertWindowHeightToViewPortHeight();
+window.addEventListener("load", () => {
+  lazyLoadBackgroundImages();
+  fetchStyle(
+    "https://fonts.googleapis.com/css?family=Montserrat:200,400&display=auto"
+  );
+});
+
+function fetchStyle(url) {
+  let link = document.createElement("link");
+  link.type = "text/css";
+  link.rel = "stylesheet";
+  link.href = url;
+  let headScript = document.querySelector("script");
+  headScript.parentNode.insertBefore(link, headScript);
+}
+
+function lazyLoadBackgroundImages() {
+  var lazyBackgrounds = [].slice.call(
+    document.querySelectorAll(".lazy-background")
+  );
+
+  if ("IntersectionObserver" in window) {
+    let lazyBackgroundObserver = new IntersectionObserver(function (
+      entries,
+      observer
+    ) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("enhanced");
+          lazyBackgroundObserver.unobserve(entry.target);
+        }
+      });
+    });
+
+    lazyBackgrounds.forEach(function (lazyBackground) {
+      lazyBackgroundObserver.observe(lazyBackground);
+    });
+  } else {
+    lazyBackgrounds.forEach((element) => {
+      element.classList.add("enhanced");
+    });
+  }
+}
 
 window.addEventListener("resize", () => {
   convertWindowHeightToViewPortHeight();

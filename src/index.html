@@ -15,9 +15,7 @@
   <link rel="manifest" href="site.webmanifest">
 
   <link rel="dns-prefetch" href="https://www.google-analytics.com">
-  <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
   <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
 
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
@@ -940,57 +938,18 @@
   </div>
 
   <script>
-    // Init datalayer if it doesn't exit yet
     window.dataLayer = window.dataLayer || [];
 
     document.querySelector("#loader").style.display = "block"
     document.querySelector("#content-body").style.display = "none"
 
-    // Lazy-load google font when page has been fully loaded
-    window.addEventListener("DOMContentLoaded", () => {
+    document.addEventListener("DOMContentLoaded", () => {
       setTimeout(showPage, 1000)
-    })
-
-    window.addEventListener("load", () => {
-      lazyLoadBackgroundImages()
-      fetchStyle("https://fonts.googleapis.com/css?family=Montserrat:200,400&display=auto");
     })
 
     function showPage() {
       document.querySelector("#loader").style.display = "none"
       document.querySelector("#content-body").style.display = "block"
-    }
-
-    function fetchStyle(url) {
-      let link = document.createElement('link');
-      link.type = 'text/css';
-      link.rel = 'stylesheet';
-      link.href = url;
-      let headScript = document.querySelector('script');
-      headScript.parentNode.insertBefore(link, headScript);
-    };
-
-    function lazyLoadBackgroundImages() {
-      var lazyBackgrounds = [].slice.call(document.querySelectorAll(".lazy-background"));
-
-      if ("IntersectionObserver" in window) {
-        let lazyBackgroundObserver = new IntersectionObserver(function (entries, observer) {
-          entries.forEach(function (entry) {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("enhanced");
-              lazyBackgroundObserver.unobserve(entry.target);
-            }
-          });
-        });
-
-        lazyBackgrounds.forEach(function (lazyBackground) {
-          lazyBackgroundObserver.observe(lazyBackground);
-        });
-      } else {
-        lazyBackgrounds.forEach((element) => {
-          element.classList.add("enhanced")
-        })
-      }
     }
 
   </script>
