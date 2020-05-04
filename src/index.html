@@ -1009,6 +1009,10 @@
         lazyBackgrounds.forEach(function (lazyBackground) {
           lazyBackgroundObserver.observe(lazyBackground);
         });
+      } else {
+        lazyBackgrounds.forEach((element) => {
+          element.classList.add("enhanced")
+        })
       }
     }
 
