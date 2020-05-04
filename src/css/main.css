@@ -133,21 +133,6 @@ a.navbar-item:hover {
   color: #4a4a4a;
 }
 
-.hero {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../img/hero.jpg") !important;
-  /* background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../img/hero.webp") !important; */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
 .hero.is-fullheight-with-navbar {
   min-height: calc(100vh - 3.25rem);
   min-height: calc((var(--vh, 1vh) * 100) - 3.25rem);
