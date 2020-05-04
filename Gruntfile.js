@@ -11,6 +11,8 @@ module.exports = function (grunt) {
     critical: {
       test: {
         options: {
+          inline: "true",
+          extract: "true",
           base: "./",
           css: [`dist/${fileName}`],
           width: 320,
