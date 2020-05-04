@@ -1,6 +1,5 @@
 @import "./normalize.css";
 @import "./bulma.css";
-@import "./fontawesome-all.css";
 
 html {
   color: #222;
@@ -61,6 +60,10 @@ textarea {
 
 a {
   color: #239a3b;
+}
+
+.navbar-item svg:hover {
+  fill: #196127;
 }
 
 a:hover {
