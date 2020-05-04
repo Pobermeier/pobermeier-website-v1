@@ -62,7 +62,7 @@ a {
   color: #239a3b;
 }
 
-.navbar-item svg:hover {
+a:not(.button) svg:hover {
   fill: #196127;
 }
 
