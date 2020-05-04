@@ -958,12 +958,12 @@
     window.dataLayer = window.dataLayer || [];
     // Lazy-load google font when page has been fully loaded
     window.addEventListener("DOMContentLoaded", () => {
-      setTimeout(showPage, 2000)
+      setTimeout(showPage, 1000)
     })
 
     window.addEventListener("load", () => {
-      fetchStyle("https://fonts.googleapis.com/css?family=Montserrat:200,400&display=auto");
       lazyLoadBackgroundImages()
+      fetchStyle("https://fonts.googleapis.com/css?family=Montserrat:200,400&display=auto");
     })
 
     function showPage() {
@@ -980,7 +980,7 @@
       headScript.parentNode.insertBefore(link, headScript);
     };
 
-    const lazyLoadBackgroundImages = () => {
+    function lazyLoadBackgroundImages() {
       var lazyBackgrounds = [].slice.call(document.querySelectorAll(".lazy-background"));
 
       if ("IntersectionObserver" in window) {
