@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "rm -rf ./serve && parcel src/index.html --out-dir serve --open",
-    "build": "rm -rf ./dist && parcel build src/*.html --out-dir dist && cp ./src/robots.txt ./dist"
+    "build": "rm -rf ./dist && parcel build src/*.html --out-dir dist && grunt critical && cp ./src/robots.txt ./dist"
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,7 @@
   "devDependencies": {
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.5",
+    "find": "^0.3.0",
     "grunt": "^1.1.0",
     "grunt-critical": "^1.1.2",
     "parcel-bundler": "^1.12.4",

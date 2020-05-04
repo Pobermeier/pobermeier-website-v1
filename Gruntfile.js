@@ -1,3 +1,10 @@
+const find = require("find");
+const path = require("path");
+
+const cssFiles = find.fileSync(/\.css$/, path.join(__dirname, "dist"));
+const fileName = path.basename(cssFiles[0]);
+console.log(fileName);
+
 module.exports = function (grunt) {
   // Project configuration.
   grunt.initConfig({
@@ -5,17 +12,12 @@ module.exports = function (grunt) {
       test: {
         options: {
           base: "./",
-          css: [
-            "src/css/main.css",
-            "src/css/bulma.css",
-            "src/css/fontawesome-all.css",
-            "src/css/normalize.css",
-          ],
-          width: 1080,
-          height: 1920,
+          css: [`dist/${fileName}`],
+          width: 320,
+          height: 70,
         },
-        src: "src/index.html",
-        dest: "src/css/critical.css",
+        src: "dist/index.html",
+        dest: "dist/index.html",
       },
     },
   });
