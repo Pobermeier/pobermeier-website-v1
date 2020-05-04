@@ -21,6 +21,8 @@
   "devDependencies": {
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.5",
+    "grunt": "^1.1.0",
+    "grunt-critical": "^1.1.2",
     "parcel-bundler": "^1.12.4",
     "parcel-plugin-imagemin": "^4.0.1",
     "parcel-plugin-purgecss": "^2.1.3"
