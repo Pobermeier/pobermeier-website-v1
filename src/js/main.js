@@ -101,17 +101,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Set email-address after DOM-content has loaded
   (function setEmailAddress(elements, email) {
-    elements.forEach((element) => {
-      element.innerHTML = `<a href="mailto:${email}" class="email-link">${email}</a>`;
-    });
+    elements &&
+      elements.forEach((element) => {
+        element.innerHTML = `<a href="mailto:${email}" class="email-link">${email}</a>`;
+      });
   })(
     document.querySelectorAll(".email-placeholder"),
     "patrick.obermeier@outlook.com"
   );
 
-  document.querySelector(
-    "#email-button-placeholder"
-  ).innerHTML = `<a class="button is-rounded is-secondary" href="mailto:patrick.obermeier@outlook.com"
+  const emailButton = document.querySelector("#email-button-placeholder");
+
+  if (emailButton) {
+    emailButton.innerHTML = `<a class="button is-rounded is-secondary" href="mailto:patrick.obermeier@outlook.com"
     referrerpolicy="no-referrer" rel="noreferrer noopener" target="_blank" id="mail-button">
     <span class="icon is-small">
       <svg width="20" height="15" viewBox="0 0 32 25" fill="#4A4A4A" xmlns="http://www.w3.org/2000/svg">
@@ -120,6 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
     </span>
     <span>Email</span>
   </a>`;
+  }
 
   var link = document.createElement("a");
   link.classList.add("navbar-item", "is-hidden-touch");
