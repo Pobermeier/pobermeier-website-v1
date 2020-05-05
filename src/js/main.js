@@ -10,31 +10,34 @@ const _STATE_ = {
 document.addEventListener("DOMContentLoaded", () => {
   // Mobile Navbar Logic
   const navbarBurger = document.getElementById("navbar-burger");
-  const navMenu = document.getElementById(navbarBurger.dataset.target);
 
-  document.body.addEventListener("click", (e) => {
-    if (
-      e.target.id !== "navbar-burger" &&
-      e.target.id !== "navMenu" &&
-      _STATE_.isNavMenuOpen === true
-    )
-      toogleNav();
-  });
+  if (navbarBurger) {
+    const navMenu = document.getElementById(navbarBurger.dataset.target);
 
-  navbarBurger.addEventListener("click", function (e) {
-    toogleNav();
-  });
+    document.body.addEventListener("click", (e) => {
+      if (
+        e.target.id !== "navbar-burger" &&
+        e.target.id !== "navMenu" &&
+        _STATE_.isNavMenuOpen === true
+      )
+        toogleNav();
+    });
 
-  navMenu.querySelectorAll(".navbar-item").forEach((navItem) => {
-    navItem.addEventListener("click", () => {
+    navbarBurger.addEventListener("click", function (e) {
       toogleNav();
     });
-  });
 
-  function toogleNav() {
-    navbarBurger.classList.toggle("is-active");
-    navMenu.classList.toggle("is-active");
-    _STATE_.isNavMenuOpen = !_STATE_.isNavMenuOpen;
+    navMenu.querySelectorAll(".navbar-item").forEach((navItem) => {
+      navItem.addEventListener("click", () => {
+        toogleNav();
+      });
+    });
+
+    function toogleNav() {
+      navbarBurger.classList.toggle("is-active");
+      navMenu.classList.toggle("is-active");
+      _STATE_.isNavMenuOpen = !_STATE_.isNavMenuOpen;
+    }
   }
 
   // Clean-up URL (remove hash) after "jumping" to a heading
