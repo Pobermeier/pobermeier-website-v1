@@ -1,6 +1,5 @@
 "use strict";
 
-// Init datalayer if it doesn't exit yet
 window.dataLayer = window.dataLayer || [];
 
 function getAlertTemplate() {
