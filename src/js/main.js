@@ -134,7 +134,8 @@ document.addEventListener("DOMContentLoaded", () => {
                       </svg>
                     <span class="sr-only">Email</span>
                     </span>`;
-  document.querySelector("#email-icon-placeholder").replaceWith(link);
+  const emailIcon = document.querySelector("#email-icon-placeholder");
+  emailIcon && emailIcon.replaceWith(link);
 
   // Fix for 100vh height of hero-section on Mobile
   convertWindowHeightToViewPortHeight();
