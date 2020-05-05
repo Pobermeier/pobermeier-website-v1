@@ -250,15 +250,15 @@ main .section {
 }
 
 main .section:nth-child(even) {
-  background-color: #7bc96f;
+  background: linear-gradient(#239a3b, #7bc96f);
   margin: 3rem 0;
 }
 
-/* main .section:nth-child(even) .title,
+main .section:nth-child(even) .title,
 main .section:nth-child(even) .subtitle,
 main .section:nth-child(even) form .label {
   color: #fff;
-} */
+}
 
 main .section:nth-child(even)::before {
   position: absolute;
@@ -268,7 +268,7 @@ main .section:nth-child(even)::before {
   display: block;
   height: 3rem;
   width: 100vw;
-  background-color: #7bc96f;
+  background-color: #239a3b;
   border-top-left-radius: 100%;
 }
 
@@ -284,15 +284,20 @@ main .section:nth-child(even)::after {
   border-bottom-right-radius: 100%;
 }
 
+.form-container form input::placeholder,
+.form-container form textarea::placeholder {
+  color: #8d8d8d;
+}
+
 .form-container {
-  margin: 3rem auto;
+  margin: 3rem auto 0 auto;
   padding: 1rem 3rem;
   max-width: 960px;
 }
 
 @media screen and (max-width: 1023px) {
   .form-container {
-    margin: 2rem auto;
+    margin: 2rem auto 0 auto;
     padding: 0;
   }
 }
