@@ -144,7 +144,15 @@ a.navbar-item:hover {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  /* border-bottom-right-radius: 25%; */
 }
+
+/* @media screen and (max-width: 1023px) {
+  .hero,
+  .hero-body {
+    border-radius: 0;
+  }
+} */
 
 .hero-body {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
@@ -173,7 +181,8 @@ a.navbar-item:hover {
     min-height: calc((var(--vh, 1vh) * 100 + 1.8rem));
   }
 
-  .hero .control {
+  .hero .control,
+  form .control {
     margin-top: 1em;
   }
 
@@ -234,8 +243,58 @@ a.navbar-item:hover {
   }
 }
 
-.footer {
-  background-color: #ebedf0;
+main .section {
+  position: relative;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+main .section:nth-child(even) {
+  background-color: #7bc96f;
+  margin: 3rem 0;
+}
+
+/* main .section:nth-child(even) .title,
+main .section:nth-child(even) .subtitle,
+main .section:nth-child(even) form .label {
+  color: #fff;
+} */
+
+main .section:nth-child(even)::before {
+  position: absolute;
+  left: 0;
+  top: -3rem;
+  content: "";
+  display: block;
+  height: 3rem;
+  width: 100vw;
+  background-color: #7bc96f;
+  border-top-left-radius: 100%;
+}
+
+main .section:nth-child(even)::after {
+  position: absolute;
+  left: 0;
+  bottom: -3rem;
+  content: "";
+  display: block;
+  height: 3rem;
+  width: 100vw;
+  background-color: #7bc96f;
+  border-bottom-right-radius: 100%;
+}
+
+.form-container {
+  margin: 3rem auto;
+  padding: 1rem 3rem;
+  max-width: 960px;
+}
+
+@media screen and (max-width: 1023px) {
+  .form-container {
+    margin: 2rem auto;
+    padding: 0;
+  }
 }
 
 .footer a,

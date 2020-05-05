@@ -701,6 +701,70 @@
             feel
             free to contact me anytime. I am very much looking forward to your message!
           </h4>
+          <div class="form-container">
+            <form action="POST" class="control" autocomplete="on">
+              <div class="field is-horizontal">
+                <div class="field-body">
+                  <div class="field">
+                    <div class="control">
+                      <label class="label" for="firstName">First Name</label>
+                      <input class="input" type="text" name="firstName" id="firstName" placeholder="First Name"
+                        required>
+                    </div>
+                  </div>
+                  <div class="field">
+                    <div class="control">
+                      <label class="label" for="lastName">Last Name</label>
+                      <input class="input" type="text" name="lastName" id="lastName" placeholder="Last Name" required>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="field">
+                <label class="label" for="email">Email</label>
+                <div class="control has-icons-left">
+                  <input class="input" type="email" placeholder="Email address" id="email" name="email" required>
+                  <span class="icon is-small is-left">
+                    <svg width="15" height="15" viewBox="0 0 32 25" fill="#4A4A4A" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M28.8 0H3.2C1.44 0 0.016 1.40625 0.016 3.125L0 21.875C0 23.5938 1.44 25 3.2 25H28.8C30.56 25 32 23.5938 32 21.875V3.125C32 1.40625 30.56 0 28.8 0ZM28.8 6.25L16 14.0625L3.2 6.25V3.125L16 10.9375L28.8 3.125V6.25Z" />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+              <div class="field">
+                <label class="label" for="subject">Subject</label>
+                <div class="control">
+                  <input class="input" type="text" name="subject" id="subject" placeholder="Subject" required>
+                </div>
+              </div>
+              <div class="field">
+                <label class="label" for="message">Message</label>
+                <div class="control">
+                  <textarea class="textarea" placeholder="Your message..." name="message" id="message"
+                    required></textarea>
+                </div>
+              </div>
+              <div class="field is-grouped is-hidden-touch">
+                <div class="control">
+                  <input type="submit" class="button is-primary is-rounded is-medium" value="Send Message">
+                </div>
+                <div class="control">
+                  <input type="reset" class="button is-secondary is-outlined is-rounded is-medium" value="Reset Form">
+                </div>
+              </div>
+              <div class="field is-hidden-desktop">
+                <div class="control">
+                  <input type="submit" class="button is-primary is-rounded is-fullwidth is-medium" value="Send Message">
+                </div>
+                <div class="control">
+                  <input type="reset" class="button is-secondary is-outlined is-rounded is-fullwidth is-medium"
+                    value="Reset Form">
+                </div>
+              </div>
+            </form>
+          </div>
+
         </div>
       </section>
     </main>
