@@ -703,7 +703,7 @@
           </h4>
           <div class="form-container">
             <form action="POST" class="control" autocomplete="on" name="contact" data-netlify="true"
-              data-netlify-recaptcha="true">
+              netlify-honeypot="address">
               <div class="field is-horizontal">
                 <div class="field-body">
                   <div class="field">
@@ -739,6 +739,12 @@
                   <input class="input" type="text" name="subject" id="subject" placeholder="Subject" required>
                 </div>
               </div>
+              <div class="field is-hidden">
+                <label class="label" for="address">Address</label>
+                <div class="control">
+                  <input class="input" type="text" name="address" id="address" placeholder="Address">
+                </div>
+              </div>
               <div class="field">
                 <label class="label" for="message">Message</label>
                 <div class="control">
@@ -746,7 +752,7 @@
                     required></textarea>
                 </div>
               </div>
-              <div data-netlify-recaptcha="true"></div>
+              <!-- <div data-netlify-recaptcha="true"></div> -->
               <div class="field is-grouped is-hidden-touch">
                 <div class="control">
                   <input type="submit" class="button is-primary is-rounded is-medium" value="Send Message">
