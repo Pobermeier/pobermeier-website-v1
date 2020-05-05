@@ -41,16 +41,23 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Clean-up URL (remove hash) after "jumping" to a heading
-  document.getElementById("scroll-to-about").onclick = () => {
-    document.location.hash = "#about";
-    removeHash();
-  };
+  const scrollArrow = document.getElementById("scroll-to-about");
 
-  document.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-      setTimeout(() => removeHash(), 0);
+  if (scrollArrow) {
+    scrollArrow.onclick = () => {
+      document.location.hash = "#about";
+      removeHash();
+    };
+  }
+
+  const allLinks = document.querySelectorAll("a");
+
+  allLinks &&
+    allLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        setTimeout(() => removeHash(), 0);
+      });
     });
-  });
 
   function removeHash() {
     history.pushState(
