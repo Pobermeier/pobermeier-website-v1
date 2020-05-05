@@ -144,7 +144,8 @@ a.navbar-item:hover {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  /* border-bottom-right-radius: 25%; */
+  /* border-bottom-right-radius: 20%;
+  border-bottom-left-radius: 20%; */
 }
 
 /* @media screen and (max-width: 1023px) {
