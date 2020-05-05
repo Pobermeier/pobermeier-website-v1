@@ -174,12 +174,12 @@
             <h2 class="subtitle has-text-white is-size-3 is-size-4-tablet is-size-5-mobile">I will try to get back to
               you as soon as possible.</h2>
             <div class="field is-grouped is-hidden-touch">
-              <p class="control"><a class="button is-primary is-rounded is-large" href="/">
+              <p class="control"><a class="button is-primary is-rounded is-large" id="back-link" href="/">
                   <span>Back to Homepage</span>
                 </a></p>
             </div>
             <div class="field is-hidden-desktop">
-              <p class="control"><a class="button is-primary is-fullwidth is-rounded is-medium" href="/">
+              <p class="control"><a class="button is-primary is-fullwidth is-rounded is-medium" id="back-link" href="/">
                   <span>Back to Homepage</span>
                 </a></p>
             </div>
@@ -419,6 +419,16 @@
       </footer>
     </div>
   </div>
+
+  <script>
+    (function () {
+      if (document.referrer && document.location.host && document.referrer.match(new RegExp("^https?://" + document
+          .location.host))) {
+        document.getElementById("back-link").setAttribute("href", document.referrer);
+      }
+    })();
+
+  </script>
 
   <script>
     window.dataLayer = window.dataLayer || [];
