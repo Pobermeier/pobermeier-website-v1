@@ -70,26 +70,28 @@ document.addEventListener("DOMContentLoaded", () => {
   // Init Modals
   const modals = document.querySelectorAll(".modal");
 
-  modals.forEach((modal) => {
-    const modalButtons = modal.querySelectorAll("button");
-    const modalBackground = modal.getElementsByClassName("modal-background");
-    const clickHandlers = [...modalButtons, ...modalBackground];
-    clickHandlers.forEach((clickHandler) =>
-      clickHandler.addEventListener("click", () => {
-        modal.classList.toggle("is-active");
-      })
-    );
-  });
+  modals &&
+    modals.forEach((modal) => {
+      const modalButtons = modal.querySelectorAll("button");
+      const modalBackground = modal.getElementsByClassName("modal-background");
+      const clickHandlers = [...modalButtons, ...modalBackground];
+      clickHandlers.forEach((clickHandler) =>
+        clickHandler.addEventListener("click", () => {
+          modal.classList.toggle("is-active");
+        })
+      );
+    });
 
   const modalLinks = document.querySelectorAll(".modal-link");
-  modalLinks.forEach((modalLink) => {
-    modalLink.addEventListener("click", (e) => {
-      e.preventDefault();
-      document
-        .getElementById(e.target.dataset.target)
-        .classList.toggle("is-active");
+  modalLinks &&
+    modalLinks.forEach((modalLink) => {
+      modalLink.addEventListener("click", (e) => {
+        e.preventDefault();
+        document
+          .getElementById(e.target.dataset.target)
+          .classList.toggle("is-active");
+      });
     });
-  });
 
   // Set current year in footer
   (function setCurrentYear(element) {
