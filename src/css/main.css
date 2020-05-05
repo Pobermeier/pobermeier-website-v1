@@ -297,6 +297,10 @@ main .section:nth-child(even)::after {
   }
 }
 
+.footer {
+  background-color: #fff;
+}
+
 .footer a,
 .footer p {
   color: #4a4a4a;
