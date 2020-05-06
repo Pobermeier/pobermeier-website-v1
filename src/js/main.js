@@ -142,8 +142,6 @@ document.addEventListener("DOMContentLoaded", () => {
     "#email-icon-placeholder-footer"
   );
   const emailIconFooter = emailIcon.cloneNode(true);
-  console.log(emailIconFooter);
-  console.log(emailIconFooterPlaceholder);
   emailIconFooter.classList.remove("navbar-item", "is-hidden-touch");
   emailIconFooter.innerHTML = `<span class="icon">
   <svg width="32" height="25" viewBox="0 0 32 25" fill="#4A4A4A" xmlns="http://www.w3.org/2000/svg">
