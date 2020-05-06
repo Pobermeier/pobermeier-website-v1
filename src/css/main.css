@@ -155,6 +155,7 @@ a.navbar-item:hover {
   left: 0px;
   top: -3rem;
   border-top-left-radius: 100%;
+  border-top-right-radius: 100%;
 }
 
 .hero-body {
