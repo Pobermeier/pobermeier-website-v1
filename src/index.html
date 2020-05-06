@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+  <!-- General Meta-Tags & SEO-->
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Patrick Obermeier | Frontend Developer & Online-Marketeer | Vienna, Austria</title>
@@ -14,9 +15,11 @@
   <meta name="copyright" content="2020 Patrick Obermeier. All Rights reserved." />
   <meta name="author" content="Patrick Obermeier" />
   <link rel="canonical" href="https://www.patrickobermeier.dev">
+  <!-- TODO: Remove this line before launch -->
   <meta name="robots" content="noindex, nofollow">
   <link rel="manifest" href="site.webmanifest">
 
+  <!-- DNS Prefetch / Preconnect to GA & Google Fonts -->
   <link rel="dns-prefetch" href="https://www.google-analytics.com">
   <link rel="dns-prefetch" href="https://fonts.googleapis.com">
 
@@ -38,6 +41,8 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
 
+  <!-- Social Media Stuff / Sharing -->
+  <!-- Open Graph (Facebook) -->
   <meta property="og:url" content="https://www.patrickobermeier.dev">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Patrick Obermeier | Frontend Developer & Online-Marketeer">
@@ -47,6 +52,7 @@
   <meta property="og:site_name" content="Patrick Obermeier Portfolio">
   <meta property="article:author" content="Patrick Obermeier">
 
+  <!-- Twitter Cards -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:url" content="https://www.patrickobermeier.dev">
   <meta name="twitter:title" content="Patrick Obermeier | Frontend Developer & Online-Marketeer">
@@ -54,11 +60,17 @@
     content="Digital enthusiast and experienced front-end developer with a solid online-marketing background on top. Passionate developer of fresh web apps and landing pages.">
   <meta name="twitter:image" content="./img/logo.png">
 
+  <!-- Styles for CSS Loader -->
   <style>
     #loader {
       position: relative;
       width: 100vw;
       height: 100vh;
+      display: block;
+    }
+
+    #content-body {
+      display: none;
     }
 
     .custom-loader {
@@ -90,9 +102,20 @@
 
   </style>
 
+  <!-- Main style sheet - Critical styles (above the fold) are inlined at build time-->
   <link rel="stylesheet" href="css/main.css">
+
+  <!-- Fallbacks in case JS is deactivated and progressive loading of Hero-image & CSS loader usage is not possible  -->
   <noscript>
     <style>
+      #loader {
+        display: none;
+      }
+
+      #content-body {
+        display: block;
+      }
+
       .hero-body {
         background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./img/hero.jpg");
       }
@@ -125,7 +148,7 @@
     });
 
   </script> -->
-  <!-- Google Tag Manager -->
+  <!-- Google Tag Manager Snippet-->
   <script>
     (function (w, d, s, l, i) {
       w[l] = w[l] || [];
@@ -142,7 +165,6 @@
     })(window, document, "script", "dataLayer", "GTM-TLPT94R");
 
   </script>
-  <!-- End Google Tag Manager -->
 </head>
 
 <body>
@@ -150,7 +172,9 @@
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TLPT94R" height="0" width="0"
       style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
-  <div id="loader" style="display: none;">
+
+  <!-- CSS Loader -->
+  <div id="loader">
     <svg width="128" height="128" viewBox="0 0 256 256" class="custom-loader" fill="none"
       xmlns="http://www.w3.org/2000/svg">
       <rect width="256" height="256" rx="50" fill="#EBEDF0" />
@@ -171,8 +195,12 @@
     </svg>
   </div>
 
+  <!-- Content Body -->
   <div id="content-body">
+
+    <!-- Header-Section: Navbar & Hero-Section -->
     <header>
+      <!-- Navbar -->
       <nav class="navbar" aria-label="main navigation">
         <div class="container">
           <div class="navbar-brand">
@@ -292,6 +320,7 @@
         </div>
       </nav>
 
+      <!-- Hero-Section -->
       <section class="hero is-fullheight-with-navbar is-large" id="hero">
         <div class="hero-body lazy-background">
           <div class="container">
@@ -374,7 +403,9 @@
       </section>
     </header>
 
+    <!-- Main Content -->
     <main>
+      <!-- About-Section -->
       <section class="section" id="about">
         <div class="container has-text-centered">
           <h3 class="title">About Me</h3>
@@ -493,6 +524,7 @@
         </div>
       </section>
 
+      <!-- Portfolio-Section -->
       <section class="section" id="portfolio">
         <div class="container has-text-centered">
           <h3 class="title">Personal Portfolio</h3>
@@ -598,7 +630,8 @@
         </div>
       </section>
 
-      <section class="section">
+      <!-- Work Excerpts -->
+      <section class="section" id="work-excerpts">
         <div class="container has-text-centered">
           <h3 class="title">Professional Work Excerpt</h3>
           <h4 class="subtitle">
@@ -703,6 +736,7 @@
         </div>
       </section>
 
+      <!-- Contact Form -->
       <section class="section" id="contact">
         <div class="container has-text-centered">
           <h3 class="title">Get in touch</h3>
@@ -785,6 +819,7 @@
       </section>
     </main>
 
+    <!-- Footer section -->
     <footer class="footer">
       <div class="content has-text-centered">
         <p><strong><a class="modal-link" data-target="privacy-modal" id="open-privacy-modal">Privacy
@@ -822,7 +857,7 @@
     </footer>
   </div>
 
-
+  <!-- Privacy modal -->
   <div class="modal" id="privacy-modal">
     <div class="modal-background close-privacy-modal"></div>
     <div class="modal-card">
@@ -957,6 +992,7 @@
     </div>
   </div>
 
+  <!-- Imprint modal -->
   <div class="modal" id="imprint-modal">
     <div class="modal-background close-imprint-modal"></div>
     <div class="modal-card">
@@ -1044,12 +1080,12 @@
     </div>
   </div>
 
+  <!-- JS critical f -->
   <script>
+    // Init GTM data layer
     window.dataLayer = window.dataLayer || [];
 
-    document.querySelector("#loader").style.display = "block"
-    document.querySelector("#content-body").style.display = "none"
-
+    // Once DOM Content is fully loaded the CSS loader is hidden & page is shown  + a short timeout so the animation can finish at least on
     document.addEventListener("DOMContentLoaded", () => {
       setTimeout(showPage, 1000)
     })
@@ -1060,6 +1096,7 @@
     }
 
   </script>
+  <!-- Main JS -->
   <script defer src="js/main.js"></script>
 </body>
 
