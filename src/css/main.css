@@ -144,8 +144,6 @@ a.navbar-item:hover {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  /* border-bottom-right-radius: 20%;
-  border-bottom-left-radius: 20%; */
 }
 
 #about::before {
@@ -158,13 +156,6 @@ a.navbar-item:hover {
   top: -3rem;
   border-top-left-radius: 100%;
 }
-
-/* @media screen and (max-width: 1023px) {
-  .hero,
-  .hero-body {
-    border-radius: 0;
-  }
-} */
 
 .hero-body {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
@@ -222,7 +213,6 @@ a.navbar-item:hover {
 .nav-text {
   color: #e4e4e4;
   position: absolute;
-  /* text-transform: uppercase; */
   font-weight: 100;
   text-align: center;
   left: -0.5em;
