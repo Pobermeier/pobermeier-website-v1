@@ -307,6 +307,10 @@ main .section:nth-child(even)::after {
   max-width: 960px;
 }
 
+.form-container form > .field {
+  margin: 1rem 0;
+}
+
 @media screen and (max-width: 1023px) {
   .form-container {
     margin: 2rem auto 0 auto;
