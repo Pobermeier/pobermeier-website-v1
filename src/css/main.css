@@ -144,19 +144,21 @@ a.navbar-item:hover {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  border-bottom-left-radius: 1000% 1000px;
+  border-bottom-right-radius: 1000% 1000px;
 }
 
-#about::before {
+/* .hero::after,
+.hero-body::after {
   content: "";
   position: absolute;
   background-color: #fff;
   width: 100%;
   height: 3rem;
+  z-index: 100;
   left: 0px;
-  top: -3rem;
-  border-top-left-radius: 100%;
-  border-top-right-radius: 100%;
-}
+  bottom: 0;
+} */
 
 .hero-body {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
@@ -272,7 +274,8 @@ main .section:nth-child(even)::before {
   height: 3rem;
   width: 100vw;
   background-color: #239a3b;
-  border-top-left-radius: 100%;
+  border-top-left-radius: 1000% 1000px;
+  border-top-right-radius: 1000% 1000px;
 }
 
 main .section:nth-child(even)::after {
@@ -284,7 +287,8 @@ main .section:nth-child(even)::after {
   height: 3rem;
   width: 100vw;
   background-color: #7bc96f;
-  border-bottom-right-radius: 100%;
+  border-bottom-left-radius: 1000% 1000px;
+  border-bottom-right-radius: 1000% 1000px;
 }
 
 .form-container form input::placeholder,
