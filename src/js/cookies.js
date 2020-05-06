@@ -3,7 +3,7 @@
 window.dataLayer = window.dataLayer || [];
 
 function getAlertTemplate() {
-  var template = `
+  const template = `
     <div id="cookie-info" style="background-color:#fff;padding:0.8em;font-size:0.9rem;text-align:center;margin: 0 auto;">
       <div>This website uses cookies. If you continue to use the website, we assume your consent.</div>
       <div style="display:flex; flex-wrap: wrap; justify-content: center">
@@ -15,7 +15,7 @@ function getAlertTemplate() {
 }
 
 function showCookieAlert() {
-  var wrapper = document.createElement("div");
+  const wrapper = document.createElement("div");
   wrapper.style.position = "fixed";
   wrapper.style.bottom = 0;
   wrapper.style.left = 0;
@@ -27,17 +27,17 @@ function showCookieAlert() {
 }
 
 function setCookie(cname, cvalue, exdays) {
-  var d = new Date();
+  const d = new Date();
   d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
-  var expires = "expires=" + d.toUTCString();
+  const expires = "expires=" + d.toUTCString();
   document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
 
 function getCookie(cname) {
-  var name = cname + "=";
-  var ca = document.cookie.split(";");
-  for (var i = 0; i < ca.length; i++) {
-    var c = ca[i];
+  const name = cname + "=";
+  const ca = document.cookie.split(";");
+  for (let i = 0; i < ca.length; i++) {
+    let c = ca[i];
     while (c.charAt(0) == " ") {
       c = c.substring(1);
     }
@@ -49,7 +49,7 @@ function getCookie(cname) {
 }
 
 function checkCookie() {
-  var cookiesAccepted = getCookie("cookies-accepted");
+  const cookiesAccepted = getCookie("cookies-accepted");
   if (cookiesAccepted == "") {
     setTimeout(showCookieAlert, 1000);
   }
@@ -82,7 +82,7 @@ document.addEventListener(
 window.addEventListener(
   "load",
   function (e) {
-    var cookie = document.getElementById("accept-cookies");
+    const cookie = document.getElementById("accept-cookies");
     if (cookie == null) {
       return checkCookie();
     }
