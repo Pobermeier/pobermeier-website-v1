@@ -2,6 +2,8 @@
 
 import "./cookies";
 
+window.dataLayer = window.dataLayer || [];
+
 // Global state
 const _STATE_ = {
   isNavMenuOpen: false,
