@@ -20,6 +20,10 @@ $link-active-border: $midGreen;
 @import "./bulma/_bulma.sass";
 
 // Custom CSS
+html {
+  background-color: $white-ter;
+}
+
 a {
   &:not(.button) {
     svg {
@@ -46,6 +50,7 @@ a {
   text-transform: uppercase;
 }
 .navbar {
+  background-color: $white-ter;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;

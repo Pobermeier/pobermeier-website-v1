@@ -7264,6 +7264,9 @@ label.panel-block {
   background-color: #fafafa;
   padding: 3rem 1.5rem 6rem; }
 
+html {
+  background-color: whitesmoke; }
+
 a:not(.button) svg:hover {
   fill: #196127; }
 
@@ -7281,6 +7284,7 @@ a:not(.button) svg:hover {
   text-transform: uppercase; }
 
 .navbar {
+  background-color: whitesmoke;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
