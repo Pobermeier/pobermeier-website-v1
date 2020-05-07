@@ -43,15 +43,15 @@
     });
   };
 
-  const getCookie = (cookieName) => {
-    const allStoredCookies = document.cookie.split("; ");
-    const foundCookie = allStoredCookies.filter((cookie) =>
-      cookie.split("=").includes(cookieName)
-    )[0];
-    return foundCookie;
-  };
-
   const checkCookie = () => {
+    const getCookie = (cookieName) => {
+      const allStoredCookies = document.cookie.split("; ");
+      const foundCookie = allStoredCookies.filter((cookie) =>
+        cookie.split("=").includes(cookieName)
+      )[0];
+      return foundCookie;
+    };
+
     !getCookie("cookies-accepted") && setTimeout(showCookieAlert, 1000);
   };
 
