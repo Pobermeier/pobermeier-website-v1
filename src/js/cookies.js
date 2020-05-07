@@ -4,7 +4,7 @@ window.dataLayer = window.dataLayer || [];
 
 function getAlertTemplate() {
   const template = `
-    <div id="cookie-info" style="background-color:#fff;padding:0.8em;font-size:0.9rem;text-align:center;margin: 0 auto;">
+    <div id="cookie-info" style="background-color:#f5f5f5;padding:0.8em;font-size:0.9rem;text-align:center;margin: 0 auto;">
       <div>This website uses cookies. If you continue to use the website, we assume your consent.</div>
       <div style="display:flex; flex-wrap: wrap; justify-content: center">
         <button id="accept-cookies" class="button is-rounded is-outlined is-primary" style="margin: 0.5em 1em;">Continue</button>
