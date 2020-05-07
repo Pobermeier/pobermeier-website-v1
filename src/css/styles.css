@@ -7437,6 +7437,22 @@ main .section {
 .modal p:not(.modal-card-title) {
   margin: 1em 0; }
 
+.technologies .subtitle {
+  margin: 3rem 0 2rem 0;
+  font-size: 1.5rem; }
+
+.technologies .showcase {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly; }
+
+.technologies .showcase__item {
+  margin: 1rem 2.5rem; }
+  .technologies .showcase__item img {
+    width: 60px;
+    height: 60px; }
+
 @media screen and (max-width: 1023px) {
   html {
     scroll-padding-top: 3.25rem; }
@@ -7449,7 +7465,8 @@ main .section {
     .hero.is-fullheight-with-navbar .hero-body {
       min-height: calc(100vh + 3rem);
       min-height: calc((var(--vh, 1vh) * 100 + 1.8rem + 3rem)); }
-  .hero .control {
+  .hero .control,
+  .about .control {
     margin-top: 1em; }
   form .control {
     margin-top: 1em; }
@@ -7462,7 +7479,12 @@ main .section {
       width: 175px; }
   .form-container {
     margin: 2rem auto 0 auto;
-    padding: 0; } }
+    padding: 0; }
+  .technologies .showcase__item {
+    margin: 1rem 1.5rem; }
+    .technologies .showcase__item img {
+      width: 40px;
+      height: 40px; } }
 
 @media screen and (max-height: 623px) {
   .scroll-to-arrow {
