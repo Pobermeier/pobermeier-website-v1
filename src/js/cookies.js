@@ -1,22 +1,7 @@
 "use strict";
 
-(function displayCookieBanner() {
+(function checkCookiesAndDisplayCookieBanner() {
   const showCookieAlert = () => {
-    document.addEventListener("click", (e) => {
-      if (e.target.id == "accept-cookies") {
-        setCookie("cookies-accepted", "1", 365 * 5);
-        document.getElementById("cookie-info").style.display = "none";
-      }
-    });
-
-    document.addEventListener("click", (e) => {
-      if (e.target.id == "open-privacy-notice") {
-        const privacyModal = document.querySelector("#privacy-modal");
-        !privacyModal.classList.contains("is-active") &&
-          privacyModal.classList.add("is-active");
-      }
-    });
-
     const template = `
       <div id="cookie-info" style="background-color:#f5f5f5;padding:0.8em;font-size:0.9rem;text-align:center;margin: 0 auto;">
         <div>This website uses cookies. If you continue to use the website, we assume your consent.</div>
@@ -35,36 +20,39 @@
     wrapper.style.textAlign = "center";
     wrapper.innerHTML = template;
     document.body.appendChild(wrapper);
-  };
 
-  const setCookie = (cname, cvalue, exdays) => {
-    const date = new Date();
-    date.setTime(date.getTime() + exdays * 24 * 60 * 60 * 1000);
-    document.cookie = `${cname}=${cvalue};expires=${date.toUTCString()};path=/`;
-  };
+    const setCookie = (cookieName, cookieValue, expirationDays) => {
+      const date = new Date();
+      date.setTime(date.getTime() + expirationDays * 24 * 60 * 60 * 1000);
+      document.cookie = `${cookieName}=${cookieValue};expires=${date.toUTCString()};path=/`;
+    };
 
-  const getCookie = (cname) => {
-    const name = cname + "=";
-    const ca = document.cookie.split(";");
-    for (let i = 0; i < ca.length; i++) {
-      let c = ca[i];
-      while (c.charAt(0) == " ") {
-        c = c.substring(1);
+    document.addEventListener("click", (e) => {
+      if (e.target.id === "accept-cookies") {
+        setCookie("cookies-accepted", "1", 365 * 5);
+        document.querySelector("#cookie-info").style.display = "none";
       }
-      if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
-    }
-    return "";
+    });
+
+    document.addEventListener("click", (e) => {
+      if (e.target.id === "open-privacy-notice") {
+        const privacyModal = document.querySelector("#privacy-modal");
+        !privacyModal.classList.contains("is-active") &&
+          privacyModal.classList.add("is-active");
+      }
+    });
+  };
+
+  const getCookie = (cookieName) => {
+    const allStoredCookies = document.cookie.split(";");
+    return allStoredCookies.filter(
+      (cookie) => cookie.split("=")[0] === cookieName
+    )[0];
   };
 
   const checkCookie = () => {
-    const cookiesAccepted = getCookie("cookies-accepted");
-    if (cookiesAccepted == "") {
-      setTimeout(showCookieAlert, 1000);
-    }
+    !getCookie("cookies-accepted") && setTimeout(showCookieAlert, 1000);
   };
 
-  window.addEventListener("load", (e) => {
-    const cookie = document.getElementById("accept-cookies");
-    if (cookie == null) return checkCookie();
-  });
+  window.addEventListener("load", checkCookie);
 })();
