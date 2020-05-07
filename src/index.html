@@ -1082,21 +1082,23 @@
 
   <!-- JS critical for page load -->
   <script>
-    // Init GTM data layer
-    window.dataLayer = window.dataLayer || [];
+    (function () {
+      // Init GTM data layer
+      window.dataLayer = window.dataLayer || [];
 
-    document.querySelector("#loader").style.display = "block"
-    document.querySelector("#content-body").style.display = "none"
+      document.querySelector("#loader").style.display = "block"
+      document.querySelector("#content-body").style.display = "none"
 
-    // Once DOM Content is fully loaded the CSS loader is hidden & page is shown  + a short timeout so the animation can finish at least on
-    document.addEventListener("DOMContentLoaded", () => {
-      setTimeout(showPage, 1000)
-    })
+      // Once DOM Content is fully loaded the CSS loader is hidden & page is shown  + a short timeout so the animation can finish at least on
+      document.addEventListener("DOMContentLoaded", () => {
+        setTimeout(showPage, 1000)
+      })
 
-    function showPage() {
-      document.querySelector("#loader").style.display = "none"
-      document.querySelector("#content-body").style.display = "block"
-    }
+      function showPage() {
+        document.querySelector("#loader").style.display = "none"
+        document.querySelector("#content-body").style.display = "block"
+      }
+    })();
 
   </script>
   <!-- Main JS -->

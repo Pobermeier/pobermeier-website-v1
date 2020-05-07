@@ -45,9 +45,11 @@
 
   const getCookie = (cookieName) => {
     const allStoredCookies = document.cookie.split(";");
-    return allStoredCookies.filter(
-      (cookie) => cookie.split("=")[0] === cookieName
+    const foundCookie = allStoredCookies.filter((cookie) =>
+      cookie.split("=").includes(cookieName)
     )[0];
+    console.log(foundCookie);
+    return foundCookie;
   };
 
   const checkCookie = () => {
