@@ -1,0 +1,130 @@
+html {
+  color: $darkGrey;
+  font-size: 1em;
+  line-height: 1.4;
+  scroll-behavior: smooth;
+}
+body {
+  &::-moz-selection {
+    background: $lightGrey;
+    text-shadow: none;
+  }
+  &::selection {
+    background: $lightGrey;
+    text-shadow: none;
+  }
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid $lightGrey;
+  margin: 1em 0;
+  padding: 0;
+}
+audio {
+  vertical-align: middle;
+}
+canvas {
+  vertical-align: middle;
+}
+iframe {
+  vertical-align: middle;
+}
+img {
+  vertical-align: middle;
+}
+svg {
+  vertical-align: middle;
+}
+video {
+  vertical-align: middle;
+}
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+textarea {
+  resize: vertical;
+}
+
+@media print {
+  * {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    &:before {
+      background: transparent !important;
+      color: #000 !important;
+      box-shadow: none !important;
+      text-shadow: none !important;
+    }
+    &:after {
+      background: transparent !important;
+      color: #000 !important;
+      box-shadow: none !important;
+      text-shadow: none !important;
+    }
+  }
+  a {
+    text-decoration: underline;
+    &:visited {
+      text-decoration: underline;
+    }
+  }
+  a[href] {
+    &:after {
+      content: " (" attr(href) ")";
+    }
+  }
+  abbr[title] {
+    &:after {
+      content: " (" attr(title) ")";
+    }
+  }
+  a[href^="#"] {
+    &:after {
+      content: "";
+    }
+  }
+  a[href^="javascript:"] {
+    &:after {
+      content: "";
+    }
+  }
+  pre {
+    white-space: pre-wrap !important;
+    border: 1px solid $darkGrey;
+    page-break-inside: avoid;
+  }
+  blockquote {
+    border: 1px solid $darkGrey;
+    page-break-inside: avoid;
+  }
+  thead {
+    display: table-header-group;
+  }
+  tr {
+    page-break-inside: avoid;
+  }
+  img {
+    page-break-inside: avoid;
+  }
+  p {
+    orphans: 3;
+    widows: 3;
+  }
+  h2 {
+    orphans: 3;
+    widows: 3;
+    page-break-after: avoid;
+  }
+  h3 {
+    orphans: 3;
+    widows: 3;
+    page-break-after: avoid;
+  }
+}

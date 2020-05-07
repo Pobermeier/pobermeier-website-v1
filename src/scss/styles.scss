@@ -1,82 +1,32 @@
 @charset "utf-8";
 @import "./normalizecss/_normalize.scss";
+@import "./_variables.scss";
+@import "./_resets.scss";
+@import "./_utils.scss";
+@import "./_animations.scss";
+
+// Bulma Overwrites
+$family-sans-serif: "Montserrat", sans-serif;
+$primary: $midGreen;
+$link: $midGreen;
+$link-visited: $darkGreen;
+$link-hover: $darkGreen;
+$link-hover-border: $midGreen;
+$link-focus: $darkGreen;
+$link-focus-border: $midGreen;
+$link-active: $darkGreen;
+$link-active-border: $midGreen;
+
 @import "./bulma/_bulma.sass";
 
-@keyframes mover {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-10px);
-  }
-}
-
-html {
-  color: #222;
-  font-size: 1em;
-  line-height: 1.4;
-  scroll-behavior: smooth;
-}
-body {
-  font-family: "Montserrat", BlinkMacSystemFont, -apple-system, "Segoe UI",
-    Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans",
-    "Helvetica Neue", Helvetica, Arial, sans-serif;
-
-  &::-moz-selection {
-    background: #b3d4fc;
-    text-shadow: none;
-  }
-  &::selection {
-    background: #b3d4fc;
-    text-shadow: none;
-  }
-}
-
-hr {
-  display: block;
-  height: 1px;
-  border: 0;
-  border-top: 1px solid #ccc;
-  margin: 1em 0;
-  padding: 0;
-}
-audio {
-  vertical-align: middle;
-}
-canvas {
-  vertical-align: middle;
-}
-iframe {
-  vertical-align: middle;
-}
-img {
-  vertical-align: middle;
-}
-svg {
-  vertical-align: middle;
-}
-video {
-  vertical-align: middle;
-}
-fieldset {
-  border: 0;
-  margin: 0;
-  padding: 0;
-}
-textarea {
-  resize: vertical;
-}
+// Custom CSS
 a {
-  color: #239a3b;
   &:not(.button) {
     svg {
       &:hover {
-        fill: #196127;
+        fill: $darkGreen;
       }
     }
-  }
-  &:hover {
-    color: #196127;
   }
 }
 .button {
@@ -88,26 +38,7 @@ a {
     transform: translateY(1px);
   }
 }
-.button.is-primary {
-  background-color: #239a3b;
-  &:hover {
-    background-color: #196127;
-    border-color: #196127;
-  }
-}
-.button.is-primary.is-outlined {
-  &:hover {
-    background-color: #196127;
-    border-color: #196127;
-  }
-  border-color: #239a3b;
-  color: #239a3b;
-}
-a.navbar-item {
-  &:hover {
-    color: #239a3b;
-  }
-}
+
 .logo-title {
   margin-left: 0.5em;
   font-size: 1.4rem;
@@ -138,7 +69,7 @@ a.navbar-item {
 .navbar-brand {
   .navbar-item {
     &:hover {
-      color: #4a4a4a;
+      color: $darkGrey;
     }
   }
 }
@@ -195,7 +126,7 @@ a.navbar-item {
   height: 25vh;
 }
 .nav-text {
-  color: #e4e4e4;
+  color: $lightGrey;
   position: absolute;
   font-weight: 100;
   text-align: center;
@@ -223,17 +154,17 @@ main {
     padding-top: 3rem;
     padding-bottom: 3rem;
     &:nth-child(even) {
-      background: linear-gradient(#239a3b, #7bc96f);
+      background: linear-gradient($midGreen, $lightGreen);
       margin: 3rem 0;
       .title {
-        color: #fff;
+        color: $white-ter;
       }
       .subtitle {
-        color: #fff;
+        color: $white-ter;
       }
       form {
         .label {
-          color: #fff;
+          color: $white-ter;
         }
       }
       &::before {
@@ -244,7 +175,7 @@ main {
         display: block;
         height: 3rem;
         width: 100vw;
-        background-color: #239a3b;
+        background-color: $midGreen;
         border-top-left-radius: 1000% 1000px;
         border-top-right-radius: 1000% 1000px;
       }
@@ -256,7 +187,7 @@ main {
         display: block;
         height: 3rem;
         width: 100vw;
-        background-color: #7bc96f;
+        background-color: $lightGreen;
         border-bottom-left-radius: 1000% 1000px;
         border-bottom-right-radius: 1000% 1000px;
       }
@@ -267,12 +198,12 @@ main {
   form {
     input {
       &::placeholder {
-        color: #8d8d8d;
+        color: $lightGrey;
       }
     }
     textarea {
       &::placeholder {
-        color: #8d8d8d;
+        color: $lightGrey;
       }
     }
     > .field {
@@ -284,12 +215,16 @@ main {
   max-width: 960px;
 }
 .footer {
-  background-color: #fff;
+  background-color: $white-ter;
   a {
-    color: #4a4a4a;
+    color: $darkGrey;
+
+    &:hover {
+      color: $darkGreen;
+    }
   }
   p {
-    color: #4a4a4a;
+    color: $darkGrey;
   }
 }
 .modal {
@@ -302,54 +237,7 @@ main {
     }
   }
 }
-.hidden {
-  display: none !important;
-}
-.sr-only {
-  border: 0;
-  clip: rect(0, 0, 0, 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-}
-.sr-only.focusable {
-  &:active {
-    clip: auto;
-    height: auto;
-    margin: 0;
-    overflow: visible;
-    position: static;
-    white-space: inherit;
-    width: auto;
-  }
-  &:focus {
-    clip: auto;
-    height: auto;
-    margin: 0;
-    overflow: visible;
-    position: static;
-    white-space: inherit;
-    width: auto;
-  }
-}
-.invisible {
-  visibility: hidden;
-}
-.clearfix {
-  &:before {
-    content: " ";
-    display: table;
-  }
-  &:after {
-    content: " ";
-    display: table;
-    clear: both;
-  }
-}
+
 @media screen and (max-width: 1023px) {
   html {
     scroll-padding-top: 3.25rem;
@@ -393,83 +281,5 @@ main {
 @media screen and (max-height: 623px) {
   .scroll-to-arrow {
     display: none;
-  }
-}
-@media print {
-  * {
-    background: transparent !important;
-    color: #000 !important;
-    box-shadow: none !important;
-    text-shadow: none !important;
-    &:before {
-      background: transparent !important;
-      color: #000 !important;
-      box-shadow: none !important;
-      text-shadow: none !important;
-    }
-    &:after {
-      background: transparent !important;
-      color: #000 !important;
-      box-shadow: none !important;
-      text-shadow: none !important;
-    }
-  }
-  a {
-    text-decoration: underline;
-    &:visited {
-      text-decoration: underline;
-    }
-  }
-  a[href] {
-    &:after {
-      content: " (" attr(href) ")";
-    }
-  }
-  abbr[title] {
-    &:after {
-      content: " (" attr(title) ")";
-    }
-  }
-  a[href^="#"] {
-    &:after {
-      content: "";
-    }
-  }
-  a[href^="javascript:"] {
-    &:after {
-      content: "";
-    }
-  }
-  pre {
-    white-space: pre-wrap !important;
-    border: 1px solid #999;
-    page-break-inside: avoid;
-  }
-  blockquote {
-    border: 1px solid #999;
-    page-break-inside: avoid;
-  }
-  thead {
-    display: table-header-group;
-  }
-  tr {
-    page-break-inside: avoid;
-  }
-  img {
-    page-break-inside: avoid;
-  }
-  p {
-    orphans: 3;
-    widows: 3;
-  }
-  h2 {
-    orphans: 3;
-    widows: 3;
-    page-break-after: avoid;
-  }
-  h3 {
-    orphans: 3;
-    widows: 3;
-    page-break-after: avoid;
   }
 }
