@@ -44,11 +44,10 @@
   };
 
   const getCookie = (cookieName) => {
-    const allStoredCookies = document.cookie.split(";");
+    const allStoredCookies = document.cookie.split("; ");
     const foundCookie = allStoredCookies.filter((cookie) =>
       cookie.split("=").includes(cookieName)
     )[0];
-    console.log(foundCookie);
     return foundCookie;
   };
 
