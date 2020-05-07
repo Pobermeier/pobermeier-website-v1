@@ -201,6 +201,12 @@ a.navbar-item:hover {
   height: 25vh;
 }
 
+@media screen and (max-height: 623px) {
+  .scroll-to-arrow {
+    display: none;
+  }
+}
+
 .nav-text {
   color: #e4e4e4;
   position: absolute;
