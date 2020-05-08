@@ -53,13 +53,13 @@ a {
   }
 
   &:not(:last-child) {
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
   }
 
   & + .subtitle {
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
     &:not(:last-child) {
-      margin-bottom: 2rem;
+      margin-bottom: 2.5rem;
     }
   }
 }
@@ -214,6 +214,45 @@ main {
     position: relative;
     padding-top: 3rem;
     padding-bottom: 3rem;
+
+    .card {
+      &,
+      .card-image figure img {
+        border-radius: 1rem;
+      }
+
+      .title,
+      .title:not(:last-child) {
+        margin-bottom: 0.5rem;
+      }
+
+      .small-logo img {
+        border: 1px solid #adadad;
+        border-radius: 5px;
+      }
+
+      .subtitle,
+      .subtitle:not(:last-child) {
+        margin: 0;
+      }
+
+      .card-content {
+        .button {
+          display: block;
+        }
+
+        .technologies-used {
+          padding: 1rem 0;
+
+          img {
+            margin: 0.5rem;
+            width: 35px;
+            height: 35px;
+          }
+        }
+      }
+    }
+
     &:nth-child(even) {
       background: linear-gradient($midGreen, $lightGreen);
       margin: 3rem 0;
@@ -228,6 +267,7 @@ main {
           color: $white-ter;
         }
       }
+
       &::before {
         position: absolute;
         left: 0;

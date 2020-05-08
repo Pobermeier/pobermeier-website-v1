@@ -7281,12 +7281,12 @@ a:not(.button) svg:hover {
   margin-top: 0; }
 
 .title:not(:last-child) {
-  margin-bottom: 2rem; }
+  margin-bottom: 2.5rem; }
 
 .title + .subtitle {
-  margin-bottom: 2rem; }
+  margin-bottom: 2.5rem; }
   .title + .subtitle:not(:last-child) {
-    margin-bottom: 2rem; }
+    margin-bottom: 2.5rem; }
 
 .navbar {
   background-color: whitesmoke;
@@ -7386,6 +7386,26 @@ main .section {
   position: relative;
   padding-top: 3rem;
   padding-bottom: 3rem; }
+  main .section .card,
+  main .section .card .card-image figure img {
+    border-radius: 1rem; }
+  main .section .card .title,
+  main .section .card .title:not(:last-child) {
+    margin-bottom: 0.5rem; }
+  main .section .card .small-logo img {
+    border: 1px solid #adadad;
+    border-radius: 5px; }
+  main .section .card .subtitle,
+  main .section .card .subtitle:not(:last-child) {
+    margin: 0; }
+  main .section .card .card-content .button {
+    display: block; }
+  main .section .card .card-content .technologies-used {
+    padding: 1rem 0; }
+    main .section .card .card-content .technologies-used img {
+      margin: 0.5rem;
+      width: 35px;
+      height: 35px; }
   main .section:nth-child(even) {
     background: linear-gradient(#239a3b, #7bc96f);
     margin: 3rem 0; }
