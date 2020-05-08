@@ -7485,12 +7485,15 @@ main .section {
   overflow: hidden;
   margin: auto; }
 
+.logo_slider ul:hover {
+  animation-play-state: paused; }
+
 .logo_slider ul {
   margin: 0;
   padding: 0;
   list-style: none;
   display: flex;
-  animation: mymove 40s linear infinite; }
+  animation: scroll 40s linear infinite; }
 
 .logo_slider ul li {
   flex-shrink: 0;
@@ -7503,7 +7506,7 @@ main .section {
 .logo_slider img {
   width: 100%; }
 
-@keyframes mymove {
+@keyframes scroll {
   0% {
     transform: 0; }
   100% {

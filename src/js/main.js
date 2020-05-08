@@ -1,6 +1,7 @@
 "use strict";
 
 import "./cookies";
+import AOS from "aos";
 
 (function App() {
   // Init GTM data layer if it hasn't been initialized yet
@@ -166,6 +167,10 @@ import "./cookies";
     fetchStyle(
       "https://fonts.googleapis.com/css?family=Montserrat:200,400&display=auto"
     );
+    convertWindowHeightToViewPortHeight();
+    setTimeout(() => {
+      AOS.refresh();
+    }, 1000);
   });
 
   function fetchStyle(url) {
@@ -214,3 +219,6 @@ import "./cookies";
     document.documentElement.style.setProperty("--vh", `${vh}px`);
   }
 })();
+
+// Init AOS library
+AOS.init();

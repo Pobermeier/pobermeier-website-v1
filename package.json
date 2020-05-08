@@ -33,6 +33,7 @@
   },
   "browserslist": "> 0.25%, not dead",
   "dependencies": {
+    "aos": "^3.0.0-beta.6",
     "bulma": "^0.8.2"
   }
 }
