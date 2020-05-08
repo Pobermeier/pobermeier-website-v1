@@ -214,6 +214,9 @@ main {
     position: relative;
     padding-top: 3rem;
     padding-bottom: 3rem;
+    // &:not(:last-child) {
+    //   min-height: 100vh;
+    // }
 
     .card {
       &,
@@ -369,12 +372,16 @@ main {
   margin: auto;
 }
 
+.logo_slider ul:hover {
+  animation-play-state: paused;
+}
+
 .logo_slider ul {
   margin: 0;
   padding: 0;
   list-style: none;
   display: flex;
-  animation: mymove 40s linear infinite;
+  animation: scroll 40s linear infinite;
 }
 
 .logo_slider ul li {
@@ -390,7 +397,7 @@ main {
   width: 100%;
 }
 
-@keyframes mymove {
+@keyframes scroll {
   0% {
     transform: 0;
   }
