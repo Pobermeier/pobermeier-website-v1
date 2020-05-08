@@ -7296,6 +7296,8 @@ a:not(.button) svg:hover {
       pointer-events: none; }
       .navbar .navbar-burger span:not(:first-child) {
         width: 12px; }
+    .navbar .navbar-burger.is-active span {
+      width: 16px; }
   .navbar .navbar-mobile-cta {
     margin: auto 0;
     margin-left: auto; }
@@ -7464,6 +7466,7 @@ main .section {
     margin-top: 1em; }
   .navbar-menu {
     position: absolute;
+    background-color: whitesmoke;
     right: 0;
     width: 200px;
     text-align: center; }

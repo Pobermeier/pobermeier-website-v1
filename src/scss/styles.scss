@@ -71,7 +71,13 @@ a {
         width: 12px;
       }
     }
+    &.is-active {
+      span {
+        width: 16px;
+      }
+    }
   }
+
   .navbar-mobile-cta {
     margin: auto 0;
     margin-left: auto;
@@ -329,6 +335,7 @@ main {
   }
   .navbar-menu {
     position: absolute;
+    background-color: $white-ter;
     right: 0;
     width: 200px;
     text-align: center;
