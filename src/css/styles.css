@@ -7388,7 +7388,7 @@ main .section {
   padding-bottom: 3rem; }
   main .section .card,
   main .section .card .card-image figure img {
-    border-radius: 1rem; }
+    border-radius: 1rem 1rem 0 0; }
   main .section .card .title,
   main .section .card .title:not(:last-child) {
     margin-bottom: 0.5rem; }
@@ -7401,7 +7401,8 @@ main .section {
   main .section .card .card-content .button {
     display: block; }
   main .section .card .card-content .technologies-used {
-    padding: 1rem 0; }
+    padding: 1rem 0;
+    text-align: center; }
     main .section .card .card-content .technologies-used img {
       margin: 0.5rem;
       width: 35px;

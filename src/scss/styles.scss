@@ -218,7 +218,7 @@ main {
     .card {
       &,
       .card-image figure img {
-        border-radius: 1rem;
+        border-radius: 1rem 1rem 0 0;
       }
 
       .title,
@@ -243,6 +243,7 @@ main {
 
         .technologies-used {
           padding: 1rem 0;
+          text-align: center;
 
           img {
             margin: 0.5rem;
