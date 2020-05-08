@@ -221,4 +221,6 @@ import AOS from "aos";
 })();
 
 // Init AOS library
-AOS.init();
+AOS.init({
+  disable: "mobile",
+});
