@@ -11,5 +11,11 @@ module.exports = {
     "aos-animate",
     "is-info",
     "is-primary",
+    "cookie-banner",
+    "cookie-banner__content",
+    "cookie-banner__text",
+    "cookie-banner__buttons",
+    "cookie-banner__accept-button",
+    "cookie-banner__info-button",
   ],
 };
