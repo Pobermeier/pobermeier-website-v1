@@ -8263,9 +8263,9 @@ main .section {
   max-width: 960px;
   margin: 0 auto; }
   .form-container form input::placeholder {
-    color: #ebedf0; }
+    color: #868686; }
   .form-container form textarea::placeholder {
-    color: #ebedf0; }
+    color: #868686; }
   .form-container form > .field {
     margin: 1rem 0; }
 

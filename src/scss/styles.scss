@@ -312,12 +312,12 @@ main {
   form {
     input {
       &::placeholder {
-        color: $lightGrey;
+        color: #868686;
       }
     }
     textarea {
       &::placeholder {
-        color: $lightGrey;
+        color: #868686;
       }
     }
     > .field {
