@@ -173,6 +173,7 @@ import AOS from "aos";
       "https://fonts.googleapis.com/css?family=Montserrat:200,400&display=auto"
     );
     convertWindowHeightToViewPortHeight();
+    // Refresh AOS x Seconds after page load is complete to avoid problem with init() not working on first load
     setTimeout(() => {
       AOS.refresh();
     }, 1000);
