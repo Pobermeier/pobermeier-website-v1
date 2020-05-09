@@ -399,6 +399,52 @@ main {
   width: 100%;
 }
 
+// Cookie Banner
+.cookie-banner {
+  background-color: rgba(245, 245, 245, 0.6);
+  color: $darkGrey;
+  padding: 0.5em 1em;
+  font-size: 0.8rem;
+  text-align: center;
+  margin: 0 auto;
+  display: flex;
+
+  .cookie-banner__content {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+
+    .cookie-banner__text {
+      padding: 1em;
+      color: $darkGrey;
+    }
+
+    .cookie-banner__buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      & > button {
+        @extend .button;
+        @extend .is-rounded;
+        @extend .is-outlined;
+        @extend .is-small;
+
+        margin: 0.5em 1.5em;
+        width: 8rem;
+      }
+
+      & > .cookie-banner__accept-button {
+        @extend .is-primary;
+      }
+
+      & > .cookie-banner__info-button {
+        @extend .is-info;
+      }
+    }
+  }
+}
+
 @keyframes scroll {
   0% {
     transform: 0;
