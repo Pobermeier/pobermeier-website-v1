@@ -8339,14 +8339,15 @@ main .section {
     margin: 0 auto; }
     .cookie-banner .cookie-banner__content .cookie-banner__text {
       padding: 1em;
-      color: #4a4a4a; }
+      color: #4a4a4a;
+      text-align: left; }
     .cookie-banner .cookie-banner__content .cookie-banner__buttons {
       display: flex;
       flex-wrap: wrap;
       justify-content: center; }
       .cookie-banner .cookie-banner__content .cookie-banner__buttons > button {
         margin: 0.5em 1.5em;
-        width: 8rem; }
+        width: 5rem; }
 
 @keyframes scroll {
   0% {

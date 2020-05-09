@@ -420,6 +420,7 @@ main {
     .cookie-banner__text {
       padding: 1em;
       color: $darkGrey;
+      text-align: left;
     }
 
     .cookie-banner__buttons {
@@ -434,7 +435,7 @@ main {
         @extend .is-small;
 
         margin: 0.5em 1.5em;
-        width: 8rem;
+        width: 5rem;
       }
 
       & > .cookie-banner__accept-button {
