@@ -7977,9 +7977,9 @@ a:not(.button) svg:hover {
   border-bottom-left-radius: 1000% 1000px;
   border-bottom-right-radius: 1000% 1000px; }
   .hero .title {
-    margin-bottom: 2rem; }
+    margin-bottom: 3rem; }
   .hero .subtitle {
-    margin-bottom: 2rem; }
+    margin-bottom: 3rem; }
   .hero.is-fullheight-with-navbar {
     min-height: calc(100vh - 3.25rem + 3rem);
     min-height: calc((var(--vh, 1vh) * 100) - 3.25rem + 3rem); }
