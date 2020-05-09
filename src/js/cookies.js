@@ -3,11 +3,13 @@
 (function checkCookiesAndDisplayCookieBanner() {
   const showCookieAlert = () => {
     const template = `
-      <div id="cookie-info" style="background-color:#f5f5f5;padding:0.8em;font-size:0.9rem;text-align:center;margin: 0 auto;">
-        <div>This website uses cookies. If you continue to use the website, we assume your consent.</div>
-        <div style="display:flex; flex-wrap: wrap; justify-content: center">
-          <button id="accept-cookies" class="button is-rounded is-outlined is-primary" style="margin: 0.5em 1em;">Continue</button>
-          <button id="open-privacy-notice" class="button is-rounded is-secondary" style="margin: 0.5em 1em;">Privacy Notice</button>
+      <div id="cookie-info" style="background-color:rgba(245,245,245, 0.6); color: #4a4a4a; padding:0.5em 1em;font-size:0.8rem;text-align:center;margin:0 auto;display: flex">
+        <div style="display:flex; align-items: center; margin:0 auto">
+          <div style="padding: 1em; color: #4a4a4a;">This website uses cookies. If you continue to use the website, we assume your consent.</div>
+          <div style="display:flex; flex-wrap: wrap; justify-content: center">
+            <button id="accept-cookies" class="button is-rounded is-outlined is-primary is-small" style="margin: 0.5em 1.5em; width:8rem;">Continue</button>
+            <button id="open-privacy-notice" class="button is-rounded is-outlined is-info is-small" style="margin: 0.5em 1.5em; width:8rem;">Privacy Notice</button>
+          </div>
         </div>
       </div>`;
 
@@ -52,7 +54,7 @@
       return foundCookie;
     };
 
-    !getCookie("cookies-accepted") && setTimeout(showCookieAlert, 1000);
+    !getCookie("cookies-accepted") && setTimeout(showCookieAlert, 2000);
   };
 
   window.addEventListener("load", checkCookie);
