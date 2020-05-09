@@ -7998,10 +7998,10 @@ a:not(.button) svg:hover {
     user-select: none;
     border-bottom-left-radius: 1000% 1000px;
     border-bottom-right-radius: 1000% 1000px;
-    background-image: linear-gradient(rgba(109, 48, 57, 0.5), rgba(109, 48, 57, 0.4)); }
+    background-image: linear-gradient(rgba(109, 48, 57, 0.75), rgba(109, 48, 57, 0.25)); }
     .hero .hero-body.enhanced {
-      background-image: linear-gradient(rgba(109, 48, 57, 0.5), rgba(109, 48, 57, 0.4)), url("../img/hero.jpg");
-      background-image: linear-gradient(rgba(109, 48, 57, 0.5), rgba(109, 48, 57, 0.4)), url("../img/hero.webp"); }
+      background-image: linear-gradient(rgba(109, 48, 57, 0.75), rgba(109, 48, 57, 0.25)), url("../img/hero.jpg");
+      background-image: linear-gradient(rgba(109, 48, 57, 0.75), rgba(109, 48, 57, 0.25)), url("../img/hero.webp"); }
     .hero .hero-body .scroll-to-arrow {
       cursor: pointer;
       position: relative;
