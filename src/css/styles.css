@@ -8178,6 +8178,8 @@ a:not(.button) svg:hover {
     .hero .hero-body.enhanced {
       background-image: linear-gradient(rgba(109, 48, 57, 0.75), rgba(109, 48, 57, 0.25)), url("../img/hero.jpg");
       background-image: linear-gradient(rgba(109, 48, 57, 0.75), rgba(109, 48, 57, 0.25)), url("../img/hero.webp"); }
+    .hero .hero-body .cta-desktop {
+      margin-top: 6rem; }
     .hero .hero-body .scroll-to-arrow {
       cursor: pointer;
       position: relative;
