@@ -27,6 +27,11 @@ html {
   background-color: $white-ter;
 }
 
+hr {
+  background-color: $darkGrey;
+  height: 1px;
+}
+
 a {
   &:not(.button) {
     svg {
