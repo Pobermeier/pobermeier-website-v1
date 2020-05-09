@@ -9,5 +9,7 @@ module.exports = {
     "lazy-background",
     "aos-init",
     "aos-animate",
+    "is-info",
+    "is-primary",
   ],
 };
