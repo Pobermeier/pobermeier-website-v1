@@ -4,6 +4,11 @@ import "./cookies";
 import AOS from "aos";
 
 (function App() {
+  // Init AOS library
+  AOS.init({
+    disable: "mobile",
+  });
+
   // Init GTM data layer if it hasn't been initialized yet
   window.dataLayer = window.dataLayer || [];
 
@@ -219,8 +224,3 @@ import AOS from "aos";
     document.documentElement.style.setProperty("--vh", `${vh}px`);
   }
 })();
-
-// Init AOS library
-AOS.init({
-  disable: "mobile",
-});
