@@ -8348,10 +8348,10 @@ main .section {
   background-color: rgba(245, 245, 245, 0.8);
   color: #4a4a4a;
   padding: 0.5em 0.5em;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   text-align: center;
   width: calc(100vw - 2rem);
-  max-width: 880px;
+  max-width: 760px;
   margin: 1rem auto;
   display: flex;
   box-sizing: border-box;
