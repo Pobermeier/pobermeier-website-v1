@@ -8396,12 +8396,6 @@ main .section {
         margin: 0.5em 1em;
         width: 5rem; }
 
-@keyframes scroll {
-  0% {
-    transform: 0; }
-  100% {
-    transform: translateX(-1800px); } }
-
 @media screen and (max-width: 1023px) {
   html {
     scroll-padding-top: 3.25rem; }

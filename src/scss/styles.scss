@@ -518,15 +518,6 @@ main {
   }
 }
 
-@keyframes scroll {
-  0% {
-    transform: 0;
-  }
-  100% {
-    transform: translateX(-1800px);
-  }
-}
-
 @media screen and (max-width: 1023px) {
   html {
     scroll-padding-top: 3.25rem;
