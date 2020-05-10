@@ -434,13 +434,19 @@ main {
 
 // Cookie Banner
 .cookie-banner {
-  background-color: rgba(245, 245, 245, 0.6);
+  background-color: rgba(245, 245, 245, 0.8);
   color: $darkGrey;
-  padding: 0.5em 1em;
+  padding: 0.5em 0.5em;
   font-size: 0.8rem;
   text-align: center;
-  margin: 0 auto;
+  width: calc(100vw - 2rem);
+  max-width: 880px;
+  margin: 1rem auto;
   display: flex;
+  box-sizing: border-box;
+  border-radius: 0.5rem;
+  box-shadow: 0 6px 12px -2px rgba(50, 50, 93, 0.25),
+    0 3px 7px -3px rgba(0, 0, 0, 0.3);
 
   .cookie-banner__content {
     display: flex;
@@ -451,12 +457,14 @@ main {
       padding: 1em;
       color: $darkGrey;
       text-align: left;
+      width: 70%;
     }
 
     .cookie-banner__buttons {
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
+      justify-content: space-around;
+      width: 30%;
 
       & > button {
         @extend .button;
@@ -464,7 +472,7 @@ main {
         @extend .is-outlined;
         @extend .is-small;
 
-        margin: 0.5em 1.5em;
+        margin: 0.5em 1em;
         width: 5rem;
       }
 
