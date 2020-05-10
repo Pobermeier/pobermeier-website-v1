@@ -796,6 +796,12 @@ textarea {
   100% {
     transform: translateY(-10px); } }
 
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0); }
+  100% {
+    transform: translateX(-50%); } }
+
 /*! bulma.io v0.8.2 | MIT License | github.com/jgthms/bulma */
 @keyframes spinAround {
   from {
@@ -8101,7 +8107,8 @@ a:not(.button) svg:hover {
   fill: #196127; }
 
 .button, .cookie-banner .cookie-banner__content .cookie-banner__buttons > button {
-  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08); }
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: all 0.1s ease-in; }
   .button:hover, .cookie-banner .cookie-banner__content .cookie-banner__buttons > button:hover {
     transform: scale(1.025); }
   .button:active, .cookie-banner .cookie-banner__content .cookie-banner__buttons > button:active {
@@ -8289,7 +8296,8 @@ main .section {
       width: 200%;
       margin: 1rem 0;
       position: absolute;
-      animation: scroll-left 40s linear infinite; }
+      animation: scroll-left 30s linear infinite;
+      animation-fill-mode: forwards; }
       .technologies .logo-carousel .logo-carousel__inner:hover {
         animation-play-state: paused; }
       .technologies .logo-carousel .logo-carousel__inner .logo-carousel__item {
@@ -8304,12 +8312,6 @@ main .section {
       .technologies .logo-carousel .logo-carousel__inner span {
         float: left;
         width: 50%; }
-
-@keyframes scroll-left {
-  0% {
-    left: 0; }
-  100% {
-    left: -100%; } }
 
 .form-container {
   padding: 1rem 3rem;
