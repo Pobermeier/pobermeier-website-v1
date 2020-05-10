@@ -134,12 +134,16 @@ a {
   }
   .navbar-brand {
     .navbar-item {
-      &:hover {
+      &:hover,
+      &:active,
+      &:visited {
         color: $darkGrey;
       }
     }
   }
-  a.navbar-item:hover {
+  a.navbar-item:hover,
+  a.navbar-item:active,
+  a.navbar-item:visited {
     background-color: $white-ter;
   }
 }

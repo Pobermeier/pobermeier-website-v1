@@ -8158,9 +8158,11 @@ a:not(.button):not(.main-logo) svg:hover {
   .navbar .navbar-mobile-cta {
     margin: auto 0;
     margin-left: auto; }
-  .navbar .navbar-brand .navbar-item:hover {
+  .navbar .navbar-brand .navbar-item:hover, .navbar .navbar-brand .navbar-item:active, .navbar .navbar-brand .navbar-item:visited {
     color: #4a4a4a; }
-  .navbar a.navbar-item:hover {
+  .navbar a.navbar-item:hover,
+  .navbar a.navbar-item:active,
+  .navbar a.navbar-item:visited {
     background-color: whitesmoke; }
 
 .hero {
