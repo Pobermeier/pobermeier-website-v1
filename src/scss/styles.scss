@@ -24,7 +24,6 @@ $link-active-border: $midGreen;
 // Custom CSS
 
 // General Styles
-
 html {
   scroll-padding-top: 3.25rem;
   background-color: $white-ter;
@@ -247,45 +246,72 @@ main {
     padding-top: 3rem;
     padding-bottom: 3rem;
 
-    .card {
-      &,
-      .card-image figure img {
-        border-radius: 1rem 1rem 0 0;
+    .project-cards {
+      display: flex;
+      align-items: stretch;
+
+      .column {
+        display: flex;
+        align-items: stretch;
       }
 
-      .title,
-      .title:not(:last-child) {
-        margin-bottom: 0.5rem;
-      }
+      .card {
+        display: flex;
+        flex-direction: column;
 
-      .small-logo img {
-        border: 1px solid #adadad;
-        border-radius: 5px;
-      }
-
-      .subtitle,
-      .subtitle:not(:last-child) {
-        margin: 0;
-      }
-
-      .card-content {
-        .button {
-          display: block;
+        &,
+        .card-image figure img {
+          border-radius: 1rem 1rem 0 0;
         }
 
-        .technologies-used {
-          padding: 1rem 0;
-          text-align: center;
+        .title,
+        .title:not(:last-child) {
+          color: $midGreen;
+          margin-bottom: 0.5rem;
+        }
 
-          img {
-            margin: 0.5rem;
-            width: 35px;
-            height: 35px;
+        .small-logo img {
+          border: 1px solid #adadad;
+          border-radius: 5px;
+        }
 
-            &:hover {
-              transform: scale(1.2);
-              cursor: pointer;
+        .subtitle,
+        .subtitle:not(:last-child) {
+          color: $darkGrey;
+          margin: 0;
+
+          strong {
+            color: $midGreen;
+          }
+        }
+
+        .card-content {
+          .button {
+            display: block;
+          }
+
+          .technologies-used {
+            padding: 1rem 0;
+            text-align: center;
+
+            img {
+              margin: 0.5rem;
+              width: 35px;
+              height: 35px;
+
+              &:hover {
+                transform: scale(1.2);
+                cursor: pointer;
+              }
             }
+          }
+        }
+
+        .my-card-footer {
+          position: relative;
+
+          .button {
+            margin: 0 1rem;
           }
         }
       }
@@ -504,6 +530,28 @@ main {
 @media screen and (max-width: 1023px) {
   html {
     scroll-padding-top: 3.25rem;
+  }
+
+  main {
+    .section {
+      .project-cards {
+        display: block;
+
+        .column {
+          display: block;
+
+          .card {
+            .my-card-footer {
+              position: relative;
+
+              .button {
+                position: relative;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 
   .hero.is-fullheight-with-navbar {

@@ -8231,30 +8231,48 @@ main .section {
   position: relative;
   padding-top: 3rem;
   padding-bottom: 3rem; }
-  main .section .card,
-  main .section .card .card-image figure img {
-    border-radius: 1rem 1rem 0 0; }
-  main .section .card .title,
-  main .section .card .title:not(:last-child) {
-    margin-bottom: 0.5rem; }
-  main .section .card .small-logo img {
-    border: 1px solid #adadad;
-    border-radius: 5px; }
-  main .section .card .subtitle,
-  main .section .card .subtitle:not(:last-child) {
-    margin: 0; }
-  main .section .card .card-content .button, main .section .card .card-content .cookie-banner .cookie-banner__content .cookie-banner__buttons > button, .cookie-banner .cookie-banner__content main .section .card .card-content .cookie-banner__buttons > button {
-    display: block; }
-  main .section .card .card-content .technologies-used {
-    padding: 1rem 0;
-    text-align: center; }
-    main .section .card .card-content .technologies-used img {
-      margin: 0.5rem;
-      width: 35px;
-      height: 35px; }
-      main .section .card .card-content .technologies-used img:hover {
-        transform: scale(1.2);
-        cursor: pointer; }
+  main .section .project-cards {
+    display: flex;
+    align-items: stretch; }
+    main .section .project-cards .column {
+      display: flex;
+      align-items: stretch; }
+    main .section .project-cards .card {
+      display: flex;
+      flex-direction: column; }
+      main .section .project-cards .card,
+      main .section .project-cards .card .card-image figure img {
+        border-radius: 1rem 1rem 0 0; }
+      main .section .project-cards .card .title,
+      main .section .project-cards .card .title:not(:last-child) {
+        color: #239a3b;
+        margin-bottom: 0.5rem; }
+      main .section .project-cards .card .small-logo img {
+        border: 1px solid #adadad;
+        border-radius: 5px; }
+      main .section .project-cards .card .subtitle,
+      main .section .project-cards .card .subtitle:not(:last-child) {
+        color: #4a4a4a;
+        margin: 0; }
+        main .section .project-cards .card .subtitle strong,
+        main .section .project-cards .card .subtitle:not(:last-child) strong {
+          color: #239a3b; }
+      main .section .project-cards .card .card-content .button, main .section .project-cards .card .card-content .cookie-banner .cookie-banner__content .cookie-banner__buttons > button, .cookie-banner .cookie-banner__content main .section .project-cards .card .card-content .cookie-banner__buttons > button {
+        display: block; }
+      main .section .project-cards .card .card-content .technologies-used {
+        padding: 1rem 0;
+        text-align: center; }
+        main .section .project-cards .card .card-content .technologies-used img {
+          margin: 0.5rem;
+          width: 35px;
+          height: 35px; }
+          main .section .project-cards .card .card-content .technologies-used img:hover {
+            transform: scale(1.2);
+            cursor: pointer; }
+      main .section .project-cards .card .my-card-footer {
+        position: relative; }
+        main .section .project-cards .card .my-card-footer .button, main .section .project-cards .card .my-card-footer .cookie-banner .cookie-banner__content .cookie-banner__buttons > button, .cookie-banner .cookie-banner__content main .section .project-cards .card .my-card-footer .cookie-banner__buttons > button {
+          margin: 0 1rem; }
   main .section:nth-child(odd) .title,
   main .section:nth-child(odd) .subtitle strong {
     color: #239a3b; }
@@ -8387,6 +8405,14 @@ main .section {
 @media screen and (max-width: 1023px) {
   html {
     scroll-padding-top: 3.25rem; }
+  main .section .project-cards {
+    display: block; }
+    main .section .project-cards .column {
+      display: block; }
+      main .section .project-cards .column .card .my-card-footer {
+        position: relative; }
+        main .section .project-cards .column .card .my-card-footer .button, main .section .project-cards .column .card .my-card-footer .cookie-banner .cookie-banner__content .cookie-banner__buttons > button, .cookie-banner .cookie-banner__content main .section .project-cards .column .card .my-card-footer .cookie-banner__buttons > button {
+          position: relative; }
   .hero.is-fullheight-with-navbar {
     min-height: calc(100vh + 3rem);
     min-height: calc((var(--vh, 1vh) * 100 + 1.8rem + 3rem)); }
