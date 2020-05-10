@@ -8103,8 +8103,10 @@ hr {
   background-color: #4a4a4a;
   height: 1px; }
 
-a:not(.button) svg:hover {
-  fill: #196127; }
+a:not(.button):not(.main-logo) svg:hover {
+  fill: #196127;
+  transform: scale(1.2);
+  cursor: pointer; }
 
 .button, .cookie-banner .cookie-banner__content .cookie-banner__buttons > button {
   box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
@@ -8246,6 +8248,9 @@ main .section {
       margin: 0.5rem;
       width: 35px;
       height: 35px; }
+      main .section .card .card-content .technologies-used img:hover {
+        transform: scale(1.2);
+        cursor: pointer; }
   main .section:nth-child(odd) .title,
   main .section:nth-child(odd) .subtitle strong {
     color: #239a3b; }

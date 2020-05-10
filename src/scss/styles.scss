@@ -40,10 +40,12 @@ hr {
 }
 
 a {
-  &:not(.button) {
+  &:not(.button):not(.main-logo) {
     svg {
       &:hover {
         fill: $darkGreen;
+        transform: scale(1.2);
+        cursor: pointer;
       }
     }
   }
@@ -273,6 +275,11 @@ main {
             margin: 0.5rem;
             width: 35px;
             height: 35px;
+
+            &:hover {
+              transform: scale(1.2);
+              cursor: pointer;
+            }
           }
         }
       }
