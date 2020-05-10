@@ -8100,12 +8100,14 @@ hr {
 a:not(.button) svg:hover {
   fill: #196127; }
 
-.button:hover, .cookie-banner .cookie-banner__content .cookie-banner__buttons > button:hover {
-  transform: scale(1.025); }
-
-.button:active, .cookie-banner .cookie-banner__content .cookie-banner__buttons > button:active {
-  transform: scale(1.02);
-  transform: translateY(1px); }
+.button, .cookie-banner .cookie-banner__content .cookie-banner__buttons > button {
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08); }
+  .button:hover, .cookie-banner .cookie-banner__content .cookie-banner__buttons > button:hover {
+    transform: scale(1.025); }
+  .button:active, .cookie-banner .cookie-banner__content .cookie-banner__buttons > button:active {
+    transform: scale(1.02);
+    transform: translateY(1px);
+    box-shadow: none; }
 
 .title:not(.is-spaced) + .subtitle {
   margin-top: 0; }
@@ -8126,6 +8128,9 @@ a:not(.button) svg:hover {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none; }
+  .navbar .navbar-brand > .navbar-item > svg {
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+    border-radius: 0.5rem; }
   .navbar .logo-title {
     margin-left: 0.5em;
     font-size: 1.4rem;
@@ -8234,11 +8239,13 @@ main .section {
       margin: 0.5rem;
       width: 35px;
       height: 35px; }
+  main .section:nth-child(odd) .title,
+  main .section:nth-child(odd) .subtitle strong {
+    color: #239a3b; }
   main .section:nth-child(even) {
     background: linear-gradient(#239a3b, #7bc96f);
     margin: 3rem 0; }
-    main .section:nth-child(even) .title {
-      color: whitesmoke; }
+    main .section:nth-child(even) .title,
     main .section:nth-child(even) .subtitle {
       color: whitesmoke; }
     main .section:nth-child(even) form .label {
@@ -8266,36 +8273,37 @@ main .section {
       border-bottom-left-radius: 1000% 1000px;
       border-bottom-right-radius: 1000% 1000px; }
 
-.technologies .subtitle {
-  margin: 3rem 0 2rem 0;
-  font-size: 1.5rem; }
-
-.technologies .logo-carousel {
-  width: 126rem;
-  height: 6rem;
-  overflow: hidden;
-  position: relative;
-  margin: 0 auto; }
-  .technologies .logo-carousel .logo-carousel__inner {
-    display: block;
-    width: 200%;
-    margin: 1rem 0;
-    position: absolute;
-    animation: scroll-left 40s linear infinite; }
-    .technologies .logo-carousel .logo-carousel__inner:hover {
-      animation-play-state: paused; }
-    .technologies .logo-carousel .logo-carousel__inner .logo-carousel__item {
-      width: 4rem;
-      height: 4rem;
-      display: inline-block;
-      margin: 0 1rem;
-      transition: all 0.2s ease-out; }
-      .technologies .logo-carousel .logo-carousel__inner .logo-carousel__item:hover {
-        transform: scale(1.2);
-        cursor: pointer; }
-    .technologies .logo-carousel .logo-carousel__inner span {
-      float: left;
-      width: 50%; }
+.technologies {
+  overflow: hidden; }
+  .technologies .subtitle {
+    margin: 3rem 0 2rem 0;
+    font-size: 1.5rem; }
+  .technologies .logo-carousel {
+    height: 6rem;
+    overflow: hidden;
+    width: 126rem;
+    position: relative;
+    margin: 0 auto; }
+    .technologies .logo-carousel .logo-carousel__inner {
+      display: block;
+      width: 200%;
+      margin: 1rem 0;
+      position: absolute;
+      animation: scroll-left 40s linear infinite; }
+      .technologies .logo-carousel .logo-carousel__inner:hover {
+        animation-play-state: paused; }
+      .technologies .logo-carousel .logo-carousel__inner .logo-carousel__item {
+        width: 4rem;
+        height: 4rem;
+        display: inline-block;
+        margin: 0 1rem;
+        transition: all 0.2s ease-out; }
+        .technologies .logo-carousel .logo-carousel__inner .logo-carousel__item:hover {
+          transform: scale(1.2);
+          cursor: pointer; }
+      .technologies .logo-carousel .logo-carousel__inner span {
+        float: left;
+        width: 50%; }
 
 @keyframes scroll-left {
   0% {

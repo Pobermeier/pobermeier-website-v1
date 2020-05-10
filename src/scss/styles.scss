@@ -24,6 +24,7 @@ $link-active-border: $midGreen;
 // Custom CSS
 
 // General Styles
+
 html {
   scroll-padding-top: 3.25rem;
   background-color: $white-ter;
@@ -48,12 +49,15 @@ a {
   }
 }
 .button {
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+
   &:hover {
     transform: scale(1.025);
   }
   &:active {
     transform: scale(1.02);
     transform: translateY(1px);
+    box-shadow: none;
   }
 }
 
@@ -87,6 +91,11 @@ a {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+
+  .navbar-brand > .navbar-item > svg {
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+    border-radius: 0.5rem;
+  }
 
   .logo-title {
     margin-left: 0.5em;
@@ -268,12 +277,17 @@ main {
       }
     }
 
+    &:nth-child(odd) {
+      .title,
+      .subtitle strong {
+        color: $midGreen;
+      }
+    }
+
     &:nth-child(even) {
       background: linear-gradient($midGreen, $lightGreen);
       margin: 3rem 0;
-      .title {
-        color: $white-ter;
-      }
+      .title,
       .subtitle {
         color: $white-ter;
       }
@@ -313,15 +327,17 @@ main {
 
 // Technology-Logos Carousel
 .technologies {
+  overflow: hidden;
+
   .subtitle {
     margin: 3rem 0 2rem 0;
     font-size: 1.5rem;
   }
 
   .logo-carousel {
-    width: 126rem;
     height: 6rem;
     overflow: hidden;
+    width: 126rem;
     position: relative;
     margin: 0 auto;
 
