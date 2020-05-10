@@ -8207,8 +8207,10 @@ a:not(.button):not(.main-logo) svg:hover {
       margin-top: 6rem; }
     .hero .hero-body .scroll-to-arrow {
       cursor: pointer;
-      position: relative;
-      top: 15vmin; }
+      position: absolute;
+      width: 100%;
+      bottom: 5rem;
+      left: 0; }
       .hero .hero-body .scroll-to-arrow .nav-text {
         color: #fff;
         font-weight: 100;
@@ -8385,8 +8387,6 @@ main .section {
 @media screen and (max-width: 1023px) {
   html {
     scroll-padding-top: 3.25rem; }
-  .hero .hero-body .scroll-to-arrow {
-    top: 4vh; }
   .hero.is-fullheight-with-navbar {
     min-height: calc(100vh + 3rem);
     min-height: calc((var(--vh, 1vh) * 100 + 1.8rem + 3rem)); }

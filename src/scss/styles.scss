@@ -214,8 +214,10 @@ a {
 
     .scroll-to-arrow {
       cursor: pointer;
-      position: relative;
-      top: 15vmin;
+      position: absolute;
+      width: 100%;
+      bottom: 5rem;
+      left: 0;
 
       .nav-text {
         color: #fff;
@@ -502,14 +504,6 @@ main {
 @media screen and (max-width: 1023px) {
   html {
     scroll-padding-top: 3.25rem;
-  }
-
-  .hero {
-    .hero-body {
-      .scroll-to-arrow {
-        top: 4vh;
-      }
-    }
   }
 
   .hero.is-fullheight-with-navbar {
