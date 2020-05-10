@@ -8305,7 +8305,7 @@ main .section {
       width: 200%;
       margin: 1rem 0;
       position: absolute;
-      animation: scroll-left 30s linear infinite;
+      animation: scroll-left 40s linear infinite;
       animation-fill-mode: forwards; }
       .technologies .logo-carousel .logo-carousel__inner:hover {
         animation-play-state: paused; }
