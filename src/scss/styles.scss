@@ -440,14 +440,13 @@ main {
 .cookie-banner {
   background-color: rgba(245, 245, 245, 0.8);
   color: $darkGrey;
-  padding: 0.5em 0.5em;
-  font-size: 0.75rem;
+  padding: 0.5em;
+  font-size: 0.8rem;
   text-align: center;
-  width: calc(100vw - 2rem);
+  width: 100%;
   max-width: 760px;
   margin: 1rem auto;
   display: flex;
-  box-sizing: border-box;
   border-radius: 0.5rem;
   box-shadow: 0 6px 12px -2px rgba(50, 50, 93, 0.25),
     0 3px 7px -3px rgba(0, 0, 0, 0.3);

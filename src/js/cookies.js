@@ -15,10 +15,11 @@
 
     const wrapper = document.createElement("div");
     wrapper.style.position = "fixed";
+    wrapper.style.padding = "0 1.5rem 0 1.5rem";
     wrapper.style.bottom = 0;
     wrapper.style.left = 0;
+    wrapper.style.width = "100%";
     wrapper.style.zIndex = 20;
-    wrapper.style.width = "calc(100vw - 1rem)";
     wrapper.style.textAlign = "center";
     wrapper.innerHTML = template;
     document.body.appendChild(wrapper);
