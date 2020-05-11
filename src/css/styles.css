@@ -8141,7 +8141,7 @@ a:not(.button):not(.main-logo) svg {
   user-select: none; }
   .navbar .navbar-brand > .navbar-item > svg {
     box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
-    border-radius: 0.5rem; }
+    border-radius: 0.75rem; }
   .navbar .logo-title {
     margin-left: 0.5em;
     font-size: 1.4rem;
@@ -8241,17 +8241,22 @@ main .section {
       align-items: stretch; }
     main .section .project-cards .card {
       display: flex;
-      flex-direction: column; }
-      main .section .project-cards .card,
-      main .section .project-cards .card .card-image figure img {
-        border-radius: 1rem 1rem 0 0; }
+      flex-direction: column;
+      border-radius: 0.5rem 0.5rem 1rem 1rem; }
+      main .section .project-cards .card .card-image {
+        background-color: #196127;
+        border-radius: 0.5rem 0.5rem 0 0; }
+        main .section .project-cards .card .card-image figure img {
+          margin-top: 0.5rem;
+          border-radius: 0.5rem 0.5rem 0 0;
+          box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08); }
       main .section .project-cards .card .title,
       main .section .project-cards .card .title:not(:last-child) {
         color: #239a3b;
         margin-bottom: 0.5rem; }
       main .section .project-cards .card .small-logo img {
-        border: 1px solid #adadad;
-        border-radius: 5px; }
+        box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+        border-radius: 0.75rem; }
       main .section .project-cards .card .subtitle,
       main .section .project-cards .card .subtitle:not(:last-child) {
         color: #4a4a4a;

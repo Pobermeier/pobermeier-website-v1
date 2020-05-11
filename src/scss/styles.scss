@@ -98,7 +98,7 @@ a {
 
   .navbar-brand > .navbar-item > svg {
     box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
-    border-radius: 0.5rem;
+    border-radius: 0.75rem;
   }
 
   .logo-title {
@@ -260,10 +260,18 @@ main {
       .card {
         display: flex;
         flex-direction: column;
+        border-radius: 0.5rem 0.5rem 1rem 1rem;
 
-        &,
-        .card-image figure img {
-          border-radius: 1rem 1rem 0 0;
+        .card-image {
+          background-color: $darkGreen;
+          border-radius: 0.5rem 0.5rem 0 0;
+
+          & figure img {
+            margin-top: 0.5rem;
+            border-radius: 0.5rem 0.5rem 0 0;
+            box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11),
+              0 1px 3px rgba(0, 0, 0, 0.08);
+          }
         }
 
         .title,
@@ -273,8 +281,9 @@ main {
         }
 
         .small-logo img {
-          border: 1px solid #adadad;
-          border-radius: 5px;
+          box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11),
+            0 1px 3px rgba(0, 0, 0, 0.08);
+          border-radius: 0.75rem;
         }
 
         .subtitle,
