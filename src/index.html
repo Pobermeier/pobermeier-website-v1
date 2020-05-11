@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html class="no-js" lang="en">
 
 <head>
   <!-- General Meta-Tags & SEO-->
@@ -63,6 +63,11 @@
     content="Digital enthusiast and experienced front-end developer with a solid online-marketing background on top. Passionate developer of fresh web apps and landing pages.">
   <meta name="twitter:image" content="./img/logo.png">
 
+  <script>
+    document.querySelector("html").classList.remove("no-js");
+
+  </script>
+
   <!-- Styles for CSS Loader -->
   <style>
     #loader {
@@ -103,6 +108,28 @@
       }
     }
 
+    .no-js #loader {
+      display: none;
+    }
+
+    .no-js #content-body {
+      display: block;
+    }
+
+    .no-js .hero .hero-body {
+      background-image: linear-gradient(rgba(109, 48, 57, 0.6),
+          rgba(109, 48, 57, 0.25)),
+        url("./img/hero.jpg");
+      background-image: linear-gradient(rgba(109, 48, 57, 0.6),
+          rgba(109, 48, 57, 0.25)),
+        url("./img/hero.webp");
+    }
+
+    .no-js [data-aos] {
+      opacity: 1 !important;
+      transform: translate(0) scale(1) !important;
+    }
+
   </style>
 
   <!-- Main style sheet - Critical styles (above the fold) are inlined at build time-->
@@ -110,41 +137,12 @@
 
   <!-- Fallbacks in case JS is deactivated and progressive loading of Hero-image & CSS loader usage is not possible  -->
   <noscript>
-    <style>
-      #loader {
-        display: none;
-      }
-
-      #content-body {
-        display: block;
-      }
-
-      .hero .hero-body {
-        background-image: linear-gradient(rgba(109, 48, 57, 0.6),
-            rgba(109, 48, 57, 0.25)),
-          url("./img/hero.jpg");
-        background-image: linear-gradient(rgba(109, 48, 57, 0.6),
-            rgba(109, 48, 57, 0.25)),
-          url("./img/hero.webp");
-      }
-
-    </style>
-  </noscript>
-  <noscript>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:200,400&display=auto">
-  </noscript>
-  <noscript>
-    <style type="text/css">
-      [data-aos] {
-        opacity: 1 !important;
-        transform: translate(0) scale(1) !important;
-      }
-
-    </style>
   </noscript>
 </head>
 
 <body>
+
   <!-- CSS Loader -->
   <div id="loader">
     <svg width="128" height="128" viewBox="0 0 256 256" class="custom-loader" fill="none"
