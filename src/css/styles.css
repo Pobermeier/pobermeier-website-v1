@@ -8407,7 +8407,16 @@ main .section {
       width: 30%; }
       .cookie-banner .cookie-banner__content .cookie-banner__buttons > button {
         margin: 0.5em 1em;
-        width: 5rem; }
+        width: 5rem;
+        transition: all 0.2s e;
+        box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+        transition: all 0.1s ease-out; }
+        .cookie-banner .cookie-banner__content .cookie-banner__buttons > button:hover {
+          transform: scale(1.025); }
+        .cookie-banner .cookie-banner__content .cookie-banner__buttons > button:active {
+          transform: scale(1.02);
+          transform: translateY(1px);
+          box-shadow: none; }
 
 @media screen and (max-width: 1023px) {
   html {
