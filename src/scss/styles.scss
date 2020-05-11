@@ -299,6 +299,10 @@ main {
         }
 
         .card-content {
+          .is-grouped {
+            justify-content: center;
+          }
+
           .button {
             display: block;
           }
@@ -318,14 +322,6 @@ main {
                 cursor: pointer;
               }
             }
-          }
-        }
-
-        .my-card-footer {
-          position: relative;
-
-          .button {
-            margin: 0 1rem;
           }
         }
       }

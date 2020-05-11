@@ -8138,7 +8138,8 @@ a:not(.button):not(.main-logo) svg {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-  user-select: none; }
+  user-select: none;
+  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02); }
   .navbar .navbar-brand > .navbar-item > svg {
     box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
     border-radius: 0.75rem; }
@@ -8264,6 +8265,8 @@ main .section {
         main .section .project-cards .card .subtitle strong,
         main .section .project-cards .card .subtitle:not(:last-child) strong {
           color: #239a3b; }
+      main .section .project-cards .card .card-content .is-grouped {
+        justify-content: center; }
       main .section .project-cards .card .card-content .button, main .section .project-cards .card .card-content .cookie-banner .cookie-banner__content .cookie-banner__buttons > button, .cookie-banner .cookie-banner__content main .section .project-cards .card .card-content .cookie-banner__buttons > button {
         display: block; }
       main .section .project-cards .card .card-content .technologies-used {
@@ -8277,10 +8280,6 @@ main .section {
           main .section .project-cards .card .card-content .technologies-used img:hover {
             transform: scale(1.2);
             cursor: pointer; }
-      main .section .project-cards .card .my-card-footer {
-        position: relative; }
-        main .section .project-cards .card .my-card-footer .button, main .section .project-cards .card .my-card-footer .cookie-banner .cookie-banner__content .cookie-banner__buttons > button, .cookie-banner .cookie-banner__content main .section .project-cards .card .my-card-footer .cookie-banner__buttons > button {
-          margin: 0 1rem; }
   main .section:nth-child(odd) .title,
   main .section:nth-child(odd) .subtitle strong {
     color: #239a3b; }
