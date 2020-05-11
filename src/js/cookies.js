@@ -7,8 +7,8 @@
         <div class="cookie-banner__content">
           <div class="cookie-banner__text">This website uses cookies. If you continue to use the website, we assume your consent.</div>
           <div class="cookie-banner__buttons">
-            <button id="accept-cookies" class="cookie-banner__accept-button">Continue</button>
-            <button id="open-privacy-notice" class="cookie-banner__info-button">Policy</button>
+            <button id="accept-cookies" class="cookie-banner__accept-button gtm-tracked-link">Continue</button>
+            <button id="open-privacy-notice" class="cookie-banner__info-button gtm-tracked-link">Policy</button>
           </div>
         </div>
       </div>`;
