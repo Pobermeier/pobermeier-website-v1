@@ -8110,7 +8110,7 @@ a:not(.button):not(.main-logo) svg:hover {
 
 .button, .cookie-banner .cookie-banner__content .cookie-banner__buttons > button {
   box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
-  transition: all 0.1s ease-in; }
+  transition: all 0.1s ease-out; }
   .button:hover, .cookie-banner .cookie-banner__content .cookie-banner__buttons > button:hover {
     transform: scale(1.025); }
   .button:active, .cookie-banner .cookie-banner__content .cookie-banner__buttons > button:active {
@@ -8265,7 +8265,8 @@ main .section {
         main .section .project-cards .card .card-content .technologies-used img {
           margin: 0.5rem;
           width: 35px;
-          height: 35px; }
+          height: 35px;
+          transition: all 0.2s ease-out; }
           main .section .project-cards .card .card-content .technologies-used img:hover {
             transform: scale(1.2);
             cursor: pointer; }
