@@ -42,7 +42,7 @@ a {
   &:not(.button):not(.main-logo) {
     svg {
       transition: all 0.2s ease-out;
-      
+
       &:hover {
         fill: $darkGreen;
         transform: scale(1.2);
@@ -333,6 +333,17 @@ main {
       .title,
       .subtitle {
         color: $white-ter;
+
+        a {
+          color: $white-ter;
+          text-decoration: underline;
+
+          &:hover,
+          &:active,
+          &:visited {
+            color: $white-ter;
+          }
+        }
       }
       form {
         .label {

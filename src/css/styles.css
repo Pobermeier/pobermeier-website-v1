@@ -8285,6 +8285,15 @@ main .section {
     main .section:nth-child(even) .title,
     main .section:nth-child(even) .subtitle {
       color: whitesmoke; }
+      main .section:nth-child(even) .title a,
+      main .section:nth-child(even) .subtitle a {
+        color: whitesmoke;
+        text-decoration: underline; }
+        main .section:nth-child(even) .title a:hover, main .section:nth-child(even) .title a:active, main .section:nth-child(even) .title a:visited,
+        main .section:nth-child(even) .subtitle a:hover,
+        main .section:nth-child(even) .subtitle a:active,
+        main .section:nth-child(even) .subtitle a:visited {
+          color: whitesmoke; }
     main .section:nth-child(even) form .label {
       color: whitesmoke; }
     main .section:nth-child(even)::before {
