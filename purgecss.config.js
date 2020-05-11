@@ -17,5 +17,7 @@ module.exports = {
     "cookie-banner__buttons",
     "cookie-banner__accept-button",
     "cookie-banner__info-button",
+    "hero",
+    "hero-body",
   ],
 };
