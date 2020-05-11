@@ -15,7 +15,7 @@
 
     const wrapper = document.createElement("div");
     wrapper.style.position = "fixed";
-    wrapper.style.padding = "0 1.5rem 0 1.5rem";
+    wrapper.style.padding = "0 1.5rem";
     wrapper.style.bottom = 0;
     wrapper.style.left = 0;
     wrapper.style.width = "100%";
