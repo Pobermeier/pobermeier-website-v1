@@ -41,6 +41,8 @@ hr {
 a {
   &:not(.button):not(.main-logo) {
     svg {
+      transition: all 0.2s ease-out;
+      
       &:hover {
         fill: $darkGreen;
         transform: scale(1.2);
@@ -443,6 +445,7 @@ main {
   background-color: $white-ter;
   a {
     color: $darkGrey;
+    transition: all 0.2s ease-out;
 
     &:hover {
       color: $darkGreen;

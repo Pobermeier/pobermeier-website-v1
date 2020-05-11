@@ -8103,10 +8103,12 @@ hr {
   background-color: #4a4a4a;
   height: 1px; }
 
-a:not(.button):not(.main-logo) svg:hover {
-  fill: #196127;
-  transform: scale(1.2);
-  cursor: pointer; }
+a:not(.button):not(.main-logo) svg {
+  transition: all 0.2s ease-out; }
+  a:not(.button):not(.main-logo) svg:hover {
+    fill: #196127;
+    transform: scale(1.2);
+    cursor: pointer; }
 
 .button, .cookie-banner .cookie-banner__content .cookie-banner__buttons > button {
   box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
@@ -8355,7 +8357,8 @@ main .section {
 .footer {
   background-color: whitesmoke; }
   .footer a {
-    color: #4a4a4a; }
+    color: #4a4a4a;
+    transition: all 0.2s ease-out; }
     .footer a:hover {
       color: #196127; }
   .footer p {
