@@ -139,7 +139,7 @@
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TLPT94R" height="0" width="0"
       style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
-  <div id="loader" style="display: none;">
+  <div id="loader">
     <svg width="128" height="128" viewBox="0 0 256 256" class="custom-loader" fill="none"
       xmlns="http://www.w3.org/2000/svg">
       <rect width="256" height="256" rx="50" fill="#EBEDF0" />
@@ -467,20 +467,25 @@
     </div>
   </div>
 
+  <!-- JS critical for page load -->
   <script>
-    window.dataLayer = window.dataLayer || [];
+    (function () {
+      // Init GTM data layer
+      window.dataLayer = window.dataLayer || [];
 
-    document.querySelector("#loader").style.display = "block"
-    document.querySelector("#content-body").style.display = "none"
+      document.querySelector("#loader").style.display = "block"
+      document.querySelector("#content-body").style.display = "none"
 
-    document.addEventListener("DOMContentLoaded", () => {
-      setTimeout(showPage, 1000)
-    })
+      // Once DOM Content is fully loaded the CSS loader is hidden & page is shown  + a short timeout so the animation can finish at least once
+      document.addEventListener("DOMContentLoaded", () => {
+        setTimeout(showPage, 1000)
+      })
 
-    function showPage() {
-      document.querySelector("#loader").style.display = "none"
-      document.querySelector("#content-body").style.display = "block"
-    }
+      function showPage() {
+        document.querySelector("#loader").style.display = "none"
+        document.querySelector("#content-body").style.display = "block"
+      }
+    })();
 
   </script>
   <script defer src="js/main.js"></script>
