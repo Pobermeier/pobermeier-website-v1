@@ -8238,6 +8238,8 @@ main .section {
   position: relative;
   padding-top: 3rem;
   padding-bottom: 3rem; }
+  main .section .profile-img {
+    order: 2; }
   main .section .project-cards {
     display: flex;
     align-items: stretch; }

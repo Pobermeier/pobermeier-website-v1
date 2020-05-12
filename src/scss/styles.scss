@@ -254,6 +254,10 @@ main {
     padding-top: 3rem;
     padding-bottom: 3rem;
 
+    .profile-img {
+      order: 2;
+    }
+
     .project-cards {
       display: flex;
       align-items: stretch;
