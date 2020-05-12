@@ -607,11 +607,22 @@ main {
   .navbar-menu {
     position: absolute;
     background-color: $white-ter;
+    box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
+      0 0px 0 1px rgba(10, 10, 10, 0.02);
     right: 0;
-    width: 200px;
+    width: 225px;
+    z-index: 999;
+    height: 100vh;
     text-align: center;
     .button {
       width: 175px;
+      margin: 0 auto;
+    }
+
+    &.is-active {
+      .navbar-item {
+        margin: 1.5rem 0;
+      }
     }
   }
   .form-container {
