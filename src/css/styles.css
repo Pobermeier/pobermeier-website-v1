@@ -8376,7 +8376,7 @@ main .section {
   .technologies .logo-carousel {
     height: 6rem;
     overflow: hidden;
-    width: 120rem;
+    width: 126rem;
     position: relative;
     margin: 0 auto; }
     .technologies .logo-carousel .logo-carousel__inner {
@@ -8397,7 +8397,7 @@ main .section {
         .technologies .logo-carousel .logo-carousel__inner .logo-carousel__item:hover {
           transform: scale(1.2);
           cursor: pointer; }
-      .technologies .logo-carousel .logo-carousel__inner span {
+      .technologies .logo-carousel .logo-carousel__inner ul {
         float: left;
         width: 50%; }
 
