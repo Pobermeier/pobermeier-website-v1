@@ -8239,6 +8239,12 @@ a:not(.button):not(.main-logo) svg {
     .hero .hero-body.enhanced {
       background-image: linear-gradient(rgba(109, 48, 57, 0.6), rgba(109, 48, 57, 0.25)), url("../img/hero.jpg");
       background-image: linear-gradient(rgba(109, 48, 57, 0.6), rgba(109, 48, 57, 0.25)), url("../img/hero.webp"); }
+    .hero .hero-body .cta-text {
+      display: inline-block;
+      padding: 0.2em 0.2em;
+      background-color: rgba(35, 154, 59, 0.8);
+      border-radius: 5px;
+      width: fit-content; }
     .hero .hero-body .cta-desktop {
       margin-top: 6rem; }
     .hero .hero-body .scroll-to-arrow {
@@ -8269,6 +8275,10 @@ main .section {
   padding-bottom: 3rem; }
   main .section .profile-img {
     order: 2; }
+    main .section .profile-img figure {
+      margin: 1rem auto;
+      width: 200px;
+      height: 200px; }
   main .section .project-cards {
     display: flex;
     align-items: stretch; }
@@ -8417,6 +8427,9 @@ main .section {
 
 .modal p:not(.modal-card-title) {
   margin: 1em 0; }
+
+.modal footer button {
+  margin-left: auto; }
 
 .cookie-banner {
   background-color: rgba(245, 245, 245, 0.9);

@@ -6,6 +6,12 @@ main {
 
     .profile-img {
       order: 2;
+
+      figure {
+        margin: 1rem auto;
+        width: 200px;
+        height: 200px;
+      }
     }
 
     .project-cards {

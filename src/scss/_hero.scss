@@ -57,6 +57,14 @@
         url("../img/hero.webp");
     }
 
+    .cta-text {
+      display: inline-block;
+      padding: 0.2em 0.2em;
+      background-color: rgba(35, 154, 59, 0.8);
+      border-radius: 5px;
+      width: fit-content;
+    }
+
     .cta-desktop {
       margin-top: 6rem;
     }
