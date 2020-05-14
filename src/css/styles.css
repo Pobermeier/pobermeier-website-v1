@@ -8317,14 +8317,18 @@ main .section {
       main .section .project-cards .card .card-content .technologies-used {
         padding: 1rem 0;
         text-align: center; }
-        main .section .project-cards .card .card-content .technologies-used img {
-          margin: 0.5rem;
-          width: 35px;
-          height: 35px;
-          transition: all 0.2s ease-out; }
-          main .section .project-cards .card .card-content .technologies-used img:hover {
-            transform: scale(1.2);
-            cursor: pointer; }
+        main .section .project-cards .card .card-content .technologies-used ul {
+          list-style: none; }
+          main .section .project-cards .card .card-content .technologies-used ul li {
+            display: inline-block; }
+            main .section .project-cards .card .card-content .technologies-used ul li img {
+              margin: 0.5rem;
+              width: 35px;
+              height: 35px;
+              transition: all 0.2s ease-out; }
+              main .section .project-cards .card .card-content .technologies-used ul li img:hover {
+                transform: scale(1.2);
+                cursor: pointer; }
   main .section:nth-child(odd) .title,
   main .section:nth-child(odd) .subtitle strong {
     color: #239a3b; }

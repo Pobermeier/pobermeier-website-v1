@@ -75,15 +75,23 @@ main {
             padding: 1rem 0;
             text-align: center;
 
-            img {
-              margin: 0.5rem;
-              width: 35px;
-              height: 35px;
-              transition: all 0.2s ease-out;
+            ul {
+              list-style: none;
 
-              &:hover {
-                transform: scale(1.2);
-                cursor: pointer;
+              li {
+                display: inline-block;
+
+                img {
+                  margin: 0.5rem;
+                  width: 35px;
+                  height: 35px;
+                  transition: all 0.2s ease-out;
+
+                  &:hover {
+                    transform: scale(1.2);
+                    cursor: pointer;
+                  }
+                }
               }
             }
           }
