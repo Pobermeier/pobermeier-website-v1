@@ -109,11 +109,11 @@
     }
 
     .no-js #loader {
-      display: none;
+      display: none !important;
     }
 
     .no-js #content-body {
-      display: block;
+      display: block !important;
     }
 
     .no-js .hero .hero-body {
@@ -148,7 +148,7 @@
   <!-- End Google Tag Manager (noscript) -->
 
   <!-- CSS Loader -->
-  <div id="loader">
+  <div id="loader" style="display: block;">
     <svg width="128" height="128" viewBox="0 0 256 256" class="custom-loader" fill="none"
       xmlns="http://www.w3.org/2000/svg">
       <rect width="256" height="256" rx="50" fill="#EBEDF0" />
@@ -170,8 +170,7 @@
   </div>
 
   <!-- Content Body -->
-  <div id="content-body">
-
+  <div id="content-body" style="display: none;">
     <!-- Header-Section: Navbar & Hero-Section -->
     <header>
       <!-- Navbar -->
