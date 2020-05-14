@@ -1,0 +1,88 @@
+@media screen and (max-width: 1023px) {
+  html {
+    scroll-padding-top: 3.25rem;
+  }
+
+  main {
+    .section {
+      .project-cards {
+        display: block;
+
+        .column {
+          display: block;
+
+          .card {
+            .my-card-footer {
+              position: relative;
+
+              .button {
+                position: relative;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .hero.is-fullheight-with-navbar {
+    min-height: calc(100vh + 3rem);
+    min-height: calc((var(--vh, 1vh) * 100 + 1.8rem + 3rem));
+    .hero-body {
+      min-height: calc(100vh + 3rem);
+      min-height: calc((var(--vh, 1vh) * 100 + 1.8rem + 3rem));
+    }
+  }
+  .hero,
+  .about {
+    .control {
+      margin-top: 1em;
+    }
+  }
+  form {
+    .control {
+      margin-top: 1em;
+    }
+  }
+  .navbar-menu {
+    position: absolute;
+    background-color: $white-ter;
+    box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
+      0 0px 0 1px rgba(10, 10, 10, 0.02);
+    right: 0;
+    width: 235px;
+    z-index: 999;
+    height: 100vh;
+    text-align: center;
+    .button {
+      width: 175px;
+      margin: 0 auto;
+    }
+
+    &.is-active {
+      .navbar-item {
+        margin: 1.5rem 0;
+      }
+    }
+  }
+  .form-container {
+    margin: 2rem auto 0 auto;
+    padding: 0;
+  }
+
+  .technologies {
+    .showcase__item {
+      margin: 1rem 1.5rem;
+
+      img {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  }
+}
+@media screen and (max-height: 623px) {
+  .scroll-to-arrow {
+    display: none;
+  }
+}

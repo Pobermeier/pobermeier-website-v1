@@ -1,0 +1,47 @@
+.technologies {
+  overflow: hidden;
+
+  .subtitle {
+    margin: 3rem 0 2rem 0;
+    font-size: 1.5rem;
+  }
+
+  .logo-carousel {
+    height: 6rem;
+    overflow: hidden;
+    width: 120rem;
+    position: relative;
+    margin: 0 auto;
+
+    .logo-carousel__inner {
+      display: block;
+      width: 200%;
+      margin: 1rem 0;
+      position: absolute;
+      animation: scroll-left 40s linear infinite;
+      animation-fill-mode: forwards;
+
+      &:hover {
+        animation-play-state: paused;
+      }
+
+      .logo-carousel__item {
+        width: 4rem;
+        height: 4rem;
+        display: inline-block;
+        margin: 0 1rem;
+        transition: all 0.2s ease-out;
+
+        &:hover {
+          transform: scale(1.2);
+          cursor: pointer;
+        }
+      }
+
+      span {
+        float: left;
+        width: 50%;
+      }
+    }
+  }
+}

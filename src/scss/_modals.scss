@@ -1,0 +1,10 @@
+.modal {
+  h3 {
+    margin: 1em 0;
+  }
+  p {
+    &:not(.modal-card-title) {
+      margin: 1em 0;
+    }
+  }
+}

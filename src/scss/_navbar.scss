@@ -1,0 +1,67 @@
+.navbar {
+  position: fixed;
+  width: 100%;
+  background-color: $white-ter;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
+    0 0px 0 1px rgba(10, 10, 10, 0.02);
+
+  .main-logo {
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+    border-radius: 0.75rem;
+    width: 50px;
+    height: 50px;
+    max-width: 50px;
+    max-height: 50px;
+  }
+
+  .logo-title {
+    margin-left: 0.5em;
+    font-size: 1.4rem;
+    font-weight: 200;
+    text-transform: uppercase;
+  }
+
+  .navbar-menu {
+    .navbar-item {
+      margin: auto 0;
+    }
+  }
+  .navbar-burger {
+    margin: auto 0;
+    span {
+      pointer-events: none;
+
+      &:not(:first-child) {
+        width: 12px;
+      }
+    }
+    &.is-active {
+      span {
+        width: 16px;
+      }
+    }
+  }
+
+  .navbar-mobile-cta {
+    margin: auto 0;
+    margin-left: auto;
+  }
+  .navbar-brand {
+    .navbar-item {
+      &:hover,
+      &:active,
+      &:visited {
+        color: $darkGrey;
+      }
+    }
+  }
+  a.navbar-item:hover,
+  a.navbar-item:active,
+  a.navbar-item:visited {
+    background-color: $white-ter;
+  }
+}

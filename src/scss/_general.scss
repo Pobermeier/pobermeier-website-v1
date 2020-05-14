@@ -1,0 +1,48 @@
+html {
+  scroll-padding-top: 3.25rem;
+  background-color: $white-ter;
+}
+
+body {
+  overflow: hidden;
+}
+
+hr {
+  background-color: $darkGrey;
+  height: 1px;
+}
+
+a {
+  &:not(.button):not(.main-logo) {
+    svg {
+      transition: all 0.2s ease-out;
+
+      &:hover {
+        fill: $darkGreen;
+        transform: scale(1.2);
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.title {
+  &:not(.is-spaced) {
+    + {
+      .subtitle {
+        margin-top: 0;
+      }
+    }
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 2.5rem;
+  }
+
+  & + .subtitle {
+    margin-bottom: 2.5rem;
+    &:not(:last-child) {
+      margin-bottom: 2.5rem;
+    }
+  }
+}

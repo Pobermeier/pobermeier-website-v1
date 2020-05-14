@@ -1,0 +1,21 @@
+.form-container {
+  padding: 1rem 3rem;
+  max-width: 960px;
+  margin: 0 auto;
+
+  form {
+    input {
+      &::placeholder {
+        color: #a6a6a6;
+      }
+    }
+    textarea {
+      &::placeholder {
+        color: #a6a6a6;
+      }
+    }
+    > .field {
+      margin: 1rem 0;
+    }
+  }
+}

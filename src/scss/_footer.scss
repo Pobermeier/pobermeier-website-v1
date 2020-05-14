@@ -1,0 +1,14 @@
+.footer {
+  background-color: $white-ter;
+  a {
+    color: $darkGrey;
+    transition: all 0.2s ease-out;
+
+    &:hover {
+      color: $darkGreen;
+    }
+  }
+  p {
+    color: $darkGrey;
+  }
+}
