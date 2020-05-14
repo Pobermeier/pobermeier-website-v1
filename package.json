@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "rm -rf ./serve && parcel src/*.html --out-dir serve --open",
-    "build": "rm -rf ./dist && parcel build src/*.html --out-dir dist && grunt critical && cp ./src/robots.txt ./src/ms-icon-*.png ./src/browserconfig.xml ./src/sitemap.xml ./dist",
+    "build": "rm -rf ./dist && parcel build src/*.html --out-dir dist && grunt critical && cp ./src/robots.txt ./src/ms-icon-*.png ./src/browserconfig.xml ./src/sitemap.xml ./src/favicon.ico ./dist",
     "css-build": "node-sass --omit-source-map-url ./src/scss/styles.scss ./src/css/styles.css",
     "css-watch": "npm run css-build -- --watch"
   },
