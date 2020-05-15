@@ -8329,6 +8329,15 @@ main .section {
               main .section .project-cards .card .card-content .technologies-used ul li img:hover {
                 transform: scale(1.2);
                 cursor: pointer; }
+    @media screen and (min-width: 1023px) {
+      main .section .project-cards .column {
+        transition: all 0.3s ease-out; }
+      main .section .project-cards .column:first-child {
+        transform: perspective(1000px) rotateY(5deg) scale(1.025); }
+      main .section .project-cards .column:last-child {
+        transform: perspective(1000px) rotateY(-5deg) scale(1.025); }
+      main .section .project-cards .column:hover {
+        transform: scale(1.05); } }
   main .section:nth-child(odd) .title,
   main .section:nth-child(odd) .subtitle strong {
     color: #239a3b; }
