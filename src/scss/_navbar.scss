@@ -19,10 +19,20 @@
   }
 
   .logo-title {
+    color: $darkGrey;
     margin-left: 0.5em;
-    font-size: 1.4rem;
+    font-size: 1.25rem;
+    line-height: 1.1;
     font-weight: 200;
     text-transform: uppercase;
+
+    // span {
+    //   color: #f5f5f5;
+    //   display: inline-block;
+    //   background-color: $midGreen;
+    //   padding: 0.2rem 0.3rem;
+    //   border-radius: 5px;
+    // }
   }
 
   .navbar-menu {
