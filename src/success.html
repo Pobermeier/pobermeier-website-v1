@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html lang="en" class="no-js">
 
 <head>
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
@@ -95,11 +95,11 @@
     }
 
     .no-js #loader {
-      display: none;
+      display: none !important;
     }
 
     .no-js #content-body {
-      display: block;
+      display: block !important;
     }
 
     .no-js .hero .hero-body {
@@ -130,7 +130,7 @@
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TLPT94R" height="0" width="0"
       style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
-  <div id="loader">
+  <div id="loader" style="display: block;">
     <svg width="128" height="128" viewBox="0 0 256 256" class="custom-loader" fill="none"
       xmlns="http://www.w3.org/2000/svg">
       <rect width="256" height="256" rx="50" fill="#EBEDF0" />
@@ -151,7 +151,7 @@
     </svg>
   </div>
 
-  <div id="content-body">
+  <div id="content-body" style="display: none;">
     <header>
       <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="container">
@@ -473,9 +473,6 @@
       // Init GTM data layer
       window.dataLayer = window.dataLayer || [];
 
-      document.querySelector("#loader").style.display = "block"
-      document.querySelector("#content-body").style.display = "none"
-
       // Once DOM Content is fully loaded the CSS loader is hidden & page is shown  + a short timeout so the animation can finish at least once
       document.addEventListener("DOMContentLoaded", () => {
         setTimeout(showPage, 1000)
@@ -488,6 +485,7 @@
     })();
 
   </script>
+  <!-- Main JS -->
   <script defer src="js/main.js"></script>
 </body>
 
