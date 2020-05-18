@@ -1,22 +1,31 @@
 "use strict";
 
-import "./cookies";
+import { initCookieBanner } from "./cookies";
+import {
+  convertWindowHeightToViewPortHeight,
+  fetchStyle,
+  lazyLoadBackgroundImages,
+} from "./helpers";
 import AOS from "aos";
 
 (function App() {
-  // Init AOS library
-  AOS.init({
-    disable: "mobile",
-  });
-
-  // Init GTM data layer if it hasn't been initialized yet
-  window.dataLayer = window.dataLayer || [];
-
   // Global state
   const _STATE_ = {
     isNavMenuOpen: false,
   };
 
+  // Init GTM data layer if it hasn't been initialized yet
+  window.dataLayer = window.dataLayer || [];
+
+  // Init AOS library
+  AOS.init({
+    disable: "mobile",
+  });
+
+  // Init cookie banner
+  initCookieBanner();
+
+  // Register Event listeners
   document.addEventListener("DOMContentLoaded", () => {
     // Mobile Navbar Logic
     const navbarBurger = document.getElementById("navbar-burger");
@@ -173,10 +182,10 @@ import AOS from "aos";
   });
 
   window.addEventListener("load", () => {
-    lazyLoadBackgroundImages();
     fetchStyle(
-      "https://fonts.googleapis.com/css?family=Montserrat:200,400&display=auto"
+      "https://fonts.googleapis.com/css?family=Montserrat:200,400&display=swap"
     );
+    lazyLoadBackgroundImages();
     convertWindowHeightToViewPortHeight();
     // Refresh AOS x Seconds after page load is complete to avoid problem with init() not working on first load
     setTimeout(() => {
@@ -184,49 +193,7 @@ import AOS from "aos";
     }, 1000);
   });
 
-  function fetchStyle(url) {
-    let link = document.createElement("link");
-    link.type = "text/css";
-    link.rel = "stylesheet";
-    link.href = url;
-    let headScript = document.querySelector("script");
-    headScript.parentNode.insertBefore(link, headScript);
-  }
-
-  function lazyLoadBackgroundImages() {
-    const lazyBackgrounds = [].slice.call(
-      document.querySelectorAll(".lazy-background")
-    );
-
-    if ("IntersectionObserver" in window) {
-      let lazyBackgroundObserver = new IntersectionObserver(function (
-        entries,
-        observer
-      ) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("enhanced");
-            lazyBackgroundObserver.unobserve(entry.target);
-          }
-        });
-      });
-
-      lazyBackgrounds.forEach(function (lazyBackground) {
-        lazyBackgroundObserver.observe(lazyBackground);
-      });
-    } else {
-      lazyBackgrounds.forEach((element) => {
-        element.classList.add("enhanced");
-      });
-    }
-  }
-
   window.addEventListener("resize", () => {
     convertWindowHeightToViewPortHeight();
   });
-
-  function convertWindowHeightToViewPortHeight() {
-    let vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty("--vh", `${vh}px`);
-  }
 })();

@@ -1,6 +1,6 @@
 "use strict";
 
-(function checkCookiesAndDisplayCookieBanner() {
+export function initCookieBanner() {
   const showCookieAlert = () => {
     const template = `
       <div id="cookie-info" class="cookie-banner">
@@ -59,4 +59,6 @@
   };
 
   window.addEventListener("load", checkCookie);
-})();
+}
+
+export default initCookieBanner;
