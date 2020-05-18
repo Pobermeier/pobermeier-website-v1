@@ -7,6 +7,7 @@ import {
   lazyLoadBackgroundImages,
   removeHash,
 } from "./helpers";
+import registerSW from "./registerSW";
 import AOS from "aos";
 
 (function App() {
@@ -180,6 +181,8 @@ import AOS from "aos";
     );
     lazyLoadBackgroundImages();
     convertWindowHeightToViewPortHeight();
+    // Register service worker
+    registerSW();
     // Refresh AOS x Seconds after page load is complete to avoid problem with init() not working on first load
     setTimeout(() => {
       AOS.refresh();
