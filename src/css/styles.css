@@ -8179,7 +8179,7 @@ a:not(.button):not(.main-logo) svg {
   .navbar .logo-title {
     color: #4a4a4a;
     margin-left: 0.5em;
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     line-height: 1.1;
     font-weight: 200;
     text-transform: uppercase; }
@@ -8496,6 +8496,9 @@ main .section {
         position: relative; }
         main .section .project-cards .column .card .my-card-footer .button, main .section .project-cards .column .card .my-card-footer .cookie-banner .cookie-banner__content .cookie-banner__buttons > button, .cookie-banner .cookie-banner__content main .section .project-cards .column .card .my-card-footer .cookie-banner__buttons > button {
           position: relative; }
+  main .section .columns .column .control {
+    text-align: center !important;
+    margin-top: 1rem !important; }
   .hero.is-fullheight-with-navbar {
     min-height: calc(100vh + 3rem);
     min-height: calc((var(--vh, 1vh) * 100 + 1.8rem + 3rem)); }
