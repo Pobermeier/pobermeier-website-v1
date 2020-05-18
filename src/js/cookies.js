@@ -1,6 +1,6 @@
 "use strict";
 
-export function initCookieBanner() {
+function initCookieBanner() {
   const showCookieAlert = () => {
     const template = `
       <div id="cookie-info" class="cookie-banner">

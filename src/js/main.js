@@ -1,6 +1,6 @@
 "use strict";
 
-import { initCookieBanner } from "./cookies";
+import initCookieBanner from "./cookies";
 import {
   convertWindowHeightToViewPortHeight,
   fetchStyle,
