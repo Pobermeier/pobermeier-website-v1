@@ -5,6 +5,7 @@ import {
   convertWindowHeightToViewPortHeight,
   fetchStyle,
   lazyLoadBackgroundImages,
+  removeHash,
 } from "./helpers";
 import AOS from "aos";
 
@@ -78,14 +79,6 @@ import AOS from "aos";
           setTimeout(() => removeHash(), 0);
         });
       });
-
-    function removeHash() {
-      history.pushState(
-        "",
-        document.title,
-        window.location.pathname + window.location.search
-      );
-    }
 
     // Init Modals
     const modals = document.querySelectorAll(".modal");

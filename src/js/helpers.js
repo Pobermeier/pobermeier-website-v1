@@ -42,3 +42,12 @@ export function lazyLoadBackgroundImages() {
     });
   }
 }
+
+// Utility function that "cleans-up" the URL after clicking on an in-page link
+export function removeHash() {
+  history.pushState(
+    "",
+    document.title,
+    window.location.pathname + window.location.search
+  );
+}
