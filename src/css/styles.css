@@ -8162,6 +8162,7 @@ a:not(.button):not(.main-logo) svg {
 
 .navbar {
   position: fixed;
+  top: 0;
   width: 100%;
   background-color: whitesmoke;
   -webkit-user-select: none;
