@@ -1,3 +1,30 @@
+* {
+  scrollbar-width: thin;
+  scrollbar-color: $lightGreen $lightGrey;
+}
+
+*::-webkit-scrollbar {
+  width: 0.5rem;
+  transition: all 0.3s ease-out;
+}
+
+*::-webkit-scrollbar:hover {
+  width: 1rem;
+}
+
+*::-webkit-scrollbar-track {
+  background: $lightGrey;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: $lightGreen;
+  border-radius: 2rem;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: $midGreen;
+}
+
 html {
   scroll-padding-top: 3.25rem;
   background-color: $white-ter;

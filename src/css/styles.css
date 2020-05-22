@@ -8092,6 +8092,27 @@ textarea {
   100% {
     transform: translateX(-50%); } }
 
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #7bc96f #ebedf0; }
+
+*::-webkit-scrollbar {
+  width: 0.5rem;
+  transition: all 0.3s ease-out; }
+
+*::-webkit-scrollbar:hover {
+  width: 1rem; }
+
+*::-webkit-scrollbar-track {
+  background: #ebedf0; }
+
+*::-webkit-scrollbar-thumb {
+  background-color: #7bc96f;
+  border-radius: 2rem; }
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #239a3b; }
+
 html {
   scroll-padding-top: 3.25rem;
   background-color: whitesmoke; }
@@ -8130,6 +8151,27 @@ a:not(.button):not(.main-logo) svg {
     transform: scale(1.02);
     transform: translateY(1px);
     box-shadow: none; }
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #7bc96f #ebedf0; }
+
+*::-webkit-scrollbar {
+  width: 0.5rem;
+  transition: all 0.3s ease-out; }
+
+*::-webkit-scrollbar:hover {
+  width: 1rem; }
+
+*::-webkit-scrollbar-track {
+  background: #ebedf0; }
+
+*::-webkit-scrollbar-thumb {
+  background-color: #7bc96f;
+  border-radius: 2rem; }
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #239a3b; }
 
 html {
   scroll-padding-top: 3.25rem;
@@ -8476,7 +8518,7 @@ main .section {
       .cookie-banner .cookie-banner__content .cookie-banner__buttons > button {
         margin: 0.5em 1em;
         width: 5rem;
-        transition: all 0.2s e;
+        transition: all 0.2s ease-out;
         box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
         transition: all 0.1s ease-out; }
         .cookie-banner .cookie-banner__content .cookie-banner__buttons > button:hover {
