@@ -51,3 +51,14 @@ export function removeHash() {
     window.location.pathname + window.location.search
   );
 }
+
+// Utility function to create parallax scroll effect on background-images
+export function parallax(elementId) {
+  const slider = document.getElementById(elementId);
+
+  const speed = slider.dataset.speed || 0;
+
+  const yPos = window.pageYOffset / speed + "px";
+
+  slider.style.backgroundPositionY = yPos;
+}
