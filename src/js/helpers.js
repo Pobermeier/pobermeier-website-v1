@@ -16,7 +16,7 @@ export function fetchStyle(url) {
 
 // Lazy-load BG-images
 export function lazyLoadBackgroundImages() {
-  const lazyBackgrounds = [].slice.call(
+  const lazyBackgrounds = Array.from(
     document.querySelectorAll(".lazy-background")
   );
 
@@ -37,6 +37,7 @@ export function lazyLoadBackgroundImages() {
       lazyBackgroundObserver.observe(lazyBackground);
     });
   } else {
+    document.body.classList.add("non-lazy");
     lazyBackgrounds.forEach((element) => {
       element.classList.add("enhanced");
     });
