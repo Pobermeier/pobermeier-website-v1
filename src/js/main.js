@@ -6,6 +6,7 @@ import {
   fetchStyle,
   lazyLoadBackgroundImages,
   removeHash,
+  parallax,
 } from "./helpers";
 import registerSW from "./registerSW";
 import AOS from "aos";
@@ -189,7 +190,9 @@ import AOS from "aos";
     }, 1000);
   });
 
-  window.addEventListener("resize", () => {
-    convertWindowHeightToViewPortHeight();
-  });
+  // window.addEventListener("scroll", () => parallax("bg-parallax"));
+
+  window.addEventListener("resize", () =>
+    convertWindowHeightToViewPortHeight()
+  );
 })();
