@@ -180,7 +180,7 @@ import AOS from "aos";
     fetchStyle(
       "https://fonts.googleapis.com/css?family=Montserrat:200,400&display=swap"
     );
-    lazyLoadBackgroundImages();
+    // lazyLoadBackgroundImages();
     convertWindowHeightToViewPortHeight();
     // Register service worker
     registerSW();
