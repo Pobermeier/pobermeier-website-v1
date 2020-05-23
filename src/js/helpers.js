@@ -20,7 +20,7 @@ export function lazyLoadBackgroundImages() {
     document.querySelectorAll(".lazy-background")
   );
 
-  if ("IntersectionObserver" in window) {
+  if (!"IntersectionObserver" in window) {
     let lazyBackgroundObserver = new IntersectionObserver(function (
       entries,
       observer
