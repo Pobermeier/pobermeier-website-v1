@@ -8284,8 +8284,7 @@ a:not(.button):not(.main-logo) svg {
     border-bottom-right-radius: 1000% 1000px;
     background-image: linear-gradient(rgba(109, 48, 57, 0.6), rgba(109, 48, 57, 0.25)); }
     .hero .hero-body.enhanced {
-      background-image: linear-gradient(rgba(109, 48, 57, 0.6), rgba(109, 48, 57, 0.25)), url("../img/hero.jpg");
-      background-image: linear-gradient(rgba(109, 48, 57, 0.6), rgba(109, 48, 57, 0.25)), url("../img/hero.webp"); }
+      background-image: linear-gradient(rgba(109, 48, 57, 0.6), rgba(109, 48, 57, 0.25)), url("../img/hero.jpg"); }
     .hero .hero-body .cta-text {
       display: inline-block;
       padding: 0.2em 0.2em;
