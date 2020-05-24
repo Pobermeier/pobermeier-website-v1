@@ -1119,7 +1119,8 @@
             free to contact me anytime. I am very much looking forward to your message!
           </p>
           <div class="form-container">
-            <form action="/success" class="control" name="contact-form" data-netlify="true" method="POST">
+            <form action="/success" class="control" id="contact-form" name="contact-form" data-netlify="true"
+              method="POST">
               <div class="field is-horizontal">
                 <div class="field-body">
                   <div class="field">
@@ -1485,6 +1486,51 @@
         document.querySelector("#content-body").style.display = "block"
       }
     })();
+
+  </script>
+
+  <script>
+    const contactForm = document.querySelector("#contact-form");
+    const firstNameInput = document.querySelector("#firstName");
+    const lastNameInput = document.querySelector("#lastName");
+    const emailInput = document.querySelector("#email");
+    const subjectInput = document.querySelector("#subject");
+    const messageInput = document.querySelector("#message");
+
+    contactForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const formData = {
+        firstName: firstNameInput.value,
+        lastName: lastNameInput.value,
+        email: emailInput.value,
+        subject: subjectInput.value,
+        message: messageInput.value,
+      }
+
+      const getEncodedDataString = data => Object.keys(data).map(key =>
+        `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`).join("&");
+
+      console.log("Form Submitted");
+
+      fetch("/", {
+          method: "POST",
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+          },
+          body: getEncodedDataString({
+            "form-name": contactForm.getAttribute("name"),
+            ...formData
+          })
+        })
+        .then(() => {
+          window.location = "/success"
+          console.log("Success!");
+        })
+        .catch((err) => {
+          console.log(err);
+        })
+    })
 
   </script>
   <!-- Main JS -->
