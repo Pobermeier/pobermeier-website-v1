@@ -103,6 +103,12 @@
       }
     }
 
+  </style>
+
+  <!-- Main style sheet - Critical styles (above the fold) are inlined at build time-->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <style>
     .no-js #loader {
       display: none !important;
     }
@@ -111,23 +117,23 @@
       display: block !important;
     }
 
+    .non-lazy .hero .hero-body,
     .no-js .hero .hero-body {
       background-image: linear-gradient(rgba(109, 48, 57, 0.6),
           rgba(109, 48, 57, 0.25)),
-        url("./img/hero.jpg");
-      background-image: linear-gradient(rgba(109, 48, 57, 0.6),
-          rgba(109, 48, 57, 0.25)),
-        url("./img/hero.webp");
+        url("./img/hero.jpg") !important;
+      /* background-image: linear-gradient(rgba(109, 48, 57, 0.6),
+        rgba(109, 48, 57, 0.25)),
+      url("./img/hero.webp") !important; */
     }
 
     .no-js [data-aos] {
       opacity: 1 !important;
       transform: translate(0) scale(1) !important;
+      pointer-events: all;
     }
 
   </style>
-
-  <link rel="stylesheet" href="css/styles.css">
 
   <noscript>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:200,400&display=auto">
@@ -175,7 +181,7 @@
       </nav>
 
       <section class="hero is-fullheight-with-navbar is-large" id="hero">
-        <div class="hero-body lazy-background">
+        <div class="hero-body lazy-background enhanced">
           <div class="container">
             <h1 class="title has-text-white is-size-1 is-size-2-tablet is-size-3-mobile">
               Oh noes! A big ol' 404!</h1>
