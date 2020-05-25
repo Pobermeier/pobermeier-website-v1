@@ -1512,8 +1512,6 @@
       const getEncodedDataString = data => Object.keys(data).map(key =>
         `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`).join("&");
 
-      console.log("Form Submitted");
-
       // FIX for issue with service-worker caching POST-request to Netlify forms
       // Create a time stamp and add send it with the POST request as a query-string, so the request will not be cached by the service worker
       const timeStamp = Math.floor(Date.now() / 1000);
@@ -1532,7 +1530,6 @@
         })
         .then(() => {
           window.location = "/success"
-          console.log("Success!");
         })
         .catch((err) => {
           console.error(err);
