@@ -1514,7 +1514,11 @@
 
       console.log("Form Submitted");
 
-      fetch("/", {
+      // FIX for issue with service-worker caching POST-request to Netlify forms
+      // Create a time stamp and add send it with the POST request as a query-string, so the request will not be cached by the service worker
+      const timeStamp = Math.floor(Date.now() / 1000);
+
+      fetch(`/?t=${timeStamp}`, {
           method: "POST",
           headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
@@ -1531,7 +1535,7 @@
           console.log("Success!");
         })
         .catch((err) => {
-          console.log(err);
+          console.error(err);
         })
     })
 
