@@ -1470,7 +1470,8 @@
     </div>
   </div>
   <!-- Dynamic Polyfills -->
-  <script src="https://polyfill.io/v3/polyfill.min.js?version=3.52.1"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=Array.prototype.forEach%2CNodeList.prototype.forEach">
+  </script>
   <!-- JS critical for page load -->
   <script>
     (function () {
@@ -1520,7 +1521,6 @@
           method: "POST",
           headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
-
           },
           cache: "no-cache",
           body: getEncodedDataString({
