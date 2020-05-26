@@ -25,6 +25,15 @@
   background-color: $midGreen;
 }
 
+::-moz-selection {
+  background: $midGreen;
+  color: $white-ter;
+}
+::selection {
+  background: $midGreen;
+  color: $white-ter;
+}
+
 html {
   scroll-padding-top: 3.25rem;
   background-color: $white-ter;

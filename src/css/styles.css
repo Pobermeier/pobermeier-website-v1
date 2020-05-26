@@ -8113,6 +8113,14 @@ textarea {
 *::-webkit-scrollbar-thumb:hover {
   background-color: #239a3b; }
 
+::-moz-selection {
+  background: #239a3b;
+  color: whitesmoke; }
+
+::selection {
+  background: #239a3b;
+  color: whitesmoke; }
+
 html {
   scroll-padding-top: 3.25rem;
   background-color: whitesmoke; }
@@ -8172,6 +8180,14 @@ a:not(.button):not(.main-logo) svg {
 
 *::-webkit-scrollbar-thumb:hover {
   background-color: #239a3b; }
+
+::-moz-selection {
+  background: #239a3b;
+  color: whitesmoke; }
+
+::selection {
+  background: #239a3b;
+  color: whitesmoke; }
 
 html {
   scroll-padding-top: 3.25rem;
