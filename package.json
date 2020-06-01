@@ -22,8 +22,8 @@
   },
   "homepage": "https://github.com/Pobermeier/pobermeier-website-v1#readme",
   "devDependencies": {
-    "@babel/core": "^7.9.0",
-    "@babel/preset-env": "^7.9.5",
+    "@babel/core": "^7.10.2",
+    "@babel/preset-env": "^7.10.2",
     "find": "^0.3.0",
     "grunt": "^1.1.0",
     "grunt-critical": "^1.1.2",
