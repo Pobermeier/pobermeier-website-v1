@@ -8160,64 +8160,6 @@ a:not(.button):not(.main-logo) svg {
     transform: translateY(1px);
     box-shadow: none; }
 
-* {
-  scrollbar-width: thin;
-  scrollbar-color: #7bc96f #ebedf0; }
-
-*::-webkit-scrollbar {
-  width: 0.5rem;
-  transition: all 0.3s ease-out; }
-
-*::-webkit-scrollbar:hover {
-  width: 1rem; }
-
-*::-webkit-scrollbar-track {
-  background: #ebedf0; }
-
-*::-webkit-scrollbar-thumb {
-  background-color: #7bc96f;
-  border-radius: 2rem; }
-
-*::-webkit-scrollbar-thumb:hover {
-  background-color: #239a3b; }
-
-::-moz-selection {
-  background: #239a3b;
-  color: whitesmoke; }
-
-::selection {
-  background: #239a3b;
-  color: whitesmoke; }
-
-html {
-  scroll-padding-top: 3.25rem;
-  background-color: whitesmoke; }
-
-body {
-  overflow: hidden; }
-
-hr {
-  background-color: #4a4a4a;
-  height: 1px; }
-
-a:not(.button):not(.main-logo) svg {
-  transition: all 0.2s ease-out; }
-  a:not(.button):not(.main-logo) svg:hover {
-    fill: #196127;
-    transform: scale(1.2);
-    cursor: pointer; }
-
-.title:not(.is-spaced) + .subtitle {
-  margin-top: 0; }
-
-.title:not(:last-child) {
-  margin-bottom: 2.5rem; }
-
-.title + .subtitle {
-  margin-bottom: 2.5rem; }
-  .title + .subtitle:not(:last-child) {
-    margin-bottom: 2.5rem; }
-
 .navbar {
   position: fixed;
   top: 0;
