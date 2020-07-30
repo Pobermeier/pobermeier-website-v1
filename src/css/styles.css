@@ -7949,6 +7949,14 @@ body::selection {
   background: #ebedf0;
   text-shadow: none; }
 
+input,
+textarea,
+button,
+div,
+select,
+a {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+
 hr {
   display: block;
   height: 1px;
@@ -7982,6 +7990,10 @@ fieldset {
 
 textarea {
   resize: vertical; }
+
+@media screen and (max-width: 468px) {
+  *:focus {
+    outline: none; } }
 
 @media print {
   * {
