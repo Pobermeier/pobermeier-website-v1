@@ -8206,6 +8206,8 @@ a:not(.button):not(.main-logo) svg {
         width: 12px; }
     .navbar .navbar-burger.is-active span {
       width: 16px; }
+    .navbar .navbar-burger:hover {
+      background-color: rgba(0, 0, 0, 0.05); }
   .navbar .navbar-mobile-cta {
     margin: auto 0;
     margin-left: auto; }

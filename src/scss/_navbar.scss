@@ -35,6 +35,7 @@
   }
   .navbar-burger {
     margin: auto 0;
+
     span {
       pointer-events: none;
 
@@ -42,10 +43,15 @@
         width: 12px;
       }
     }
+
     &.is-active {
       span {
         width: 16px;
       }
+    }
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.05);
     }
   }
 
