@@ -28,6 +28,7 @@
     "grunt": "^1.1.0",
     "grunt-critical": "^1.1.2",
     "node-sass": "^4.14.1",
+    "parcel": "^1.12.4",
     "parcel-bundler": "^1.12.4",
     "parcel-plugin-imagemin": "^4.0.1",
     "parcel-plugin-purgecss": "^2.1.3",
