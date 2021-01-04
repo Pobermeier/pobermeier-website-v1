@@ -8436,10 +8436,31 @@ main .section {
   padding: 1rem 3rem;
   max-width: 960px;
   margin: 0 auto; }
-  .form-container form input::placeholder {
-    color: #a6a6a6; }
+  .form-container form .field {
+    position: relative; }
+    .form-container form .field .floating-label {
+      color: #4a4a4a !important;
+      font-weight: normal !important;
+      position: absolute;
+      top: 0.75rem;
+      margin: 0 0 0 0.8rem;
+      transition: all 0.3s;
+      z-index: 10; }
+  .form-container form input[type="text"],
+  .form-container form input[type="email"] {
+    height: 3rem; }
+    .form-container form input[type="text"]::placeholder,
+    .form-container form input[type="email"]::placeholder {
+      color: #a6a6a6; }
   .form-container form textarea::placeholder {
     color: #a6a6a6; }
+  .form-container form input:focus ~ .floating-label,
+  .form-container form input:not(:placeholder-shown) ~ .floating-label,
+  .form-container form textarea:focus ~ .floating-label,
+  .form-container form textarea:not(:placeholder-shown) ~ .floating-label {
+    font-size: 0.5rem;
+    top: 0.1rem;
+    font-weight: bold !important; }
   .form-container form > .field {
     margin: 1rem 0; }
 

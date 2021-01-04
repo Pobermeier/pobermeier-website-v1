@@ -4,7 +4,24 @@
   margin: 0 auto;
 
   form {
-    input {
+    .field {
+      position: relative;
+
+      .floating-label {
+        color: $darkGrey !important;
+        font-weight: normal !important;
+        position: absolute;
+        top: 0.75rem;
+        margin: 0 0 0 0.8rem;
+        transition: all 0.3s;
+        z-index: 10;
+      }
+    }
+
+    input[type="text"],
+    input[type="email"] {
+      height: 3rem;
+
       &::placeholder {
         color: #a6a6a6;
       }
@@ -14,6 +31,16 @@
         color: #a6a6a6;
       }
     }
+
+    input:focus ~ .floating-label,
+    input:not(:placeholder-shown) ~ .floating-label,
+    textarea:focus ~ .floating-label,
+    textarea:not(:placeholder-shown) ~ .floating-label {
+      font-size: 0.5rem;
+      top: 0.1rem;
+      font-weight: bold !important;
+    }
+
     > .field {
       margin: 1rem 0;
     }

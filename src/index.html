@@ -1382,34 +1382,28 @@
                 <div class="field-body">
                   <div class="field">
                     <div class="control">
-                      <label class="label" for="firstName">First Name</label>
-                      <input class="input" type="text" name="firstName" id="firstName" required>
+                      <input class="input" type="text" name="firstName" id="firstName" placeholder=" " required>
+                      <label class="label floating-label" for="firstName">First Name</label>
                     </div>
                   </div>
                   <div class="field">
                     <div class="control">
-                      <label class="label" for="lastName">Last Name</label>
-                      <input class="input" type="text" name="lastName" id="lastName" required>
+                      <input class="input" type="text" name="lastName" id="lastName" placeholder=" " required>
+                      <label class="label floating-label" for="lastName">Last Name</label>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="field">
-                <label class="label" for="email">Email</label>
-                <div class="control has-icons-left">
-                  <input class="input" type="email" id="email" name="email" required>
-                  <span class="icon is-small is-left">
-                    <svg width="15" height="15" viewBox="0 0 32 25" fill="#AAAAAA" xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M28.8 0H3.2C1.44 0 0.016 1.40625 0.016 3.125L0 21.875C0 23.5938 1.44 25 3.2 25h28.8C30.56 25 32 23.5938 32 21.875V3.125C32 1.40625 30.56 0 28.8 0ZM28.8 6.25L16 14.0625L3.2 6.25V3.125L16 10.9375L28.8 3.125V6.25Z" />
-                    </svg>
-                  </span>
+                <div class="control">
+                  <input class="input" type="email" id="email" name="email" placeholder=" " required>
+                  <label class="label floating-label" for="email">Email</label>
                 </div>
               </div>
               <div class="field">
-                <label class="label" for="subject">Subject</label>
                 <div class="control">
-                  <input class="input" type="text" name="subject" id="subject" required>
+                  <input class="input" type="text" name="subject" id="subject" placeholder=" " required>
+                  <label class="label floating-label" for="subject">Subject</label>
                 </div>
               </div>
               <!-- <div class="field is-hidden">
@@ -1419,9 +1413,9 @@
                 </div>
               </div> -->
               <div class="field">
-                <label class="label" for="message">Message</label>
                 <div class="control">
-                  <textarea class="textarea" name="message" id="message" required></textarea>
+                  <textarea class="textarea" name="message" id="message" placeholder=" " required></textarea>
+                  <label class="label floating-label" for="message">Message</label>
                 </div>
               </div>
               <!-- <div data-netlify-recaptcha="true"></div> -->
