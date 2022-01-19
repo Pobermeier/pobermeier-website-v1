@@ -184,6 +184,8 @@ import AOS from "aos";
     convertWindowHeightToViewPortHeight();
     // Register service worker
     // registerSW();
+    // Remove service worker registration
+    navigator.serviceWorker.getRegistrations().then( function(registrations) { for(let registration of registrations) { registration.unregister(); } }); 
     // Refresh AOS x Seconds after page load is complete to avoid problem with init() not working on first load
     setTimeout(() => {
       AOS.refresh();
